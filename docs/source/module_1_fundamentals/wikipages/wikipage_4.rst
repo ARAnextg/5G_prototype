@@ -73,7 +73,4 @@ References
 2. "GNURadio Wiki": https://wiki.gnuradio.org/index.php/Main_Page
 3. "Software Defined Radio for Engineers" by Travis F. Collins et al.
 
-.. |copyright| unicode:: U+00A9
-   :trim:
 
-Copyright |copyright| [Your Name/Company]

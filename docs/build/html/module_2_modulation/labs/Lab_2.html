@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 2: Implementing a Simple OFDM Transmitter and Receiver &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,9 @@
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Advanced Modulation Techniques in SDR" href="../wikipages/wikipage_4.html" />
+    <link rel="prev" title="Quiz 2: OFDM &amp; Frequency Hopping" href="../quizzes/Quiz_2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,7 +43,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../module_1_fundamentals/index.html">Module 1: Fundamental Concepts of SDR</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/wikipages/introduction_to_sdr.html">Introduction to Software Defined Radios (SDR)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/introduction_to_sdr.html#overview">Overview</a></li>
@@ -74,7 +76,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/wikipages/basic_concepts_of_signal_processing.html">Basic Concepts of Signal Processing in SDR</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/basic_concepts_of_signal_processing.html#introduction-to-signal-processing-test-ci-cd">Introduction to Signal Processing (Test CI/CD)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/basic_concepts_of_signal_processing.html#introduction-to-signal-processing">Introduction to Signal Processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/basic_concepts_of_signal_processing.html#key-concepts-in-signal-processing">Key Concepts in Signal Processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/basic_concepts_of_signal_processing.html#tools-and-techniques">Tools and Techniques</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/basic_concepts_of_signal_processing.html#applications-of-signal-processing-in-sdr">Applications of Signal Processing in SDR</a></li>
@@ -102,14 +104,64 @@
 <li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/sdr_hardware_overview.html#references">References</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html">Concepts of Signal Reflection and Multipath</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html">Concepts of Signal Reflection and Multipath</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_waveform_transmission.html">Lab: Waveform Transmission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab: Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html">Concepts of Signal Reflection and Multipath</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#understanding-signal-reflection">Understanding Signal Reflection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#nature-and-causes-of-signal-reflection">Nature and Causes of Signal Reflection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#impact-on-wireless-communication">Impact on Wireless Communication</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Module 2: Modulation and Communication Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#multipath-propagation">Multipath Propagation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#characteristics-and-effects-of-multipath">Characteristics and Effects of Multipath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#challenges-in-sdr-communication">Challenges in SDR Communication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#mitigation-strategies">Mitigation Strategies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#diversity-techniques">Diversity Techniques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#equalization-and-signal-processing">Equalization and Signal Processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#advanced-modulation-techniques">Advanced Modulation Techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_5.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html">Basics of Radar Systems in SDRs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#principles-of-radar-systems">Principles of Radar Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#how-radar-works">How Radar Works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#radar-system-components">Radar System Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#implementation-in-sdr">Implementation in SDR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#advantages-of-sdr-in-radar">Advantages of SDR in Radar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#sdr-radar-applications">SDR Radar Applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#challenges-and-considerations">Challenges and Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/wikipages/wikipage_6.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_waveform_transmission.html">Lab 1: Waveform Transmission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 2: Signal Reflection and Multipath</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module 2: Modulation and Communication Techniques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_1.html">Understanding Modulation &amp; Demodulation Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_1.html">Quiz 1: Modulation Techniques and Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lab_1.html">Lab 1: Modulation and Demodulation Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_2.html">OFDM: Principles and Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_3.html">Frequency Hopping in Communication Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_2.html">Quiz 2: OFDM &amp; Frequency Hopping</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 2: Implementing a Simple OFDM Transmitter and Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_4.html">Advanced Modulation Techniques in SDR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lab_3.html">Lab 3: Frequency Hopping</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_3_signal_processing/index.html">Module 3: Signal Processing and Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_4_data_encoding/index.html">Module 4: Data Encoding and Packet Communication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>
@@ -131,7 +183,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+          <li class="breadcrumb-item"><a href="../index.html">Module 2: Modulation and Communication Techniques</a></li>
+      <li class="breadcrumb-item active">Lab 2: Implementing a Simple OFDM Transmitter and Receiver</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_2_modulation/labs/Lab_2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -141,11 +194,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
+  <section id="lab-2-implementing-a-simple-ofdm-transmitter-and-receiver">
+<h1>Lab 2: Implementing a Simple OFDM Transmitter and Receiver<a class="headerlink" href="#lab-2-implementing-a-simple-ofdm-transmitter-and-receiver" title="Link to this heading"></a></h1>
+</section>
+
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../quizzes/Quiz_2.html" class="btn btn-neutral float-left" title="Quiz 2: OFDM &amp; Frequency Hopping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../wikipages/wikipage_4.html" class="btn btn-neutral float-right" title="Advanced Modulation Techniques in SDR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -1,4 +1,4 @@
-Lab: Waveform Transmission 
+Lab 1: Waveform Transmission 
 =============================
 
 **Platform:** Software Defined Radios.

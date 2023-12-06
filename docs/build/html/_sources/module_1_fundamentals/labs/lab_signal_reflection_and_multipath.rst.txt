@@ -1,4 +1,4 @@
-Lab: Signal Reflection and Multipath 
+Lab 2: Signal Reflection and Multipath 
 =====================================
 
 **Platform:** Software Defined Radios.
