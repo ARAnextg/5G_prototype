@@ -9,7 +9,7 @@ Module 1: Fundamental Concepts of SDR
    wikipages/basic_concepts_of_signal_processing
    wikipages/sdr_hardware_overview
    wikipages/wikipage_5
-   wikipages/wikipage_5
+   wikipages/wikipage_6
    quizzes/quiz_fundamentals_1
    labs/lab_waveform_transmission
    labs/lab_signal_reflection_and_multipath
