@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview of UHD and GNURadio &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=976fd976"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Basic Concepts of Signal Processing in SDR" href="basic_concepts_of_signal_processing.html" />
+    <link rel="prev" title="Introduction to Software Defined Radios (SDR)" href="introduction_to_sdr.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module 1: Fundamental Concepts of SDR</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction_to_sdr.html">Introduction to Software Defined Radios (SDR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#what-is-sdr">What is SDR?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#key-advantages">Key Advantages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#evolution-of-sdr">Evolution of SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#sdr-vs-traditional-radios">SDR vs Traditional Radios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#components-of-an-sdr-system">Components of an SDR System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#applications-of-sdr">Applications of SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#getting-started-with-sdr">Getting Started with SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="introduction_to_sdr.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Overview of UHD and GNURadio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-uhd">What is UHD?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#key-features-of-uhd">Key Features of UHD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-uhd">Installing UHD</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-gnuradio">What is GNURadio?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#key-features-of-gnuradio">Key Features of GNURadio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-gnuradio">Installing GNURadio</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#applications">Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts_of_signal_processing.html">Basic Concepts of Signal Processing in SDR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts_of_signal_processing.html#introduction-to-signal-processing-test-ci-cd">Introduction to Signal Processing (Test CI/CD)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts_of_signal_processing.html#key-concepts-in-signal-processing">Key Concepts in Signal Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts_of_signal_processing.html#tools-and-techniques">Tools and Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts_of_signal_processing.html#applications-of-signal-processing-in-sdr">Applications of Signal Processing in SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts_of_signal_processing.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts_of_signal_processing.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sdr_hardware_overview.html">SDR Hardware Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sdr_hardware_overview.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdr_hardware_overview.html#essential-hardware-components">Essential Hardware Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#rf-front-end">RF Front-End</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#analog-to-digital-converters-adc">Analog-to-Digital Converters (ADC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#digital-to-analog-converters-dac">Digital-to-Analog Converters (DAC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#signal-processor">Signal Processor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sdr_hardware_overview.html#popular-sdr-hardware-examples">Popular SDR Hardware Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#rtl-sdr">RTL-SDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#hackrf-one">HackRF One</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sdr_hardware_overview.html#usrp-universal-software-radio-peripheral">USRP (Universal Software Radio Peripheral)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sdr_hardware_overview.html#choosing-the-right-hardware">Choosing the Right Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdr_hardware_overview.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdr_hardware_overview.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="wikipage_5.html">Concepts of Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wikipage_5.html">Concepts of Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_waveform_transmission.html">Lab: Waveform Transmission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_signal_reflection_and_multipath.html">Lab: Signal Reflection and Multipath</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_2_modulation/index.html">Module 2: Modulation and Communication Techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3_signal_processing/index.html">Module 3: Signal Processing and Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_4_data_encoding/index.html">Module 4: Data Encoding and Packet Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_6_OAI_5G_technologies/index.html">Module 6: OpenAirInterface(OAI) and 5G Technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_7_cognitive_radio/index.html">Module 7: Cognitive Radio</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module 1: Fundamental Concepts of SDR</a></li>
+      <li class="breadcrumb-item active">Overview of UHD and GNURadio</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/module_1_fundamentals/wikipages/wikipage_4.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="overview-of-uhd-and-gnuradio">
+<h1>Overview of UHD and GNURadio<a class="headerlink" href="#overview-of-uhd-and-gnuradio" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#what-is-uhd" id="id2">What is UHD?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#key-features-of-uhd" id="id3">Key Features of UHD</a></p></li>
+<li><p><a class="reference internal" href="#installing-uhd" id="id4">Installing UHD</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#what-is-gnuradio" id="id5">What is GNURadio?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#key-features-of-gnuradio" id="id6">Key Features of GNURadio</a></p></li>
+<li><p><a class="reference internal" href="#installing-gnuradio" id="id7">Installing GNURadio</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#applications" id="id8">Applications</a></p></li>
+<li><p><a class="reference internal" href="#conclusion" id="id9">Conclusion</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id10">References</a></p></li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This section provides an overview of the Universal Hardware Driver (UHD) and GNURadio, both of which are crucial in the operation and understanding of Software Defined Radios (SDR).</p>
+</section>
+<section id="what-is-uhd">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">What is UHD?</a><a class="headerlink" href="#what-is-uhd" title="Link to this heading"></a></h2>
+<p>UHD (Universal Hardware Driver) is the hardware driver for all USRP devices. It provides a standardized interface for controlling SDR hardware.</p>
+<section id="key-features-of-uhd">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Key Features of UHD</a><a class="headerlink" href="#key-features-of-uhd" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Device Abstraction</strong>: It abstracts the hardware specifics and presents a uniform interface to the user.</p></li>
+<li><p><strong>Cross-Platform Support</strong>: UHD supports Linux, Windows, and MacOS.</p></li>
+<li><p><strong>Compatibility</strong>: Works with a range of USRP devices.</p></li>
+<li><p><strong>Extensibility</strong>: Designed to be easily extendable for new SDR hardware.</p></li>
+</ul>
+</section>
+<section id="installing-uhd">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Installing UHD</a><a class="headerlink" href="#installing-uhd" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Pre-Built Packages</strong>: Available for various operating systems, offering a straightforward installation process.</p></li>
+<li><p><strong>Building from Source</strong>: For advanced users, building from source offers customization and access to the latest features and bug fixes.
+- Dependencies: List of prerequisites for building from source.
+- Step-by-Step Guide: Detailed instructions for compiling and installing UHD from source.</p></li>
+</ul>
+</section>
+</section>
+<section id="what-is-gnuradio">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">What is GNURadio?</a><a class="headerlink" href="#what-is-gnuradio" title="Link to this heading"></a></h2>
+<p>GNURadio is an open-source software development toolkit that provides signal processing blocks to implement software radios.</p>
+<section id="key-features-of-gnuradio">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Key Features of GNURadio</a><a class="headerlink" href="#key-features-of-gnuradio" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Graphical Interface</strong>: GNURadio Companion (GRC) offers a graphical tool for creating signal flow graphs.</p></li>
+<li><p><strong>Extensive Block Library</strong>: A wide range of signal processing blocks available.</p></li>
+<li><p><strong>Community Contributions</strong>: A rich set of contributions from the community, offering additional functionality.</p></li>
+<li><p><strong>Integration with UHD</strong>: Seamless integration with UHD for controlling USRP devices.</p></li>
+</ul>
+</section>
+<section id="installing-gnuradio">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Installing GNURadio</a><a class="headerlink" href="#installing-gnuradio" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Package Managers</strong>: Available in the repositories of most major Linux distributions, as well as Homebrew for macOS and installers for Windows.</p></li>
+<li><p><strong>Source Compilation</strong>: For the latest version or for specific customization, users can opt to build GNURadio from source.
+- Required Dependencies: List of necessary packages and libraries.
+- Compilation Instructions: Step-by-step guide for compiling and installing GNURadio.</p></li>
+</ul>
+</section>
+</section>
+<section id="applications">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Applications</a><a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Educational Tool</strong>: Ideal for teaching concepts of signal processing and communications.</p></li>
+<li><p><strong>Research and Development</strong>: Used in cutting-edge research in wireless communications.</p></li>
+<li><p><strong>Amateur Radio</strong>: Popular among amateur radio enthusiasts for its flexibility.</p></li>
+<li><p><strong>Commercial Applications</strong>: Deployed in various commercial settings for prototyping and testing.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Understanding UHD and GNURadio is fundamental for anyone working with SDRs. These tools offer powerful capabilities for both beginners and advanced users in the field of wireless communication.</p>
+</section>
+<section id="references">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">References</a><a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>“UHD Documentation”: <a class="reference external" href="https://files.ettus.com/manual/">https://files.ettus.com/manual/</a></p></li>
+<li><p>“GNURadio Wiki”: <a class="reference external" href="https://wiki.gnuradio.org/index.php/Main_Page">https://wiki.gnuradio.org/index.php/Main_Page</a></p></li>
+<li><p>“Software Defined Radio for Engineers” by Travis F. Collins et al.</p></li>
+</ol>
+<p>Copyright©[Your Name/Company]</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction_to_sdr.html" class="btn btn-neutral float-left" title="Introduction to Software Defined Radios (SDR)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basic_concepts_of_signal_processing.html" class="btn btn-neutral float-right" title="Basic Concepts of Signal Processing in SDR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Zachary Zemlicka Joshua St. John Varun Advani Jared Melcher Lukas Zerajic Christopher Sell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

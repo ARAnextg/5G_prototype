@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz 1: Fundamentals of SDRs &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=976fd976"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab: Waveform Transmission" href="../labs/lab_waveform_transmission.html" />
+    <link rel="prev" title="Concepts of Signal Reflection and Multipath" href="../wikipages/wikipage_5.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module 1: Fundamental Concepts of SDR</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/introduction_to_sdr.html">Introduction to Software Defined Radios (SDR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#what-is-sdr">What is SDR?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#key-advantages">Key Advantages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#evolution-of-sdr">Evolution of SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#sdr-vs-traditional-radios">SDR vs Traditional Radios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#components-of-an-sdr-system">Components of an SDR System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#applications-of-sdr">Applications of SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#getting-started-with-sdr">Getting Started with SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/introduction_to_sdr.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_4.html">Overview of UHD and GNURadio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_4.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_4.html#what-is-uhd">What is UHD?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_4.html#key-features-of-uhd">Key Features of UHD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_4.html#installing-uhd">Installing UHD</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_4.html#what-is-gnuradio">What is GNURadio?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_4.html#key-features-of-gnuradio">Key Features of GNURadio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_4.html#installing-gnuradio">Installing GNURadio</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_4.html#applications">Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_4.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_4.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html">Basic Concepts of Signal Processing in SDR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html#introduction-to-signal-processing-test-ci-cd">Introduction to Signal Processing (Test CI/CD)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html#key-concepts-in-signal-processing">Key Concepts in Signal Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html#tools-and-techniques">Tools and Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html#applications-of-signal-processing-in-sdr">Applications of Signal Processing in SDR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/basic_concepts_of_signal_processing.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html">SDR Hardware Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#essential-hardware-components">Essential Hardware Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#rf-front-end">RF Front-End</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#analog-to-digital-converters-adc">Analog-to-Digital Converters (ADC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#digital-to-analog-converters-dac">Digital-to-Analog Converters (DAC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#signal-processor">Signal Processor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#popular-sdr-hardware-examples">Popular SDR Hardware Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#rtl-sdr">RTL-SDR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#hackrf-one">HackRF One</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#usrp-universal-software-radio-peripheral">USRP (Universal Software Radio Peripheral)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#choosing-the-right-hardware">Choosing the Right Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/sdr_hardware_overview.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_5.html">Concepts of Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_5.html">Concepts of Signal Reflection and Multipath</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quiz 1: Fundamentals of SDRs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_waveform_transmission.html">Lab: Waveform Transmission</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/lab_signal_reflection_and_multipath.html">Lab: Signal Reflection and Multipath</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_2_modulation/index.html">Module 2: Modulation and Communication Techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_3_signal_processing/index.html">Module 3: Signal Processing and Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_4_data_encoding/index.html">Module 4: Data Encoding and Packet Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_6_OAI_5G_technologies/index.html">Module 6: OpenAirInterface(OAI) and 5G Technologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module_7_cognitive_radio/index.html">Module 7: Cognitive Radio</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module 1: Fundamental Concepts of SDR</a></li>
+      <li class="breadcrumb-item active">Quiz 1: Fundamentals of SDRs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/module_1_fundamentals/quizzes/quiz_fundamentals_1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quiz-1-fundamentals-of-sdrs">
+<h1>Quiz 1: Fundamentals of SDRs<a class="headerlink" href="#quiz-1-fundamentals-of-sdrs" title="Link to this heading"></a></h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fundamentals of SDRs</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .question { margin-bottom: 20px; }
+        .feedback { margin-top: 10px; color: green; }
+        .incorrect { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Quiz 1</h1>
+
+    <form id="quiz">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. What does SDR stand for?</p>
+            <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a. Software Defined Radio</label><br>
+            <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b. Systematic Digital Radio</label><br>
+            <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c. Signal Driven Reception</label>
+            <p class="feedback" id="feedback1"></p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. Which component converts analog signals into digital signals in an SDR?</p>
+            <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a. Digital-to-Analog Converter</label><br>
+            <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b. Analog-to-Digital Converter</label><br>
+            <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c. Signal Processor</label>
+            <p class="feedback" id="feedback2"></p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. What is the primary purpose of a Digital Signal Processor (DSP) in SDR?</p>
+            <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a. To enhance the signal strength</label><br>
+            <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b. To convert digital signals to RF waves</label><br>
+            <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c. To handle various signal processing tasks</label>
+            <p class="feedback" id="feedback3"></p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. In SDR, which method is commonly used for spectrum analysis?</p>
+            <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">a. Time-Domain Reflectometry</label><br>
+            <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">b. Fast Fourier Transform</label><br>
+            <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">c. Pulse Code Modulation</label>
+            <p class="feedback" id="feedback4"></p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. What is the primary advantage of SDR over traditional hardware radios?</p>
+            <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">a. Longer range of transmission</label><br>
+            <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">b. Higher power efficiency</label><br>
+            <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">c. Flexibility and adaptability</label>
+            <p class="feedback" id="feedback5"></p>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. Which frequency range is typically accessible by most commercial SDR receivers?</p>
+            <input type="radio" name="q6" value="a" id="q6a"> <label for="q6a">a. Up to 30 MHz</label><br>
+            <input type="radio" name="q6" value="b" id="q6b"> <label for="q6b">b. 30 MHz to 3 GHz</label><br>
+            <input type="radio" name="q6" value="c" id="q6c"> <label for="q6c">c. Above 5 GHz</label>
+            <p class="feedback" id="feedback6"></p>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 6;
+
+            // Check Question 1
+            if(document.getElementById('q1a').checked) {
+                score++;
+                document.getElementById('feedback1').innerHTML = "Correct!";
+            } else {
+                document.getElementById('feedback1').innerHTML = "Incorrect. The correct answer is 'Software Defined Radio'.";
+                document.getElementById('feedback1').classList.add('incorrect');
+            }
+
+            // Check Question 2
+            if(document.getElementById('q2b').checked) {
+                score++;
+                document.getElementById('feedback2').innerHTML = "Correct!";
+            } else {
+                document.getElementById('feedback2').innerHTML = "Incorrect. The correct component is 'Analog-to-Digital Converter'.";
+                document.getElementById('feedback2').classList.add('incorrect');
+            }
+
+            // Check Question 3
+            if(document.getElementById('q3c').checked) {
+                score++;
+                document.getElementById('feedback3').innerHTML = "Correct!";
+            } else {
+                document.getElementById('feedback3').innerHTML = "Incorrect. The DSP handles various signal processing tasks.";
+                document.getElementById('feedback3').classList.add('incorrect');
+            }
+
+            // Check Question 4
+            if(document.getElementById('q4b').checked) {
+                score++;
+                document.getElementById('feedback4').innerHTML = "Correct!";
+            } else {
+                document.getElementById('feedback4').innerHTML = "Incorrect. Fast Fourier Transform is commonly used for spectrum analysis.";
+                document.getElementById('feedback4').classList.add('incorrect');
+            }
+
+            // Check Question 5
+            if(document.getElementById('q5c').checked) {
+                score++;
+                document.getElementById('feedback5').innerHTML = "Correct!";
+            } else {
+                document.getElementById('feedback5').innerHTML = "Incorrect. The primary advantage of SDR is its flexibility and adaptability.";
+                document.getElementById('feedback5').classList.add('incorrect');
+            }
+
+            // Check Question 6
+            if(document.getElementById('q6b').checked) {
+                score++;
+                document.getElementById('feedback6').innerHTML = "Correct!";
+            } else {
+                document.getElementById('feedback6').innerHTML = "Incorrect. Most commercial SDR receivers access 30 MHz to 3 GHz.";
+                document.getElementById('feedback6').classList.add('incorrect');
+            }
+
+            // Overall Feedback
+            var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
+            if (score === totalQuestions) {
+                overallFeedback += "<p>Great job! You have a strong understanding of SDR fundamentals.</p>";
+            } else if (score > totalQuestions / 2) {
+                overallFeedback += "<p>Good effort, but there are some areas to review.</p>";
+            } else {
+                overallFeedback += "<p>It seems you might need to revisit the fundamentals of SDR.</p>";
+            }
+
+            document.getElementById('result').innerHTML = overallFeedback;
+        }
+    </script>
+</body>
+</html>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../wikipages/wikipage_5.html" class="btn btn-neutral float-left" title="Concepts of Signal Reflection and Multipath" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../labs/lab_waveform_transmission.html" class="btn btn-neutral float-right" title="Lab: Waveform Transmission" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Zachary Zemlicka Joshua St. John Varun Advani Jared Melcher Lukas Zerajic Christopher Sell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
