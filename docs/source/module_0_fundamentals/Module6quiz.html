@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module 1 Quiz</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 20px;
+			padding: 20px;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.quiz {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 1px #ccc;
+			margin: 20px;
+			padding: 20px;
+			width: 500px;
+		}
+
+		.question {
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.answer {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+
+		.answer label {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		.answer input[type="radio"] {
+			margin-right: 10px;
+		}
+
+		.submit-button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		.submit-button:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form class="quiz" onsubmit="return false;">
+
+			<div class="question">Why is it difficult to establish 5G networking in rural areas?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="a" required>
+					There is a lack of population density to justify its deployment
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="b">
+					The infrastructure required is not feasible for low-cost rural areas
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="c">
+					Both A and B
+				</label>
+			</div>
+
+			<div class="question">What is a challenge for transmitting 5G signals in rural areas?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="a" required>
+					Limited power for small cells
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="b">
+					Rugged terrain
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="c">
+					Millimeter waves having a tough time traveling far or transmitting through obstacles
+				</label>
+			</div>
+
+			<div class="question">How could 5G technology bring significant economic benefits to rural areas?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="a" required>
+					Boosting economic growth through increased productivity and connectivity
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="b">
+					Implementing advanced 5G-powered vehicles in agriculture for more efficient farming practices
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="c">
+					Both A and B
+				</label>
+			</div>
+			<button class="submit-button" onclick="submitQuiz()">Submit</button>
+		</form>
+	</div>
+	<script>
+
+function submitQuiz() {
+			let q1 = document.querySelector('input[name="q1"]:checked').value;
+			let q2 = document.querySelector('input[name="q2"]:checked').value;
+			let q3 = document.querySelector('input[name="q3"]:checked').value;
+
+			let correctAnswers = ["c", "c", "c"];
+			let score = 0;
+			if (q1 === correctAnswers[0]) {
+				score++;
+			}
+			if (q2 === correctAnswers[1]) {
+				score++;
+			}
+			if (q3 === correctAnswers[2]) {
+				score++;
+			}
+			alert(`You scored ${score} out of ${correctAnswers.length}`);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module 1 Quiz</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 20px;
+			padding: 20px;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.quiz {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 1px #ccc;
+			margin: 20px;
+			padding: 20px;
+			width: 500px;
+		}
+
+		.question {
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.answer {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+
+		.answer label {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		.answer input[type="radio"] {
+			margin-right: 10px;
+		}
+
+		.submit-button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		.submit-button:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form class="quiz" onsubmit="return false;">
+
+			<div class="question">What does 5G stand for?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="a" required>
+					5-Gigabytes
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="b">
+					5th Generation
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="c">
+					5-Gigabits
+				</label>
+			</div>
+
+			<div class="question">What is an example of a UE with regards to 5G architecture?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="a" required>
+					Mobile Phones
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="b">
+					Personal Computers
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="c">
+					iPad
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="d">
+					All of the above
+				</label>
+			</div>
+
+			<div class="question">
+				The functions that Radio Access Networks perform are <br /><br />(i) radio transmission and reception <br />(ii) routing data between different networks <br />
+				(iii) signal processing
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="a" required>
+					i, iii
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="b">
+					i, ii, iii
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="c">
+					ii, iii
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="d">
+					None of the above
+				</label>
+			</div>
+
+			<div class="question">
+				Core Networks transfer data between different Radio Access Network nodes.
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q4" value="a" required>
+					True
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q4" value="b">
+					False
+				</label>
+			</div>
+			<button class="submit-button" onclick="submitQuiz()">Submit</button>
+		</form>
+	</div>
+	<script>
+
+function submitQuiz() {
+			let q1 = document.querySelector('input[name="q1"]:checked').value;
+			let q2 = document.querySelector('input[name="q2"]:checked').value;
+			let q3 = document.querySelector('input[name="q3"]:checked').value;
+			let q4 = document.querySelector('input[name="q4"]:checked').value;
+
+			let correctAnswers = ["b", "d", "a", "a"];
+			let score = 0;
+			if (q1 === correctAnswers[0]) {
+				score++;
+			}
+			if (q2 === correctAnswers[1]) {
+				score++;
+			}
+			if (q3 === correctAnswers[2]) {
+				score++;
+			}
+			if (q4 === correctAnswers[3]) {
+				score++;
+			}
+			alert(`You scored ${score} out of ${correctAnswers.length}`);
+		}
+	</script>
+</body>
+</html>

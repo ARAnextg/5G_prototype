@@ -10,6 +10,7 @@ Welcome to Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural 
    :maxdepth: 2
    :caption: Modules
 
+   module_0_fundamentals/index
    module_1_fundamentals/index
    module_2_modulation/index
    module_3_signal_processing/index

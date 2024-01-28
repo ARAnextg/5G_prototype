@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module 1 Quiz</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 20px;
+			padding: 20px;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.quiz {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 1px #ccc;
+			margin: 20px;
+			padding: 20px;
+			width: 500px;
+		}
+
+		.question {
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.answer {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+
+		.answer label {
+			font-size: 16px;
+			margin-bottom: 5px;
+		}
+
+		.answer input[type="radio"] {
+			margin-right: 10px;
+		}
+
+		.submit-button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+
+		.submit-button:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form class="quiz" onsubmit="return false;">
+
+			<div class="question">Which frequency bands do 5G UEs connect to in a multi-band support?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="a" required>
+					Sub-6 GHz bands
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="b">
+					mmWave bands
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q1" value="c">
+					Both A and B
+				</label>
+			</div>
+
+			<div class="question">What are some advanced signal-processing methods commonly used in 5G UEs?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="a" required>
+					Error Correction
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="b">
+					Channel Coding
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="c">
+					Modulation
+				</label>
+			</div>
+
+			<div class="answer">
+				<label>
+					<input type="radio" name="q2" value="d">
+					All of the above
+				</label>
+			</div>
+
+			<div class="question">What gives 5G user equipment an edge over previous generations such as 4G?</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="a" required>
+					Faster transfer speed
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="b">
+					Higher letency rate
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="c">
+					Can handle less data than 4G
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q3" value="d">
+					None of the above
+				</label>
+			</div>
+
+			<div class="question">
+				What is the average latency rate of 5G UEs?
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q4" value="a" required>
+					20ms
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q4" value="b">
+					200ms
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q4" value="c">
+					1ms
+				</label>
+			</div>
+			<div class="answer">
+				<label>
+					<input type="radio" name="q4" value="d">
+					10ms
+				</label>
+			</div>
+			<button class="submit-button" onclick="submitQuiz()">Submit</button>
+		</form>
+	</div>
+	<script>
+
+function submitQuiz() {
+			let q1 = document.querySelector('input[name="q1"]:checked').value;
+			let q2 = document.querySelector('input[name="q2"]:checked').value;
+			let q3 = document.querySelector('input[name="q3"]:checked').value;
+			let q4 = document.querySelector('input[name="q4"]:checked').value;
+
+			let correctAnswers = ["c", "d", "a", "c"];
+			let score = 0;
+			if (q1 === correctAnswers[0]) {
+				score++;
+			}
+			if (q2 === correctAnswers[1]) {
+				score++;
+			}
+			if (q3 === correctAnswers[2]) {
+				score++;
+			}
+			if (q4 === correctAnswers[3]) {
+				score++;
+			}
+			alert(`You scored ${score} out of ${correctAnswers.length}`);
+		}
+	</script>
+</body>
+</html>
