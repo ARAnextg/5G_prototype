@@ -7,6 +7,8 @@ Module 4: Data Encoding and Packet Communication
    wikipages/wikipage_1
    wikipages/wikipage_2
    wikipages/wikipage_3
+   wikipages/wikipage_4
+   wikipages/wikipage_5
   
    quizzes/Quiz_1
    quizzes/Quiz_2
