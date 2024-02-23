@@ -66,12 +66,5 @@ In the context of 5G, efficient data encoding is paramount to achieving the netw
 Overview of Data Encoding Techniques
 ---------------------------------------
 
-Low-Density Parity Check Codes (LDPC)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Polar Codes
-^^^^^^^^^^^^^
-
-Summary
----------
 
