@@ -1,2 +1,0 @@
-OFDM: Principles and Implementation
-====================================
