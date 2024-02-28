@@ -53,16 +53,86 @@ Implementing packet communication in 5G networks presents unique challenges, inc
 
 
 Structure and Components of 5G Packets
-----------------------------------------
+======================================
 
-Headers
-^^^^^^^^^^
+Understanding the structure and components of 5G packets is crucial for comprehending how data is formatted, transmitted, and processed within the 5G network framework. This section provides a detailed look at the integral parts of 5G packets: headers, payloads, and trailers, each playing a pivotal role in the seamless delivery of services.
 
-Payloads
-^^^^^^^^^^
+**Headers in 5G Packets**
+-------------------------
 
-Trailers
-^^^^^^^^^^
+The header of a 5G packet contains critical information necessary for the routing and delivery of packets across the network. This includes source and destination addresses, sequence numbers, and Quality of Service (QoS) parameters.
+
+.. list-table:: Header Components in 5G Packets
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Component
+     - Description
+   * - User Plane Function (UPF)
+     - Manages packet routing and forwarding, packet inspection, and QoS handling for data flows.
+   * - Access and Mobility Management Function (AMF)
+     - Handles registration and connection management.
+   * - Session Management Function (SMF)
+     - Responsible for the establishment, maintenance, and termination of network slices.
+   * - Network Slice Selection Function (NSSF)
+     - Selects network slice instances and determines the NSSAI.
+   * - Policy Control Function (PCF)
+     - Provides policy rules to influence traffic routing decisions.
+   * - Application Function (AF)
+     - Influences traffic routing and accesses UE location information.
+   * - Unified Data Management (UDM)
+     - Manages registration and stores session management information.
+
+.. image:: images/5G_Packet_Header_Structure.png
+   :align: center
+   :alt: Detailed structure of a 5G packet header including key components.
+
+**Payloads in 5G Packets**
+---------------------------
+
+The payload section of a 5G packet carries the actual data intended for transmission, which could range from voice to video or textual data. The payloads are subject to various processing techniques to ensure integrity and efficiency.
+
+.. list-table:: Payload Characteristics in 5G Packets
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Characteristic
+     - Description
+   * - Data Types
+     - Includes voice, video, text, etc., depending on the application.
+   * - Encoding
+     - Goes through layers like SDAP for QoS management, typically using Ethernet protocol for transmission.
+   * - Error Correction
+     - Utilizes techniques like LDPC and Polar codes for reliable transmission.
+   * - 5G NR Support
+     - Accommodates multiple codewords for different layer transmissions.
+   * - Quality of Service (QoS)
+     - Applies specific QoS parameters for performance standards.
+
+**Trailers in 5G Packets**
+--------------------------
+
+The trailer at the end of a 5G packet contains error-checking information, such as Cyclic Redundancy Check (CRC) codes, to ensure the integrity of the transmitted data.
+
+.. list-table:: Trailer Components in 5G Packets
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Component
+     - Description
+   * - Cyclic Redundancy Check (CRC)
+     - Detects any errors occurred during the packet transmission.
+   * - Error Detection and Identification
+     - Confirms the integrity of the transmitted data.
+   * - Variable Length
+     - Adjusts based on specific protocols and technologies used.
+   * - Encoding Techniques
+     - Employs methods like LDPC and Polar codes for error correction.
+
+.. image:: images/5G_Packet_Trailer_Structure.png
+   :align: center
+   :alt: Illustration of a 5G packet trailer and its error-checking mechanisms.
+
 
 Role of Packet Communication in 5G
 ------------------------------------
