@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 1 : Data Encoding and Decoding &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="Lab_2.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="../quizzes/Quiz_2.html" /> 
+    <link rel="next" title="Lab 2 : Packet Radio System" href="Lab_2.html" />
+    <link rel="prev" title="Quiz 5: Implementing Packet Communication with USRP SDRs" href="../quizzes/Quiz_5.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +43,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../module_0_fundamentals/index.html">Module 0: Introduction to 5G (© Copyright 2023, Zachary Miller, Adam Kruger, Danny Cao, Ethan Gabriel. Revision 23440036)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../module_0_fundamentals/beforeyoubegin.html">Starting your learning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../module_0_fundamentals/beforeyoubegin.html#learning-modules">Learning Modules</a></li>
@@ -264,7 +264,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_3_signal_processing/index.html">Module 3: Signal Processing and Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Module 4: Data Encoding and Packet Communication</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module 4: Data Encoding and Packet Communication</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_1.html">Introduction to Data Encoding in 5G</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_1.html#overview-of-data-encoding">Overview of Data Encoding</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_1.html#why-data-encoding-is-crucial-in-telecommunications">Why Data Encoding is Crucial in Telecommunications</a></li>
@@ -304,12 +304,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_2.html#challenges-and-considerations">Challenges and Considerations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_2.html#structure-and-components-of-5g-packets">Structure and Components of 5G Packets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_2.html#headers">Headers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_2.html#payloads">Payloads</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_2.html#trailers">Trailers</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_2.html#structure-and-components-of-5g-packets">Structure and Components of 5G Packets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_2.html#headers-in-5g-packets"><strong>Headers in 5G Packets</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_2.html#payloads-in-5g-packets"><strong>Payloads in 5G Packets</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_2.html#trailers-in-5g-packets"><strong>Trailers in 5G Packets</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_2.html#role-of-packet-communication-in-5g">Role of Packet Communication in 5G</a></li>
 </ul>
 </li>
@@ -331,6 +331,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_5.html#analysis-of-packet-communication">Analysis of Packet Communication</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_1.html">Quiz 1: Introduction to Data Encoding in 5G</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_2.html">Quiz 2: Fundamentals of Packet Communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1 : Data Encoding and Decoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lab_2.html">Lab 2 : Packet Radio System</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>
@@ -353,7 +360,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module 4: Data Encoding and Packet Communication</a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Lab 1 : Data Encoding and Decoding</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_4_data_encoding/labs/Lab_1.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -363,13 +370,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
+  <section id="lab-1-data-encoding-and-decoding">
+<h1>Lab 1 : Data Encoding and Decoding<a class="headerlink" href="#lab-1-data-encoding-and-decoding" title="Link to this heading"></a></h1>
+</section>
+
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../quizzes/Quiz_2.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Lab_2.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../quizzes/Quiz_5.html" class="btn btn-neutral float-left" title="Quiz 5: Implementing Packet Communication with USRP SDRs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lab_2.html" class="btn btn-neutral float-right" title="Lab 2 : Packet Radio System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
