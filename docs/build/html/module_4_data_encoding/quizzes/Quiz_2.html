@@ -460,7 +460,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fundamentals of SDRs</title>
+    <title>Fundamentals of Packet Communication in 5G</title>
     <style>
         body { font-family: Arial, sans-serif; }
         .question { margin-bottom: 20px; }
@@ -469,138 +469,123 @@
     </style>
 </head>
 <body>
-    <h1>Quiz 1</h1>
+    <h1>Quiz 2: Fundamentals of Packet Communication in 5G</h1>
 
-    <form id="quiz">
+    <form id="quiz2">
         <!-- Question 1 -->
         <div class="question">
-            <p>1. What does SDR stand for?</p>
-            <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a. Software Defined Radio</label><br>
-            <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b. Systematic Digital Radio</label><br>
-            <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c. Signal Driven Reception</label>
-            <p class="feedback" id="feedback1"></p>
+            <p>1. What is the role of the User Plane Function (UPF) in the header of a 5G packet?</p>
+            <input type="radio" name="q1" value="a" id="q2_1a"> <label for="q2_1a">a. It is responsible for packet routing and forwarding, packet inspection, and QoS handling for data flows.</label><br>
+            <input type="radio" name="q1" value="b" id="q2_1b"> <label for="q2_1b">b. It is responsible for establishing, maintaining, and terminating network slices.</label><br>
+            <input type="radio" name="q1" value="c" id="q2_1c"> <label for="q2_1c">c. It is responsible for the registration of network functions that serve the User Equipment (UE).</label><br>
+            <input type="radio" name="q1" value="d" id="q2_1d"> <label for="q2_1d">d. It is responsible for providing policy rules to control plane function(s) to influence the traffic routing decision.</label>
+            <p class="feedback" id="feedback2_1"></p>
         </div>
 
         <!-- Question 2 -->
         <div class="question">
-            <p>2. Which component converts analog signals into digital signals in an SDR?</p>
-            <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a. Digital-to-Analog Converter</label><br>
-            <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b. Analog-to-Digital Converter</label><br>
-            <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c. Signal Processor</label>
-            <p class="feedback" id="feedback2"></p>
+            <p>2. What types of data can the payload in a 5G network contain?</p>
+            <input type="radio" name="q2" value="a" id="q2_2a"> <label for="q2_2a">a. Only voice data</label><br>
+            <input type="radio" name="q2" value="b" id="q2_2b"> <label for="q2_2b">b. Only video data</label><br>
+            <input type="radio" name="q2" value="c" id="q2_2c"> <label for="q2_2c">c. Only text data</label><br>
+            <input type="radio" name="q2" value="d" id="q2_2d"> <label for="q2_2d">d. Various types of data, including voice, video, text, and more</label>
+            <p class="feedback" id="feedback2_2"></p>
         </div>
 
         <!-- Question 3 -->
         <div class="question">
-            <p>3. What is the primary purpose of a Digital Signal Processor (DSP) in SDR?</p>
-            <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a. To enhance the signal strength</label><br>
-            <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b. To convert digital signals to RF waves</label><br>
-            <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c. To handle various signal processing tasks</label>
-            <p class="feedback" id="feedback3"></p>
+            <p>3. What error correction techniques are used in 5G networks?</p>
+            <input type="radio" name="q3" value="a" id="q2_3a"> <label for="q2_3a">a. High-Density Parity-Check (HDPC) and Polar codes</label><br>
+            <input type="radio" name="q3" value="b" id="q2_3b"> <label for="q2_3b">b. Low-Density Parity-Check (LDPC) and Polar codes</label><br>
+            <input type="radio" name="q3" value="c" id="q2_3c"> <label for="q2_3c">c. Medium-Density Parity-Check (MDPC) and Polar codes</label><br>
+            <input type="radio" name="q3" value="d" id="q2_3d"> <label for="q2_3d">d. Low-Density Parity-Check (LDPC) and High-Density Parity-Check (HDPC) codes</label>
+            <p class="feedback" id="feedback2_3"></p>
         </div>
 
         <!-- Question 4 -->
         <div class="question">
-            <p>4. In SDR, which method is commonly used for spectrum analysis?</p>
-            <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">a. Time-Domain Reflectometry</label><br>
-            <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">b. Fast Fourier Transform</label><br>
-            <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">c. Pulse Code Modulation</label>
-            <p class="feedback" id="feedback4"></p>
+            <p>4. In 5G NR, how many codewords does the payload support for 1 to 4-layer transmission?</p>
+            <input type="radio" name="q4" value="a" id="q2_4a"> <label for="q2_4a">a. One codeword</label><br>
+            <input type="radio" name="q4" value="b" id="q2_4b"> <label for="q2_4b">b. Two codewords</label><br>
+            <input type="radio" name="q4" value="c" id="q2_4c"> <label for="q2_4c">c. Three codewords</label><br>
+            <input type="radio" name="q4" value="d" id="q2_4d"> <label for="q2_4d">d. Four codewords</label>
+            <p class="feedback" id="feedback2_4"></p>
         </div>
 
         <!-- Question 5 -->
         <div class="question">
-            <p>5. What is the primary advantage of SDR over traditional hardware radios?</p>
-            <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">a. Longer range of transmission</label><br>
-            <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">b. Higher power efficiency</label><br>
-            <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">c. Flexibility and adaptability</label>
-            <p class="feedback" id="feedback5"></p>
+            <p>5. What is the purpose of a Cyclic Redundancy Check (CRC) in the trailer of a 5G packet?</p>
+            <input type="radio" name="q5" value="a" id="q2_5a"> <label for="q2_5a">a. It is used to detect any errors that might have occurred during the transmission of the packet.</label><br>
+            <input type="radio" name="q5" value="b" id="q2_5b"> <label for="q2_5b">b. It is used to correct any errors that might have occurred during the transmission of the packet.</label><br>
+            <input type="radio" name="q5" value="c" id="q2_5c"> <label for="q2_5c">c. It is used to increase the speed of data transmission.</label><br>
+            <input type="radio" name="q5" value="d" id="q2_5d"> <label for="q2_5d">d. It is used to decrease the speed of data transmission.</label>
+            <p class="feedback" id="feedback2_5"></p>
         </div>
 
-        <!-- Question 6 -->
-        <div class="question">
-            <p>6. Which frequency range is typically accessible by most commercial SDR receivers?</p>
-            <input type="radio" name="q6" value="a" id="q6a"> <label for="q6a">a. Up to 30 MHz</label><br>
-            <input type="radio" name="q6" value="b" id="q6b"> <label for="q6b">b. 30 MHz to 3 GHz</label><br>
-            <input type="radio" name="q6" value="c" id="q6c"> <label for="q6c">c. Above 5 GHz</label>
-            <p class="feedback" id="feedback6"></p>
-        </div>
-
-        <button type="button" onclick="submitQuiz()">Submit</button>
-    </form>
-
-    <div id="result"></div>
+      
+             <!-- Question 6 -->
+             <div class="question">
+                <p>6. What is packet switching and how does it enhance efficiency in 5G networks?</p>
+                <input type="radio" name="q6" value="a" id="q2_6a"> <label for="q2_6a">a. Packet switching is a method of grouping data transmitted over a digital network into packets. It enhances efficiency by allowing network resources to be shared among multiple users and sending packets in bursts at different time intervals.</label><br>
+                <input type="radio" name="q6" value="b" id="q2_6b"> <label for="q2_6b">b. Packet switching is a method of grouping data transmitted over a digital network into packets. It enhances efficiency by allocating dedicated network resources to each user.</label><br>
+                <input type="radio" name="q6" value="c" id="q2_6c"> <label for="q2_6c">c. Packet switching is a method of transmitting data over a digital network without grouping them into packets. It enhances efficiency by allowing network resources to be shared among multiple users.</label><br>
+                <input type="radio" name="q6" value="d" id="q2_6d"> <label for="q2_6d">d. Packet switching is a method of transmitting data over a digital network without grouping them into packets. It enhances efficiency by allocating dedicated network resources to each user.</label>
+                <p class="feedback" id="feedback2_6"></p>
+            </div>
+    
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. How does packet switching enable faster data transmission in 5G networks?</p>
+                <input type="radio" name="q7" value="a" id="q2_7a"> <label for="q2_7a">a. It uses technologies like Long Term Evolution (LTE) and IPv6 to ensure higher bandwidth and low latency for mobile devices.</label><br>
+                <input type="radio" name="q7" value="b" id="q2_7b"> <label for="q2_7b">b. It uses technologies like Short Term Evolution (STE) and IPv4 to ensure higher bandwidth and low latency for mobile devices.</label><br>
+                <input type="radio" name="q7" value="c" id="q2_7c"> <label for="q2_7c">c. It uses technologies like Long Term Evolution (LTE) and IPv6 to ensure lower bandwidth and high latency for mobile devices.</label><br>
+                <input type="radio" name="q7" value="d" id="q2_7d"> <label for="q2_7d">d. It uses technologies like Short Term Evolution (STE) and IPv4 to ensure lower bandwidth and high latency for mobile devices.</label>
+                <p class="feedback" id="feedback2_7"></p>
+            </div>
+    
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. What is Packet Duplication (PD) and how does it enhance reliability in 5G networks?</p>
+                <input type="radio" name="q8" value="a" id="q2_8a"> <label for="q2_8a">a. Packet Duplication (PD) is a technique that increases redundancy of the transmission. It enhances reliability by allowing a User Equipment (UE) to be connected to multiple base stations simultaneously.</label><br>
+                <input type="radio" name="q8" value="b" id="q2_8b"> <label for="q2_8b">b. Packet Duplication (PD) is a technique that decreases redundancy of the transmission. It enhances reliability by allowing a User Equipment (UE) to be connected to a single base station.</label><br>
+                <input type="radio" name="q8" value="c" id="q2_8c"> <label for="q2_8c">c. Packet Duplication (PD) is a technique that increases redundancy of the transmission. It enhances reliability by allowing a User Equipment (UE) to be connected to a single base station.</label><br>
+                <input type="radio" name="q8" value="d" id="q2_8d"> <label for="q2_8d">d. Packet Duplication (PD) is a technique that decreases redundancy of the transmission. It enhances reliability by allowing a User Equipment (UE) to be connected to multiple base stations simultaneously.</label>
+                <p class="feedback" id="feedback2_8"></p>
+            </div>
+    
+            <button type="button" onclick="submitQuiz2()">Submit</button>
+        </form>
+    
+        <div id="result2"></div>
+    
 
     <script>
-        function submitQuiz() {
+        function submitQuiz2() {
             var score = 0;
-            var totalQuestions = 6;
+            var totalQuestions = 5;  // Update total number of questions if more are added
 
             // Check Question 1
-            if(document.getElementById('q1a').checked) {
-                score++;
-                document.getElementById('feedback1').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback1').innerHTML = "Incorrect. The correct answer is 'Software Defined Radio'.";
-                document.getElementById('feedback1').classList.add('incorrect');
+            var q1Options = document.getElementsByName('q1');
+            var q1Answered = false;
+            for (var i = 0; i < q1Options.length; i++) {
+                if (q1Options[i].checked) {
+                    q1Answered = true;
+                    if(q1Options[i].value == 'a') {
+                        score++;
+                        document.getElementById('feedback2_1').innerHTML = "Correct!";
+                    } else {
+                        document.getElementById('feedback2_1').innerHTML = "Incorrect. The correct answer is 'It is responsible for packet routing and forwarding, packet inspection, and QoS handling for data flows'.";
+                        document.getElementById('feedback2_1').classList.add('incorrect');
+                    }
+                }
             }
+            if (!q1Answered) document.getElementById('feedback2_1').innerHTML = "No answer selected.";
 
-            // Check Question 2
-            if(document.getElementById('q2b').checked) {
-                score++;
-                document.getElementById('feedback2').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback2').innerHTML = "Incorrect. The correct component is 'Analog-to-Digital Converter'.";
-                document.getElementById('feedback2').classList.add('incorrect');
-            }
-
-            // Check Question 3
-            if(document.getElementById('q3c').checked) {
-                score++;
-                document.getElementById('feedback3').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback3').innerHTML = "Incorrect. The DSP handles various signal processing tasks.";
-                document.getElementById('feedback3').classList.add('incorrect');
-            }
-
-            // Check Question 4
-            if(document.getElementById('q4b').checked) {
-                score++;
-                document.getElementById('feedback4').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback4').innerHTML = "Incorrect. Fast Fourier Transform is commonly used for spectrum analysis.";
-                document.getElementById('feedback4').classList.add('incorrect');
-            }
-
-            // Check Question 5
-            if(document.getElementById('q5c').checked) {
-                score++;
-                document.getElementById('feedback5').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback5').innerHTML = "Incorrect. The primary advantage of SDR is its flexibility and adaptability.";
-                document.getElementById('feedback5').classList.add('incorrect');
-            }
-
-            // Check Question 6
-            if(document.getElementById('q6b').checked) {
-                score++;
-                document.getElementById('feedback6').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback6').innerHTML = "Incorrect. Most commercial SDR receivers access 30 MHz to 3 GHz.";
-                document.getElementById('feedback6').classList.add('incorrect');
-            }
-
+            
             // Overall Feedback
             var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
-            if (score === totalQuestions) {
-                overallFeedback += "<p>Great job! You have a strong understanding of SDR fundamentals.</p>";
-            } else if (score > totalQuestions / 2) {
-                overallFeedback += "<p>Good effort, but there are some areas to review.</p>";
-            } else {
-                overallFeedback += "<p>It seems you might need to revisit the fundamentals of SDR.</p>";
-            }
-
-            document.getElementById('result').innerHTML = overallFeedback;
+            overallFeedback += score === totalQuestions ? "<p>Excellent understanding of Packet Communication in 5G.</p>" : "<p>Review the materials for a better understanding.</p>";
+            document.getElementById('result2').innerHTML = overallFeedback;
         }
     </script>
 </body>

@@ -24,6 +24,7 @@ Advantages of Packet Communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Packet communication offers several advantages over traditional circuit-switched communication methods, particularly in terms of flexibility, efficiency, and scalability.
 
+
 - **Efficiency:** By breaking down data into packets, networks can transmit information more efficiently, using available bandwidth more effectively and reducing transmission costs.
 
 - **Reliability:** Packet switching allows for dynamic rerouting around congested areas or in case of link failures, enhancing the reliability of data transmission.
@@ -34,6 +35,10 @@ Packet Communication in 5G Networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 5G networks leverage the advantages of packet communication to support a wide array of services and applications, from high-speed mobile internet to IoT connectivity.
 
+.. figure:: /images/abc.jpg
+  
+    *Packet communication in 5G networks*
+
 - **Enhanced Mobile Broadband (eMBB):** Utilizes packet communication to deliver high data rates for streaming, gaming, and other bandwidth-intensive applications.
 
 - **Ultra-Reliable Low-Latency Communications (URLLC):** Employs packet switching to minimize delays and ensure reliable, real-time communication for critical applications, such as autonomous vehicles and telemedicine.
@@ -42,6 +47,11 @@ Packet Communication in 5G Networks
 
 Packet Switching vs. Circuit Switching
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: /images/circuit_packet.jpg
+  
+    *Circuit Switching vs Packet Switching*
+
 Packet communication relies on the principle of packet switching, a contrast to the traditional circuit-switching method used in early telecommunication systems.
 
 - **Packet Switching:** Data is divided into packets that are routed independently across the network. This method allows for dynamic routing, efficient bandwidth utilization, and better fault tolerance, making it ideal for data and Internet communications.
@@ -63,9 +73,12 @@ Understanding 5G Packet Anatomy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A 5G packet is primarily composed of three main components: the Header, the Payload, and the Trailer. Each component plays a crucial role in the packet's journey from source to destination.
 
+.. figure:: /images/headers.jpg
+  
+    *5G packets*
+
 **Headers in 5G Packets**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The header of a 5G packet contains essential information required for the correct routing and delivery of the packet. It includes the following elements:
 
 - **Source and Destination Addresses:** Identifies the sending and receiving entities.
