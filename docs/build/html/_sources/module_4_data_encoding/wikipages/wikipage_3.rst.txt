@@ -231,7 +231,7 @@ The eMBB scenario demands exceptional throughput, reduced latency, and enhanced 
    | LDPC High Throughput | Enables the handling of high data rates, suitable for video |
    |                      | streaming and large file transfers.                         |
    +----------------------+-------------------------------------------------------------+
-   | Flexibility          | Adapts to various data rates and user demands, improving     |
+   | Flexibility          | Adapts to various data rates and user demands, improving    |
    |                      | overall network responsiveness and efficiency.              |
    +----------------------+-------------------------------------------------------------+
    | HARQ Integration     | Reduces data retransmission times, enhancing user experience|
@@ -336,7 +336,7 @@ Autonomous vehicles necessitate ultra-reliable communication with extremely low 
    | LDPC High Data Rate  | Facilitates the real-time transmission of sensor and video  |
    |                      | data, crucial for autonomous vehicle navigation and safety. |
    +----------------------+-------------------------------------------------------------+
-   |Polar Code            |
+   |Polar Code            |                                                             |
    |Reliability           | Ensures that critical control messages are delivered        |
    |                      | promptly and accurately, vital for vehicle safety and       |
    |                      | operational efficiency.                                     |

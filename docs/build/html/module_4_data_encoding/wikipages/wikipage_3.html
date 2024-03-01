@@ -366,9 +366,32 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="wikipage_4.html">Packet Communication Protocols and Standards</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#overview-of-5g-nr-protocols">Overview of 5G NR protocols</a></li>
-<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#ip-networking-in-5g">IP Networking in 5G</a></li>
-<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#qos-in-5g">QoS in 5G</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#overview-of-5g-nr-new-radio-protocols">Overview of 5G NR (New Radio) Protocols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#introduction-to-5g-nr-protocols">Introduction to 5G NR Protocols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#service-data-adaptation-protocol-sdap">Service Data Adaptation Protocol (SDAP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#packet-data-convergence-protocol-pdcp">Packet Data Convergence Protocol (PDCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#radio-link-control-rlc">Radio Link Control (RLC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#media-access-control-mac">Media Access Control (MAC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#physical-layer-phy">Physical Layer (PHY)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#ip-networking-in-5g">IP Networking in 5G</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#introduction-to-ip-networking-in-5g">Introduction to IP Networking in 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#ip-anyhaul-in-5g">IP Anyhaul in 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#multi-access-edge-computing-mec-in-5g">Multi-access Edge Computing (MEC) in 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#cloud-interconnect-and-5g-networking">Cloud Interconnect and 5G Networking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#automation-in-5g-ip-networking">Automation in 5G IP Networking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#evolution-of-ip-connectivity-in-5g">Evolution of IP Connectivity in 5G</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wikipage_4.html#qos-in-5g-networks">QoS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#introduction-to-qos-in-5g">Introduction to QoS in 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#significance-of-qos-in-5g-networks">Significance of QoS in 5G Networks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#management-of-qos-through-packet-communication">Management of QoS Through Packet Communication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_4.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="wikipage_5.html">Implementing Packet Communication with USRP SDRs</a><ul>
@@ -652,6 +675,28 @@ complete solution for data reliability.</p></td>
 <li><p><strong>Variable Code Rates and Lengths:</strong> This flexibility allows networks to adapt to varying channel conditions and user demands, essential for the diverse applications envisioned for eMBB.</p></li>
 <li><p><strong>Efficient HARQ Processes:</strong> Integration with HARQ ensures timely correction of errors, crucial for maintaining continuous high-speed data transmission.</p></li>
 </ul>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Encoding Techniques’ Impact on eMBB</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Benefit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LDPC High Throughput</p></td>
+<td><p>Enables the handling of high data rates, suitable for video
+streaming and large file transfers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flexibility</p></td>
+<td><p>Adapts to various data rates and user demands, improving
+overall network responsiveness and efficiency.</p></td>
+</tr>
+<tr class="row-even"><td><p>HARQ Integration</p></td>
+<td><p>Reduces data retransmission times, enhancing user experience
+and network capacity.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="practical-example-high-definition-video-streaming">
 <h3>Practical Example: High-Definition Video Streaming<a class="headerlink" href="#practical-example-high-definition-video-streaming" title="Link to this heading"></a></h3>
@@ -671,8 +716,8 @@ complete solution for data reliability.</p></td>
 <li><p><strong>Low Latency:</strong> Polar codes support rapid encoding and decoding processes, essential for latency-sensitive applications.</p></li>
 <li><p><strong>Reliability:</strong> The inherent error correction capabilities of Polar codes ensure data integrity, a non-negotiable requirement for URLLC.</p></li>
 </ul>
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-text">Encoding Techniques’ Impact on URLLC</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Encoding Techniques’ Impact on URLLC</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
 <th class="head"><p>Benefit</p></th>
@@ -709,8 +754,8 @@ retransmissions and further lowering latency.</p></td>
 <li><p><strong>Scalability and Efficiency:</strong> LDPC codes, with their ability to handle a wide range of code rates and lengths, are ideal for the diverse array of devices and applications within smart cities, from high-speed data transmission to low-rate sensor data.</p></li>
 <li><p><strong>Reliability in Varied Environments:</strong> Smart cities feature a complex mix of urban and sub-urban environments. Polar codes, with their excellent performance in short block lengths, are adept at providing reliable communication in varying signal conditions.</p></li>
 </ul>
-<table class="docutils align-default" id="id12">
-<caption><span class="caption-text">Impact of Encoding Techniques on Smart Cities</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Impact of Encoding Techniques on Smart Cities</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
 <th class="head"><p>Benefit</p></th>
@@ -755,6 +800,26 @@ responsiveness.</p></td>
 <li><p><strong>High-Speed Data Transmission:</strong> LDPC codes support the high data rates required for transmitting detailed maps, sensor data, and live video feeds, ensuring that autonomous vehicles receive and process necessary information without delay.</p></li>
 <li><p><strong>Real-Time Control Information:</strong> Polar codes, with their low latency and high reliability, are crucial for transmitting real-time control information, such as acceleration, steering, and braking commands.</p></li>
 </ul>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Impact of Encoding Techniques on Autonomous Vehicles</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Benefit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LDPC High Data Rate</p></td>
+<td><p>Facilitates the real-time transmission of sensor and video
+data, crucial for autonomous vehicle navigation and safety.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Polar Code
+Reliability</p></td>
+<td><p>Ensures that critical control messages are delivered
+promptly and accurately, vital for vehicle safety and
+operational efficiency.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="practical-example-sensor-data-transmission-in-autonomous-vehicles">
 <h3>Practical Example: Sensor Data Transmission in Autonomous Vehicles<a class="headerlink" href="#practical-example-sensor-data-transmission-in-autonomous-vehicles" title="Link to this heading"></a></h3>
