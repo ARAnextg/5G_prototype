@@ -393,10 +393,27 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="wikipage_5.html">Implementing Packet Communication with USRP SDRs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wikipage_5.html">Implementing Packet Communication with USRP SDRs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wikipage_5.html#id1">Implementing Packet Communication with USRP SDRs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="wikipage_5.html#introduction-to-using-usrp-for-packet-communication">Introduction to Using USRP for Packet Communication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="wikipage_5.html#configuring-usrp-for-packet-transmission">Configuring USRP for Packet Transmission</a></li>
-<li class="toctree-l3"><a class="reference internal" href="wikipage_5.html#analysis-of-packet-communication">Analysis of Packet Communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wikipage_5.html#configuring-usrp-for-packet-transmission">Configuring USRP for Packet Transmission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#introduction-to-packet-transmission-with-usrp">Introduction to Packet Transmission with USRP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#principles-of-usrp-configuration-for-packet-communication">Principles of USRP Configuration for Packet Communication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#technical-configuration-aspects">Technical Configuration Aspects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#mathematical-foundations">Mathematical Foundations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wikipage_5.html#analysis-of-packet-communication-using-usrp-and-sdr-tools">Analysis of Packet Communication Using USRP and SDR Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#packet-loss-analysis">Packet Loss Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#transmission-efficiency-analysis">Transmission Efficiency Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#error-rate-analysis">Error Rate Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#use-of-simulation-and-modeling">Use of Simulation and Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#network-monitoring-tools">Network Monitoring Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wikipage_5.html#id2">Conclusion</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_1.html">Quiz 1: Introduction to Data Encoding in 5G</a></li>
@@ -458,6 +475,12 @@
 </section>
 <section id="evolution-of-data-encoding-from-1g-to-5g">
 <h3>Evolution of Data Encoding From 1G to 5G<a class="headerlink" href="#evolution-of-data-encoding-from-1g-to-5g" title="Link to this heading"></a></h3>
+<figure class="align-default" id="id1">
+<img alt="../../_images/1G_5G.jpeg" src="../../_images/1G_5G.jpeg" />
+<figcaption>
+<p><span class="caption-text"><em>Evolution from 1G to 5G</em></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>The evolution from 1G to 5G has seen significant advancements in encoding techniques:</p>
 <ul class="simple">
 <li><p><strong>1G to 2G:</strong> Transition from analog to digital, introducing basic digital encoding.</p></li>
@@ -475,6 +498,12 @@
 </section>
 <section id="analog-vs-digital-encoding">
 <h3>Analog vs. Digital Encoding<a class="headerlink" href="#analog-vs-digital-encoding" title="Link to this heading"></a></h3>
+<figure class="align-default" id="id2">
+<img alt="../../_images/encoding_analog_digital.jpg" src="../../_images/encoding_analog_digital.jpg" />
+<figcaption>
+<p><span class="caption-text"><em>Analog vs Digital Encoding</em></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Encoding techniques can be broadly categorized into analog and digital methods, each suited for different types of data and transmission scenarios.</p>
 <ul class="simple">
 <li><p><strong>Analog Encoding:</strong> Involves modulating continuous signals, such as voice or video, directly onto carrier frequencies. Techniques include amplitude modulation (AM), frequency modulation (FM), and phase modulation (PM).</p></li>
@@ -483,7 +512,15 @@
 </section>
 <section id="types-of-digital-encoding-techniques">
 <h3>Types of Digital Encoding Techniques<a class="headerlink" href="#types-of-digital-encoding-techniques" title="Link to this heading"></a></h3>
-<p>Digital encoding encompasses several techniques, each designed to optimize the transmission and integrity of data across digital networks.</p>
+<dl>
+<dt>Digital encoding encompasses several techniques, each designed to optimize the transmission and integrity of data across digital networks.</dt><dd><figure class="align-default" id="id3">
+<img alt="../../_images/block_convolutional_coding.jpg" src="../../_images/block_convolutional_coding.jpg" />
+<figcaption>
+<p><span class="caption-text"><em>Block Codes vs Convolutional Codes</em></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</dd>
+</dl>
 <ul class="simple">
 <li><p><strong>Line Coding:</strong> Converts binary data into a signal for transmission over the physical medium. Examples include Non-Return to Zero (NRZ), Manchester encoding, and 4B/5B encoding.</p></li>
 <li><p><strong>Block Coding:</strong> Increases the redundancy in data to enable error detection and correction. Examples include Reed-Solomon codes and Hamming codes.</p></li>
@@ -509,9 +546,23 @@
 <section id="common-data-encoding-techniques">
 <h3>Common Data Encoding Techniques<a class="headerlink" href="#common-data-encoding-techniques" title="Link to this heading"></a></h3>
 <p>Several data encoding techniques are employed to ensure efficient and reliable data transmission. These methods vary based on the type of data, transmission medium, and specific requirements of the communication system:</p>
+<figure class="align-default" id="id4">
+<img alt="../../_images/nrz_manchester.png" src="../../_images/nrz_manchester.png" />
+<figcaption>
+<p><span class="caption-text"><em>NRZ vs Manchester Encoding</em></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p><strong>NRZ (Non-Return to Zero):</strong> A binary code in which ones are represented by one significant condition (usually a positive voltage) and zeros by another (usually a negative voltage), without returning to a zero voltage between bits. This method is simple but susceptible to synchronization issues.</p></li>
 <li><p><strong>Manchester Encoding:</strong> Combines clock and data information in a single bit stream, with each bit containing a transition at the midpoint: a low-to-high transition represents one, and a high-to-low transition represents zero. This self-clocking feature makes it ideal for environments where synchronization might be a problem.</p></li>
+</ul>
+<figure class="align-default" id="id5">
+<img alt="../../_images/4b_5b.jpg" src="../../_images/4b_5b.jpg" />
+<figcaption>
+<p><span class="caption-text"><em>4B/5B Encoding</em></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
 <li><p><strong>4B/5B Encoding:</strong> Encodes data in blocks of four bits into five-bit sequences to ensure a balanced number of ones and zeros in the transmission, reducing the likelihood of signal distortion. This technique is often used in fiber optic communication.</p></li>
 <li><p><strong>Pulse Code Modulation (PCM):</strong> Converts analog signals into digital by sampling the signal’s amplitude and then encoding each sample into a digital value. PCM is the foundation of digital audio and is used in various telecommunications systems.</p></li>
 <li><p><strong>Quadrature Amplitude Modulation (QAM):</strong> A method that combines amplitude and phase modulation to encode information into radio waves. This technique allows for higher data rate transmission and is widely used in cable television and broadband internet.</p></li>
@@ -529,8 +580,8 @@
 <section id="the-role-of-sdr-in-data-encoding">
 <h3><strong>The Role of SDR in Data Encoding</strong><a class="headerlink" href="#the-role-of-sdr-in-data-encoding" title="Link to this heading"></a></h3>
 <p>SDRs revolutionize how signals are transmitted and received, allowing dynamic adaptation to different encoding schemes based on the communication requirements. This adaptability is crucial for 5G networks, which support a vast array of services with varying data rate and latency requirements.</p>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Role of SDR in Data Encoding</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Role of SDR in Data Encoding</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 75%" />
@@ -556,8 +607,8 @@
 <section id="integration-of-data-encoding-with-sdrs">
 <h3><strong>Integration of Data Encoding with SDRs</strong><a class="headerlink" href="#integration-of-data-encoding-with-sdrs" title="Link to this heading"></a></h3>
 <p>SDRs integrate closely with data encoding processes, enhancing the performance and reliability of telecommunications networks. The software-based nature of SDRs allows for the implementation of complex encoding algorithms that can be updated or replaced as standards evolve.</p>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Integration of Data Encoding with SDRs</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Integration of Data Encoding with SDRs</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 75%" />
@@ -584,8 +635,8 @@
 <h3><strong>Impact of SDR on 5G Data Encoding</strong><a class="headerlink" href="#impact-of-sdr-on-5g-data-encoding" title="Link to this heading"></a></h3>
 <img alt="Schematic representation of data encoding flow in an SDR system" class="align-center" src="../../_images/SDR-flow-diagram.png" />
 <p>The impact of SDR technology on 5G data encoding is profound, enabling networks to support high-speed, high-volume, and reliable data transmission necessary for next-generation services.</p>
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Impact of SDR on 5G Data Encoding</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Impact of SDR on 5G Data Encoding</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 75%" />

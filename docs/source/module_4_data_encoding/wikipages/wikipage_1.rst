@@ -21,6 +21,11 @@ The Role of Data Encoding in 5G Networks
 
 Evolution of Data Encoding From 1G to 5G
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: /images/1G_5G.jpeg
+
+    *Evolution from 1G to 5G*
+
 The evolution from 1G to 5G has seen significant advancements in encoding techniques:
 
 - **1G to 2G:** Transition from analog to digital, introducing basic digital encoding.
@@ -37,6 +42,9 @@ Data encoding in telecommunications involves converting data into a form that ca
 
 Analog vs. Digital Encoding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: /images/encoding_analog_digital.jpg
+
+    *Analog vs Digital Encoding*
 Encoding techniques can be broadly categorized into analog and digital methods, each suited for different types of data and transmission scenarios.
 
 - **Analog Encoding:** Involves modulating continuous signals, such as voice or video, directly onto carrier frequencies. Techniques include amplitude modulation (AM), frequency modulation (FM), and phase modulation (PM).
@@ -46,7 +54,9 @@ Encoding techniques can be broadly categorized into analog and digital methods, 
 Types of Digital Encoding Techniques
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Digital encoding encompasses several techniques, each designed to optimize the transmission and integrity of data across digital networks.
+   .. figure:: /images/block_convolutional_coding.jpg
 
+    *Block Codes vs Convolutional Codes*
 - **Line Coding:** Converts binary data into a signal for transmission over the physical medium. Examples include Non-Return to Zero (NRZ), Manchester encoding, and 4B/5B encoding.
 
 - **Block Coding:** Increases the redundancy in data to enable error detection and correction. Examples include Reed-Solomon codes and Hamming codes.
@@ -66,6 +76,7 @@ In the context of 5G, efficient data encoding is paramount to achieving the netw
 Overview of Data Encoding Techniques
 ---------------------------------------
 
+
 Introduction to Data Encoding Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Data encoding techniques play a pivotal role in the digital communication process, transforming raw data into a format that is suitable for transmission over communication networks. This section provides an overview of various encoding methods, highlighting their importance and application in modern telecommunications systems, particularly in the context of 5G networks.
@@ -74,9 +85,17 @@ Common Data Encoding Techniques
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Several data encoding techniques are employed to ensure efficient and reliable data transmission. These methods vary based on the type of data, transmission medium, and specific requirements of the communication system:
 
+.. figure:: /images/nrz_manchester.png
+  
+    *NRZ vs Manchester Encoding*
+
 - **NRZ (Non-Return to Zero):** A binary code in which ones are represented by one significant condition (usually a positive voltage) and zeros by another (usually a negative voltage), without returning to a zero voltage between bits. This method is simple but susceptible to synchronization issues.
 
 - **Manchester Encoding:** Combines clock and data information in a single bit stream, with each bit containing a transition at the midpoint: a low-to-high transition represents one, and a high-to-low transition represents zero. This self-clocking feature makes it ideal for environments where synchronization might be a problem.
+
+.. figure:: /images/4b_5b.jpg
+  
+    *4B/5B Encoding*
 
 - **4B/5B Encoding:** Encodes data in blocks of four bits into five-bit sequences to ensure a balanced number of ones and zeros in the transmission, reducing the likelihood of signal distortion. This technique is often used in fiber optic communication.
 
