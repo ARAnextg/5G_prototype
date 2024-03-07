@@ -13,7 +13,7 @@ Lab 1 : Signal Filtering
 
 **Detailed Description:** GNU Radio is used to implement low-pass, 
 high-pass, band-pass, and band-stop filters to clean up a received signal.
-Verying degrees of artificial noise can be added to the signal and the 
+Varying degrees of artificial noise can be added to the signal and the 
 constructed filters will be used to improve the clarity of the signal. 
 
 Follow the steps below to start this experiment:
