@@ -6,9 +6,13 @@ OFDM has developed into a popular scheme for wideband digital communication, use
 DSL internet access, wireless networks, power line networks, and 4G/5G mobile communications.
 -Why use OFDM
 	-Overcoming frequency selective fading and multipath distortions found in wideband channels
+
 	-Allowing channel estimation and equalization oto occur independently at each subcarrier
+
 	-Ease in sharing resources across multiple data streams
+
 	-Ability to fir well with MIMO and Massive MIMO systems because each subcarrier experiences flat fading, so equalization includes one single tap per subcarrier
+    
 	-high overall spectral efficiency
 
 
