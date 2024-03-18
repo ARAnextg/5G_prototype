@@ -3,7 +3,12 @@ Understanding Modulation & Demodulation Techniques
 -A transmission system makes use of a physical transmission medium or channel that allows the propagation of energy in the form of pulses or variations in voltage, current, or light intensity.
 
 
---picture
+.. figure:: /images/differ_cables.png
+    
+    
+    
+    *examples of some cables widely used*
+
 
 
 -Copper wire pairs, coaxial cables, optical fiber, infrared, and radio are all examples of transmission media.
