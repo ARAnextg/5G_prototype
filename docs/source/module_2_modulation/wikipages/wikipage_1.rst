@@ -17,6 +17,12 @@ Understanding Modulation & Demodulation Techniques
 -In analog communications, the objective is to transmit a waveform, which is a function that varies continuously with time.
 The cost advantage of digital transmission over analog transmission become apparent when transmitting over a long distance.
 
+.. figure:: /images/repeater.jpg
+
+
+    
+    
+    *Repeater Example*
 
 -For examples, a system that involves a transmission over a pair of copper wires. As the length of the pair of wires increases, the signal at the output is attenuated and the original shape of the signal is increasingly distorted.
 
@@ -46,7 +52,11 @@ Image information consists of the variation of intensity over a plane. Video and
 All of these signals can assume a continuum of values over time and/or space and consequently requires infinite precision in their representation. 
 
 
---picture
+.. figure:: /images/example_signals.png
+
+
+
+    *examples of signals*
 
 
 -Overall in signal, we have 3 basic properties: amplitude, phase, and frequency. We also have the message signals which are original signals that are not modulated. For example, regular voice signals: up to 3kHz. Then we have the Carrier Signal, which is a waveform just like the message signal. But this signal has a higher frequency to allow the data transmission to travel farther distances.
@@ -66,7 +76,11 @@ frequency increases and the time period decreases. While the amplitude decreases
 -Once the message signal is modulated using one of these modulation techniques(am,pm,fm), then we will have a modulated carrier signal that is optimized for transmission from point A to point B with the assistance of repeaters to keep the quality of the signals over a certain distance. Once the data reaches the destination, the modulated carrier signal will have to be demodulated or extract the message signal from the carrier signal.
 
 
---picture
+.. figure:: /images/Envelope_Detector.png
+
+
+
+    *example of Envelope Detector*
 
 
 -There are a few demodulation techniques depending on the modulation technique used. 
