@@ -43,5 +43,3 @@ ax.set_xticklabels([])
 ax.set_yticklabels([])
 
 plt.show()
-
-fig.savefig('../_static/amplitude_phase_period.svg', bbox_inches='tight')
