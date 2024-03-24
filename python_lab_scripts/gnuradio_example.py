@@ -45,10 +45,10 @@ tb.stop()
 tb.wait()
 print("Sample collection complete.")
 
-# Get the data and plot
+
 data = tb.get_data()
-plt.clc()  # Clear the previous plot
-plt.scatter(np.real(data), np.imag(data))  # Plot the complex data as a scatter plot
+plt.clc()  
+plt.scatter(np.real(data), np.imag(data))  
 plt.title('Received Signal')
 plt.xlabel('Real Part')
 plt.ylabel('Imaginary Part')
