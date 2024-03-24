@@ -1,0 +1,85 @@
+/* General body settings for a cleaner look */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+}
+
+.wy-side-nav-search {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border-bottom: 1px solid #222; /* Adds a slight border */
+}
+
+/* Main content background and text color */
+.wy-body-for-nav {
+    background-color: white;
+    color: black;
+}
+
+/* Sidebar styles */
+.wy-nav-side {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.wy-nav-side .wy-menu-vertical header {
+    background-color: #222; /* Darker black for header */
+    color: #fff;
+}
+
+.wy-nav-side .wy-menu-vertical li.toctree-l1.current > a {
+    color: #fff;
+    background-color: #d60000; /* Red highlights */
+}
+
+.wy-nav-side .wy-menu-vertical li.toctree-l1 > a {
+    color: #fff;
+    border: none;
+}
+
+/* Links styling for better visibility */
+a, a:visited {
+    color: #d60000; /* Red color for links */
+}
+
+a:hover {
+    color: #bf0000; /* Darker red on hover */
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+    color: #d60000; /* Red headings */
+}
+
+/* Admonitions styling */
+.admonition {
+    border-left: 10px solid #d60000; /* Red bar for admonitions */
+}
+
+/* Custom footer styling */
+.rst-footer {
+    background-color: #000; /* Black footer background */
+    color: #fff; /* White footer text */
+}
+
+.rst-footer a {
+    color: #d60000; /* Red links in footer */
+}
+
+/* Custom styles for code blocks to fit the theme */
+.highlight {
+    background-color: #f7f7f7; /* Light background for code blocks */
+    border: 1px solid #ccc; /* Grey border */
+}
+
+/* Custom styles for tables */
+.table {
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
