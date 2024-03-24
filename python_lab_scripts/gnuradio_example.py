@@ -4,7 +4,7 @@ from gnuradio import gr
 from gnuradio import uhd
 from gnuradio import blocks
 import plotext as plt
-import time  # Import the time module for sleep
+import time  
 
 class top_block(gr.top_block):
     def __init__(self):
@@ -27,10 +27,7 @@ class top_block(gr.top_block):
         self.usrp_source.set_center_freq(center_freq, 0)
         self.usrp_source.set_gain(gain, 0)
 
-        # USRP Sink - if not transmitting, this can be omitted
-        # ... (setup USRP Sink here if needed) ...
-
-        # Blocks for collecting data
+       
         self.vector_sink = blocks.vector_sink_c()
 
         # Connections
@@ -43,7 +40,7 @@ class top_block(gr.top_block):
 tb = top_block()
 tb.start()
 print("Collecting samples...")
-time.sleep(1)  # Collect samples for a certain period; adjust as needed
+time.sleep(1) 
 tb.stop()
 tb.wait()
 print("Sample collection complete.")
