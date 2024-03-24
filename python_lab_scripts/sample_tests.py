@@ -35,7 +35,5 @@ for i in range(num_samps//1000):
 stream_cmd = uhd.types.StreamCMD(uhd.types.StreamMode.stop_cont)
 streamer.issue_stream_cmd(stream_cmd)
 
-
-
 print(len(samples))
 print(samples[0:10])
