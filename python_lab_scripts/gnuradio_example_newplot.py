@@ -3,8 +3,9 @@ import numpy as np
 from gnuradio import gr
 from gnuradio import uhd
 from gnuradio import blocks
-import plotext as plt
-import time  
+import time 
+import matplotlib.pyplot as plt
+
 
 class top_block(gr.top_block):
     def __init__(self):
@@ -47,9 +48,8 @@ print("Sample collection complete.")
 
 
 data = tb.get_data()
-plt.clc()  
 plt.scatter(np.real(data), np.imag(data))  
 plt.title('Received Signal')
 plt.xlabel('Real Part')
 plt.ylabel('Imaginary Part')
-plt.show()
+plt.savefig("gnuexampleoutput.png", dpi=150)
