@@ -14,13 +14,13 @@ essential to learn about the tools used to process signals (filters) and underst
 What are Filters?
 -----------------
 
-Filtering is the process of extracting useful signals from jumbles of random noise made up of all kinds of interfering signals. There are several different types of filters used (frequency selective circuits) that discriminate the input based on various attributes. If received noise and useful signals possess different frequency distributions and are both present at the filter’s input, the noise can be attenuated/eliminated while still retaining the useful signal.
+Filtering is the process of extracting useful signals from jumbles of random noise made up of all kinds of interfering signals. If received noise and useful signals possess different frequency distributions and are both present at the filter’s input, the noise can be attenuated/eliminated while still retaining the useful signal. 
 
 
 Different Types of Filters
 --------------------------
 
-Filters can be classified as lowpass, highpass, bandpass, and bandstop according to their frequency responses and according to the signal a filter deals with, it can be classified as an analog or digital filter. 
+Filters are either Digital or Analog and can be classified as lowpass, highpass, bandpass, and bandstop. Filters are classified according to their frequency responses which discriminate the signal input based on various attributes. 
 
 Digital vs. Analog Filters
 ---------------------------------
@@ -29,7 +29,7 @@ There are four filters used with digital signals:
 
 - **Low-pass Filters**: 
   
-  - 
+  - This filter passes low frequencies but stops higher frequencies. 0 Hz is always in the passband (the range of frequencies a filter lets through).
 
 - **High-pass Filters**: 
   
