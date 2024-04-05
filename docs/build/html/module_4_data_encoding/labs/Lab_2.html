@@ -4,10 +4,9 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab 2 : Packet Radio System &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 4: QPSK Communication System with Polar Coding &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="&lt;no title&gt;" href="Lab_3.html" />
-    <link rel="prev" title="Lab 1: Data Encoding and Decoding" href="Lab_1.html" /> 
+    <link rel="prev" title="Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes" href="Lab_1.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -249,7 +248,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_waveform_transmission.html">Lab 1: Waveform Transmission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 2: Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 3: Visualizing SDR data with GNURadio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#software-installation">Software Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#environment-configuration">Environment Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#testing-your-setup">Testing Your Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#developing-the-gnuradio-script">Developing the GNURadio Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#script-overview">Script Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#step-by-step-script-development">Step-by-Step Script Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#transferring-the-plot-using-sftp">Transferring the Plot Using SFTP</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_2_modulation/index.html">Module 2: Modulation and Communication Techniques</a><ul>
@@ -422,7 +430,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Lab_1.html">Lab 1: Data Encoding and Decoding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Lab_1.html">Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#introduction-to-bpsk-modulation">Introduction to BPSK Modulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#simulating-a-noisy-channel">Simulating a Noisy Channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#ldpc-encoding">LDPC Encoding</a></li>
@@ -430,7 +438,23 @@
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#ldpc-decoding">LDPC Decoding</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 2 : Packet Radio System</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 4: QPSK Communication System with Polar Coding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-and-configuration">Setup and Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-the-data">Generating the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#encoding-the-data">Encoding the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modulation">Modulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#channel-simulation-and-demodulation">Channel Simulation and Demodulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decoding-and-ber-analysis">Decoding and BER Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constellation-diagram">Constellation Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-visualizations">Additional Visualizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-vector-magnitude-evm-vs-snr">Error Vector Magnitude (EVM) vs. SNR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eye-diagram">Eye Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-trajectory">Phase Trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constellation-diagram-with-error-vectors">Constellation Diagram with Error Vectors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>
@@ -453,7 +477,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module 4: Data Encoding and Packet Communication</a></li>
-      <li class="breadcrumb-item active">Lab 2 : Packet Radio System</li>
+      <li class="breadcrumb-item active">Lab 4: QPSK Communication System with Polar Coding</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_4_data_encoding/labs/Lab_2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -463,15 +487,226 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lab-2-packet-radio-system">
-<h1>Lab 2 : Packet Radio System<a class="headerlink" href="#lab-2-packet-radio-system" title="Link to this heading"></a></h1>
+  <section id="lab-4-qpsk-communication-system-with-polar-coding">
+<h1>Lab 4: QPSK Communication System with Polar Coding<a class="headerlink" href="#lab-4-qpsk-communication-system-with-polar-coding" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This lab explores the concepts of Quadrature Phase Shift Keying (QPSK) modulation and Polar codes in a 5G-like communication system. You will generate random binary data, encode it using Polar codes, modulate it using QPSK, add noise through an AWGN channel, and then demodulate and decode it to measure the Bit Error Rate (BER). Additionally, you will visualize the results using various plots such as the BER vs. SNR, constellation diagrams, eye diagrams, and phase trajectories.</p>
+</section>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand and implement QPSK modulation and Polar coding.</p></li>
+<li><p>Simulate a noisy channel using AWGN and observe its effect on the signal.</p></li>
+<li><p>Perform demodulation and decoding to recover the transmitted message.</p></li>
+<li><p>Analyze the system’s performance by calculating and plotting BER vs. SNR.</p></li>
+<li><p>Visualize the modulation scheme through constellation diagrams and other visual tools.</p></li>
+</ul>
+</section>
+<section id="setup-and-configuration">
+<h2>Setup and Configuration<a class="headerlink" href="#setup-and-configuration" title="Link to this heading"></a></h2>
+<p>To start the simulation, we first set up the environment and define the system parameters, including the length of the message bits, the output length for rate matching, the Polar code block length, the SNR range for analysis, and the list length for Polar decoding.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Clear environment</span>
+<span class="nb">clear</span><span class="p">;</span><span class="w"> </span><span class="n">close</span><span class="w"> </span><span class="s">all</span><span class="p">;</span>
+
+<span class="c">% System parameters</span>
+<span class="n">K</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">132</span><span class="p">;</span><span class="w">                </span><span class="c">% Number of message bits (including CRC if any)</span>
+<span class="n">E</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span><span class="w">                </span><span class="c">% Rate matched output length</span>
+<span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span><span class="w">                </span><span class="c">% Polar code block length</span>
+<span class="n">snrRange</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span><span class="w">      </span><span class="c">% SNR range in dB for BER analysis</span>
+<span class="n">L</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">                  </span><span class="c">% List length for Polar decoding</span>
+<span class="n">padCRC</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">         </span><span class="c">% CRC padding</span>
+</pre></div>
+</div>
+</section>
+<section id="generating-the-data">
+<h2>Generating the Data<a class="headerlink" href="#generating-the-data" title="Link to this heading"></a></h2>
+<p>The first step in the communication system is to generate random binary data that will be encoded, modulated, and transmitted.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Generate random binary data</span>
+<span class="n">data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="encoding-the-data">
+<h2>Encoding the Data<a class="headerlink" href="#encoding-the-data" title="Link to this heading"></a></h2>
+<p>Using the generated data, we apply Polar encoding. Polar codes are a type of forward error correction (FEC) code that enables reliable communication.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Polar Encoding</span>
+<span class="n">encodedData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nrPolarEncode</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="modulation">
+<h2>Modulation<a class="headerlink" href="#modulation" title="Link to this heading"></a></h2>
+<p>After encoding the data with Polar codes, we modulate the encoded bits using QPSK. QPSK is a modulation scheme that conveys data by changing the phase of a reference signal.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% QPSK Modulation</span>
+<span class="n">modulatedData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pskmod</span><span class="p">(</span><span class="n">encodedData</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gray&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>QPSK modulation process stores a mapping of encoded bits to symbols.</p>
+</section>
+<section id="channel-simulation-and-demodulation">
+<h2>Channel Simulation and Demodulation<a class="headerlink" href="#channel-simulation-and-demodulation" title="Link to this heading"></a></h2>
+<p>We simulate the transmission of the signal through an Additive White Gaussian Noise (AWGN) channel. The received signal is then demodulated to retrieve the Log-Likelihood Ratios (LLRs) for decoding.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Initialize BER results array</span>
+<span class="n">berResults</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">snrRange</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c">% Loop over SNR values for simulation</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">snrRange</span><span class="p">)</span>
+<span class="w">    </span><span class="c">% Add AWGN to the modulated signal</span>
+<span class="w">    </span><span class="n">receivedSignal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">awgn</span><span class="p">(</span><span class="n">modulatedData</span><span class="p">,</span><span class="w"> </span><span class="n">snrRange</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;measured&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% Demodulate signal (soft decision)</span>
+<span class="w">    </span><span class="n">demodulatedData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">qamdemod</span><span class="p">(</span><span class="n">receivedSignal</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;OutputType&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;approxllr&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;UnitAveragePower&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;NoiseVariance&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span>^<span class="p">(</span><span class="o">-</span><span class="n">snrRange</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">));</span>
+<span class="w">    </span><span class="k">...</span>
+</pre></div>
+</div>
+</section>
+<section id="decoding-and-ber-analysis">
+<h2>Decoding and BER Analysis<a class="headerlink" href="#decoding-and-ber-analysis" title="Link to this heading"></a></h2>
+<p>The LLRs obtained from demodulation are fed into the Polar decoder to recover the transmitted data. The Bit Error Rate (BER) is then calculated to analyze the performance of the communication system.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">...</span>
+<span class="w">    </span><span class="c">% Polar Decoding</span>
+<span class="w">    </span><span class="n">decodedData</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nrPolarDecode</span><span class="p">(</span><span class="n">demodulatedData</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="w"> </span><span class="n">L</span><span class="p">,</span><span class="w"> </span><span class="n">padCRC</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% Calculate BER</span>
+<span class="w">    </span><span class="p">[</span><span class="n">numErrors</span><span class="p">,</span><span class="w"> </span><span class="n">ber</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">biterr</span><span class="p">(</span><span class="n">data</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">K</span><span class="p">),</span><span class="w"> </span><span class="n">decodedData</span><span class="p">);</span>
+<span class="w">    </span><span class="n">berResults</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ber</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="c">% BER vs. SNR Plot</span>
+<span class="nb">figure</span><span class="p">;</span>
+<span class="nb">semilogy</span><span class="p">(</span><span class="n">snrRange</span><span class="p">,</span><span class="w"> </span><span class="n">berResults</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;b-o&#39;</span><span class="p">);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;BER vs. SNR for 5G-like QPSK Communication System with Polar Coding&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;SNR (dB)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Bit Error Rate (BER)&#39;</span><span class="p">);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;QPSK with Polar Codes&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id1">
+<img alt="BER vs. SNR Plot" src="../../_images/ber_vs_snr.png" />
+<figcaption>
+<p><span class="caption-text">The BER vs. SNR plot for the QPSK communication system with Polar coding.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The BER vs. SNR plot illustrates the system’s performance across different signal-to-noise ratio levels. As SNR increases, the Bit Error Rate (BER) decreases, showcasing the effectiveness of Polar coding and QPSK modulation in combating channel noise. This graph is crucial for understanding the relationship between noise in the channel and the error rate of the received data, demonstrating the importance of coding and modulation techniques in improving communication reliability.</p>
+</section>
+<section id="constellation-diagram">
+<h2>Constellation Diagram<a class="headerlink" href="#constellation-diagram" title="Link to this heading"></a></h2>
+<p>To visualize the impact of the noise on the signal, we plot the constellation diagram of the received QPSK symbols at a specific SNR value.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Constellation Diagram for a Specific SNR</span>
+<span class="n">specificSNR</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">receivedSignalSpecific</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">awgn</span><span class="p">(</span><span class="n">modulatedData</span><span class="p">,</span><span class="w"> </span><span class="n">specificSNR</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;measured&#39;</span><span class="p">);</span>
+<span class="n">scatterplot</span><span class="p">(</span><span class="n">receivedSignalSpecific</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">([</span><span class="s">&#39;QPSK Constellation Diagram at SNR = &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">specificSNR</span><span class="p">),</span><span class="w"> </span><span class="s">&#39; dB&#39;</span><span class="p">]);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;In-phase&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Quadrature&#39;</span><span class="p">);</span>
+<span class="n">axis</span><span class="w"> </span><span class="s">square</span><span class="p">;</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id2">
+<img alt="QPSK Constellation Diagram" src="../../_images/qpsk_constellation.png" />
+<figcaption>
+<p><span class="caption-text">Constellation diagram of the QPSK signal showing the impact of noise at 10 dB SNR.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The QPSK Constellation Diagram displays the mapping of encoded bits to QPSK symbols, represented as points in the In-phase/Quadrature plane. Each point corresponds to a unique pair of bits, with the diagram illustrating the effect of AWGN on the symbol positions. The ideal locations without noise are at the corners of a square, but as noise increases (lower SNR), the points spread out, demonstrating the challenge of distinguishing between symbols. This visualization helps in understanding how modulation schemes like QPSK encode data and the impact of channel conditions on signal integrity.</p>
+</section>
+<section id="additional-visualizations">
+<h2>Additional Visualizations<a class="headerlink" href="#additional-visualizations" title="Link to this heading"></a></h2>
+</section>
+<section id="error-vector-magnitude-evm-vs-snr">
+<h2>Error Vector Magnitude (EVM) vs. SNR<a class="headerlink" href="#error-vector-magnitude-evm-vs-snr" title="Link to this heading"></a></h2>
+<p>The EVM vs. SNR plot provides insight into the modulation accuracy and system performance. EVM measures the deviation of the received symbols from their ideal positions in the constellation diagram, offering a metric of signal quality and integrity.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Calculate EVM for each SNR</span>
+<span class="n">evmResults</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">snrRange</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">snrRange</span><span class="p">)</span>
+<span class="w">    </span><span class="c">% Add AWGN to the modulated signal</span>
+<span class="w">    </span><span class="n">noisySignal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">awgn</span><span class="p">(</span><span class="n">modulatedData</span><span class="p">,</span><span class="w"> </span><span class="n">snrRange</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;measured&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c">% Calculate EVM</span>
+<span class="w">    </span><span class="n">referenceSignal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pskmod</span><span class="p">(</span><span class="n">pskdemod</span><span class="p">(</span><span class="n">noisySignal</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gray&#39;</span><span class="p">),</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gray&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">evmResults</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">noisySignal</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">referenceSignal</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">));</span>
+<span class="k">end</span>
+
+<span class="c">% Plot EVM vs. SNR</span>
+<span class="nb">figure</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">snrRange</span><span class="p">,</span><span class="w"> </span><span class="n">evmResults</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;m-s&#39;</span><span class="p">);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;EVM vs. SNR for QPSK Modulated Signal&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;SNR (dB)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Error Vector Magnitude (EVM)&#39;</span><span class="p">);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;EVM&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id3">
+<img alt="EVM vs. SNR Plot" src="../../_images/evm_vs_snr.png" />
+<figcaption>
+<p><span class="caption-text">The EVM vs. SNR plot demonstrates the signal quality across different SNR levels. Lower EVM values indicate better signal quality, with the plot showing how noise impacts the accuracy of symbol placement within the QPSK constellation.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="eye-diagram">
+<h2>Eye Diagram<a class="headerlink" href="#eye-diagram" title="Link to this heading"></a></h2>
+<p>The eye diagram is a powerful tool for analyzing the signal quality and the effects of inter-symbol interference (ISI) and noise. It overlays multiple signal periods to provide a visual indication of how noise might affect the signal timing and amplitude.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Generate Eye Diagram</span>
+<span class="n">eyediagram</span><span class="p">(</span><span class="n">sampleSignal</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">200</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c">% Use an appropriate number of samples</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Eye Diagram for QPSK Modulated Signal&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id4">
+<img alt="Eye Diagram" src="../../_images/eye_diagram.png" />
+<figcaption>
+<p><span class="caption-text">The eye diagram for the QPSK modulated signal, showing the “opening” of the eye. A wider opening indicates less signal distortion, providing insights into the system’s tolerance to timing errors and ISI.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="phase-trajectory">
+<h2>Phase Trajectory<a class="headerlink" href="#phase-trajectory" title="Link to this heading"></a></h2>
+<p>The phase trajectory plot traces the phase changes of the modulated signal over time, offering a perspective on the signal’s phase stability and the impact of channel noise.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Phase Trajectory</span>
+<span class="nb">figure</span><span class="p">;</span>
+<span class="nb">polarplot</span><span class="p">(</span><span class="nb">angle</span><span class="p">(</span><span class="n">sampleSignal</span><span class="p">));</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Phase Trajectory of the Received QPSK Signal&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<img alt="Phase Trajectory Plot" src="../../_images/phase_trajectory.png" />
+<figcaption>
+<p><span class="caption-text">The phase trajectory plot for the QPSK signal, illustrating how the phase changes over time and the effects of noise on phase transitions.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="constellation-diagram-with-error-vectors">
+<h2>Constellation Diagram with Error Vectors<a class="headerlink" href="#constellation-diagram-with-error-vectors" title="Link to this heading"></a></h2>
+<p>This visualization enhances the constellation diagram by adding error vectors, which point from the received symbols to their ideal locations, directly illustrating the impact of noise.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Constellation Diagram with Error Vectors</span>
+<span class="nb">figure</span><span class="p">;</span>
+<span class="n">scatterplot</span><span class="p">(</span><span class="n">sampleSignal</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="n">referenceSignal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pskmod</span><span class="p">(</span><span class="n">pskdemod</span><span class="p">(</span><span class="n">sampleSignal</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gray&#39;</span><span class="p">),</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gray&#39;</span><span class="p">);</span>
+<span class="n">errors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sampleSignal</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">referenceSignal</span><span class="p">;</span>
+<span class="nb">quiver</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">referenceSignal</span><span class="p">),</span><span class="w"> </span><span class="nb">imag</span><span class="p">(</span><span class="n">referenceSignal</span><span class="p">),</span><span class="w"> </span><span class="nb">real</span><span class="p">(</span><span class="n">errors</span><span class="p">),</span><span class="w"> </span><span class="nb">imag</span><span class="p">(</span><span class="n">errors</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Constellation Diagram with Error Vectors&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;In-phase&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Quadrature&#39;</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">off</span><span class="p">;</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id6">
+<img alt="Constellation Diagram with Error Vectors" src="../../_images/constellation_with_errors.png" />
+<figcaption>
+<p><span class="caption-text">Enhanced constellation diagram showing error vectors for the QPSK signal. These vectors visualize the deviation of each received symbol from its ideal position due to noise, providing a clear depiction of signal distortion.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Lab_1.html" class="btn btn-neutral float-left" title="Lab 1: Data Encoding and Decoding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lab_1.html" class="btn btn-neutral float-left" title="Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="Lab_3.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

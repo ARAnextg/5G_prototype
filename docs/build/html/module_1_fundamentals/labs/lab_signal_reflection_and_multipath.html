@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab 2: Visualizing SDR data with GNURadio &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 3: Visualizing SDR data with GNURadio &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -248,7 +248,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lab_waveform_transmission.html">Lab 1: Waveform Transmission</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 2: Visualizing SDR data with GNURadio</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 3: Visualizing SDR data with GNURadio</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#software-installation">Software Installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#environment-configuration">Environment Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#testing-your-setup">Testing Your Setup</a></li>
@@ -438,7 +438,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_1.html#ldpc-decoding">LDPC Decoding</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html">Lab 2 : Packet Radio System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html">Lab 4: QPSK Communication System with Polar Coding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#setup-and-configuration">Setup and Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#generating-the-data">Generating the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#encoding-the-data">Encoding the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#modulation">Modulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#channel-simulation-and-demodulation">Channel Simulation and Demodulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#decoding-and-ber-analysis">Decoding and BER Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#constellation-diagram">Constellation Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#additional-visualizations">Additional Visualizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#error-vector-magnitude-evm-vs-snr">Error Vector Magnitude (EVM) vs. SNR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#eye-diagram">Eye Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#phase-trajectory">Phase Trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_4_data_encoding/labs/Lab_2.html#constellation-diagram-with-error-vectors">Constellation Diagram with Error Vectors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>
@@ -461,7 +477,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module 1: Fundamental Concepts of SDRs</a></li>
-      <li class="breadcrumb-item active">Lab 2: Visualizing SDR data with GNURadio</li>
+      <li class="breadcrumb-item active">Lab 3: Visualizing SDR data with GNURadio</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_1_fundamentals/labs/lab_signal_reflection_and_multipath.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -471,8 +487,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lab-2-visualizing-sdr-data-with-gnuradio">
-<h1>Lab 2: Visualizing SDR data with GNURadio<a class="headerlink" href="#lab-2-visualizing-sdr-data-with-gnuradio" title="Link to this heading"></a></h1>
+  <section id="lab-3-visualizing-sdr-data-with-gnuradio">
+<h1>Lab 3: Visualizing SDR data with GNURadio<a class="headerlink" href="#lab-3-visualizing-sdr-data-with-gnuradio" title="Link to this heading"></a></h1>
 <p><strong>Platform:</strong> Software Defined Radios.</p>
 <p><strong>Resources needed:</strong> 2 x USRP B210s</p>
 <p><strong>Short Description:</strong> Transmit and receive samples to a file using USRP Hardware Driver (UHD) and GNU Radio.</p>

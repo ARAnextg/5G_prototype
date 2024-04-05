@@ -7,7 +7,6 @@
   <title>Module 6: OpenAirInterface(OAI) and 5G Technologies &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -249,7 +248,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../module_1_fundamentals/quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_1_fundamentals/labs/lab_waveform_transmission.html">Lab 1: Waveform Transmission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 2: Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 3: Visualizing SDR data with GNURadio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#software-installation">Software Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#environment-configuration">Environment Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#testing-your-setup">Testing Your Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#developing-the-gnuradio-script">Developing the GNURadio Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#script-overview">Script Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#step-by-step-script-development">Step-by-Step Script Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#transferring-the-plot-using-sftp">Transferring the Plot Using SFTP</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../module_2_modulation/index.html">Module 2: Modulation and Communication Techniques</a><ul>
@@ -422,7 +430,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_1.html">Lab 1: Data Encoding and Decoding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_1.html">Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_1.html#introduction-to-bpsk-modulation">Introduction to BPSK Modulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_1.html#simulating-a-noisy-channel">Simulating a Noisy Channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_1.html#ldpc-encoding">LDPC Encoding</a></li>
@@ -430,7 +438,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_1.html#ldpc-decoding">LDPC Decoding</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html">Lab 2 : Packet Radio System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html">Lab 4: QPSK Communication System with Polar Coding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#setup-and-configuration">Setup and Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#generating-the-data">Generating the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#encoding-the-data">Encoding the Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#modulation">Modulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#channel-simulation-and-demodulation">Channel Simulation and Demodulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#decoding-and-ber-analysis">Decoding and BER Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#constellation-diagram">Constellation Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#additional-visualizations">Additional Visualizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#error-vector-magnitude-evm-vs-snr">Error Vector Magnitude (EVM) vs. SNR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#eye-diagram">Eye Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#phase-trajectory">Phase Trajectory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../module_4_data_encoding/labs/Lab_2.html#constellation-diagram-with-error-vectors">Constellation Diagram with Error Vectors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../module_5_practical_applications/index.html">Module 5: Practical Applications and Systems</a></li>

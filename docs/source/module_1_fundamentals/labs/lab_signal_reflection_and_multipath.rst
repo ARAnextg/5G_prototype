@@ -1,4 +1,4 @@
-Lab 2: Visualizing SDR data with GNURadio
+Lab 3: Visualizing SDR data with GNURadio
 =====================================
 
 
