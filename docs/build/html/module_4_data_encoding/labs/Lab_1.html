@@ -4,10 +4,9 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab 1 : Data Encoding and Decoding &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 1: Data Encoding and Decoding &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -422,7 +421,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1 : Data Encoding and Decoding</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1: Data Encoding and Decoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-bpsk-modulation">Introduction to BPSK Modulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulating-a-noisy-channel">Simulating a Noisy Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldpc-encoding">LDPC Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bpsk-decoding">BPSK Decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldpc-decoding">LDPC Decoding</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="Lab_2.html">Lab 2 : Packet Radio System</a></li>
 </ul>
 </li>
@@ -446,7 +452,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module 4: Data Encoding and Packet Communication</a></li>
-      <li class="breadcrumb-item active">Lab 1 : Data Encoding and Decoding</li>
+      <li class="breadcrumb-item active">Lab 1: Data Encoding and Decoding</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_4_data_encoding/labs/Lab_1.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -457,7 +463,153 @@
            <div itemprop="articleBody">
              
   <section id="lab-1-data-encoding-and-decoding">
-<h1>Lab 1 : Data Encoding and Decoding<a class="headerlink" href="#lab-1-data-encoding-and-decoding" title="Link to this heading"></a></h1>
+<h1>Lab 1: Data Encoding and Decoding<a class="headerlink" href="#lab-1-data-encoding-and-decoding" title="Link to this heading"></a></h1>
+<p>This lab explores the concepts of data encoding and decoding in the context of digital communication systems. We’ll start with BPSK modulation, a fundamental digital modulation technique, and simulate the transmission of a modulated signal through a noisy channel using the Additive White Gaussian Noise (AWGN) model.</p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="introduction-to-bpsk-modulation">
+<h2>Introduction to BPSK Modulation<a class="headerlink" href="#introduction-to-bpsk-modulation" title="Link to this heading"></a></h2>
+<p>Binary Phase Shift Keying (BPSK) is one of the simplest forms of phase modulation technique that uses two phases to represent binary numbers. In this part, we will generate a random binary message, modulate it using BPSK, and visualize the modulated signal.</p>
+<p><strong>Procedure</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Generate a Binary Message</strong>: Start by generating a random binary sequence. This will act as our original message for modulation.</p></li>
+<li><p><strong>Apply BPSK Modulation</strong>: Modulate the binary message using BPSK. In BPSK, we map binary <cite>0</cite> to one phase and binary <cite>1</cite> to another phase.</p></li>
+<li><p><strong>Visualize the Signal</strong>: Plot the modulated signal to visualize how the binary message is represented in the BPSK signal.</p></li>
+</ol>
+<p><strong>MATLAB Code</strong>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Example for generating a DVB-S2 LDPC parity-check matrix</span>
+<span class="n">codeRate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">ldpcMatrix</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dvbs2ldpc</span><span class="p">(</span><span class="n">codeRate</span><span class="p">);</span>
+
+<span class="c">% Adjust the binary message length to match the number of information bits for the code</span>
+<span class="n">binaryMessage</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randi</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">ldpcMatrix</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">ldpcMatrix</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w"> </span><span class="c">% BPSK Modulation</span>
+<span class="w"> </span><span class="n">bpskModulated</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">binaryMessage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w"> </span><span class="c">% Plot the BPSK modulated signal</span>
+<span class="w"> </span><span class="nb">figure</span><span class="p">;</span>
+<span class="w"> </span><span class="nb">stem</span><span class="p">(</span><span class="n">bpskModulated</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<span class="w"> </span><span class="nb">title</span><span class="p">(</span><span class="s">&#39;BPSK Modulated Signal&#39;</span><span class="p">);</span>
+<span class="w"> </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Bit Index&#39;</span><span class="p">);</span>
+<span class="w"> </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Modulated Signal Value&#39;</span><span class="p">);</span>
+<span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id1">
+<img alt="BPSK Modulation Process" src="../../_images/modulated_bpsk.bmp" />
+<figcaption>
+<p><span class="caption-text">The process of BPSK modulation of a binary message.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The BPSK Modulation Process figure shows the modulated signal resulting from applying Binary Phase Shift Keying (BPSK) to a random binary message. Each bit of the original message is represented as either a high or low amplitude in the signal, corresponding to binary <cite>1</cite> and <cite>0</cite>, respectively. This visualization demonstrates how digital data is prepared for transmission over a communication channel by converting bits into a form suitable for the physical layer.</p>
+</section>
+<section id="simulating-a-noisy-channel">
+<h2>Simulating a Noisy Channel<a class="headerlink" href="#simulating-a-noisy-channel" title="Link to this heading"></a></h2>
+<p>After modulating the binary message, the next step in our communication system simulation is to transmit the signal through a noisy channel. The Additive White Gaussian Noise (AWGN) model is commonly used to simulate the effect of noise in wireless communication systems.</p>
+<p><strong>Procedure</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Define the Signal-to-Noise Ratio (SNR)</strong>: Choose an SNR value to determine the level of noise added to the signal. A lower SNR value means more noise.</p></li>
+<li><p><strong>Transmit Through AWGN Channel</strong>: Use MATLAB to add AWGN to the BPSK modulated signal, simulating transmission through a noisy channel.</p></li>
+<li><p><strong>Visualize the Noisy Signal</strong>: Plot the noisy signal to observe the effect of noise on the BPSK signal.</p></li>
+</ol>
+<p><strong>MATLAB Code</strong>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Define SNR</span>
+<span class="n">snr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c">% Signal to Noise Ratio in dB</span>
+
+<span class="c">% Add AWGN to the BPSK modulated signal</span>
+<span class="n">awgnChannel</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">comm</span><span class="p">.</span><span class="n">AWGNChannel</span><span class="p">(</span><span class="s">&#39;NoiseMethod&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Signal to noise ratio (SNR)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;SNR&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">snr</span><span class="p">);</span>
+<span class="n">noisySignal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">step</span><span class="p">(</span><span class="n">awgnChannel</span><span class="p">,</span><span class="w"> </span><span class="n">bpskModulated</span><span class="p">.</span><span class="o">&#39;</span><span class="p">);</span>
+
+<span class="c">% Plot the noisy BPSK signal</span>
+<span class="nb">figure</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">noisySignal</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;b.&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Noisy BPSK Signal&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Bit Index&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Signal Value&#39;</span><span class="p">);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</pre></div>
+</div>
+<figure class="align-center" id="id2">
+<img alt="Noisy BPSK Signal" src="../../_images/noisy_bpsk.bmp" />
+<figcaption>
+<p><span class="caption-text">Visualization of the BPSK signal after passing through an AWGN channel.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Noisy BPSK Signal figure illustrates the effect of Additive White Gaussian Noise (AWGN) on the BPSK modulated signal during transmission through a noisy channel. The plot highlights how the originally distinct signal values become less discernible due to the presence of noise, simulating real-world conditions where communication signals are subject to interference and distortion. This scenario underscores the importance of robust modulation and coding techniques in maintaining data integrity in noisy environments.</p>
+</section>
+<section id="ldpc-encoding">
+<h2>LDPC Encoding<a class="headerlink" href="#ldpc-encoding" title="Link to this heading"></a></h2>
+<p>Low-Density Parity-Check (LDPC) codes are an error-correcting code that provides a method for transmitting messages over noisy transmission channels more reliably. LDPC codes are particularly effective in close-to-capacity conditions. In this part, we will encode our binary message using an LDPC encoder to improve its robustness against channel noise.</p>
+<p><strong>Procedure</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Initialize LDPC Encoder</strong>: Use MATLAB’s built-in functions to create an LDPC encoder object.</p></li>
+<li><p><strong>Encode the Message</strong>: Apply the encoder to the binary message, introducing redundancy that helps in error correction.</p></li>
+<li><p><strong>Visualize the Encoded Message</strong>: Although the encoded message will be longer than the original due to added parity bits, it’s essential to understand the encoding process’s impact on the message size.</p></li>
+</ol>
+<p><strong>MATLAB Code</strong>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Create an LDPC encoder object</span>
+<span class="n">ldpcEncoder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">comm</span><span class="p">.</span><span class="n">LDPCEncoder</span><span class="p">(</span><span class="s">&#39;ParityCheckMatrix&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ldpcMatrix</span><span class="p">);</span>
+
+<span class="c">% Encode the binary message</span>
+<span class="n">encodedMessage</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">step</span><span class="p">(</span><span class="n">ldpcEncoder</span><span class="p">,</span><span class="w"> </span><span class="n">binaryMessage</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After encoding with LDPC, the message length increases due to the addition of parity bits. These bits are essential for detecting and correcting errors in the receiver side, showcasing the trade-off between redundancy and error resilience.</p>
+</div>
+</section>
+<section id="bpsk-decoding">
+<h2>BPSK Decoding<a class="headerlink" href="#bpsk-decoding" title="Link to this heading"></a></h2>
+<p>After transmission through a noisy channel, the received signal must be decoded back into a binary message. This process involves demodulating the BPSK signal and then applying error correction codes if necessary.</p>
+<p><strong>Procedure</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>BPSK Demodulation</strong>: Convert the received noisy signal back into binary format using a thresholding technique.</p></li>
+<li><p><strong>Visualize the Demodulated Signal</strong>: Plot the demodulated signal to compare it with the original binary message.</p></li>
+</ol>
+<p><strong>MATLAB Code</strong>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% BPSK Demodulation</span>
+<span class="n">demodulatedSignal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">noisySignal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c">% Convert to 0 and 1 based on sign</span>
+
+<span class="c">% Visualize the demodulated signal</span>
+<span class="nb">figure</span><span class="p">;</span>
+<span class="nb">stem</span><span class="p">(</span><span class="n">demodulatedSignal</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Demodulated BPSK Signal&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Bit Index&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Signal Value&#39;</span><span class="p">);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<img alt="Demodulated BPSK Signal" src="../../_images/demodulated_bpsk.bmp" />
+</figure>
+<p>This figure illustrates the demodulated BPSK signal, showcasing the process of converting the received noisy signal back into a binary format. Despite the presence of noise, the fundamental structure of the original message can still be discerned, highlighting the effectiveness of BPSK modulation and demodulation techniques.</p>
+</section>
+<section id="ldpc-decoding">
+<h2>LDPC Decoding<a class="headerlink" href="#ldpc-decoding" title="Link to this heading"></a></h2>
+<p>The final step in the communication process involves decoding the message using an LDPC decoder. This step corrects any errors introduced by the channel noise, ensuring the integrity of the transmitted message.</p>
+<p><strong>Procedure</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Initialize LDPC Decoder</strong>: Create an LDPC decoder object in MATLAB.</p></li>
+<li><p><strong>Decode the Message</strong>: Apply the decoder to the demodulated signal to correct errors.</p></li>
+<li><p><strong>Compare Original and Decoded Messages</strong>: Analyze the effectiveness of the LDPC coding by comparing the original message with the decoded one.</p></li>
+</ol>
+<p><strong>MATLAB Code</strong>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% LDPC Decoding</span>
+<span class="n">ldpcDecoder</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">comm</span><span class="p">.</span><span class="n">LDPCDecoder</span><span class="p">(</span><span class="s">&#39;ParityCheckMatrix&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ldpcMatrix</span><span class="p">);</span>
+<span class="n">decodedMessage</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">step</span><span class="p">(</span><span class="n">ldpcDecoder</span><span class="p">,</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">demodulatedSignal</span><span class="p">));</span>
+
+<span class="c">% Calculate the number of bit errors</span>
+<span class="n">bitErrors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">decodedMessage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">binaryMessage</span><span class="p">.</span><span class="o">&#39;</span><span class="p">));</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Number of bit errors: %d\\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">bitErrors</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The effectiveness of LDPC codes in correcting errors is evident when comparing the number of bit errors before and after decoding. A significant reduction in errors demonstrates the robustness of LDPC codes against channel noise.</p>
+</div>
+</section>
 </section>
 
 
