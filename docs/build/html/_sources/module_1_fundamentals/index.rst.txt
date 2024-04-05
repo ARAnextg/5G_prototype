@@ -12,6 +12,6 @@ Module 1: Fundamental Concepts of SDRs
    wikipages/wikipage_6
    quizzes/quiz_fundamentals_1
    labs/lab_waveform_transmission
-   labs/lab_signal_reflection_and_multipath
+   labs/sdr_gnuradio
 
 

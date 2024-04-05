@@ -1,19 +1,54 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fundamentals of SDRs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Data Encoding in 5G</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .question { margin-bottom: 20px; }
-        .feedback { margin-top: 10px; color: green; }
-        .incorrect { color: red; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f8f9fa;
+        }
+        .question { 
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .feedback { 
+            margin-top: 10px; 
+        }
+        .incorrect { 
+            color: #dc3545; /* Bootstrap 'danger' color */
+        }
+        .correct {
+            color: #0eed42; /* Bootstrap 'success' color */
+        }
+        .quiz-title {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .submit-btn {
+            background-color: #007bff; /* Bootstrap primary button color */
+            color: rgb(3, 2, 2);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <h1>Quiz 1</h1>
-
-    <form id="quiz">
-        <!-- Question 1 -->
+    <div class="container">
+        <h1 class="quiz-title">Data Encoding in 5G</h1>
+        <form id="quiz">
+             <!-- Question 1 -->
         <div class="question">
             <p>1. What does SDR stand for?</p>
             <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a. Software Defined Radio</label><br>
@@ -66,14 +101,16 @@
             <input type="radio" name="q6" value="c" id="q6c"> <label for="q6c">c. Above 5 GHz</label>
             <p class="feedback" id="feedback6"></p>
         </div>
-
-        <button type="button" onclick="submitQuiz()">Submit</button>
-    </form>
-
-    <div id="result"></div>
-
+            
+            <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function submitQuiz() {
+         function submitQuiz() {
             var score = 0;
             var totalQuestions = 6;
 
@@ -146,3 +183,4 @@
     </script>
 </body>
 </html>
+

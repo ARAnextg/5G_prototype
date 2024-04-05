@@ -19,5 +19,6 @@ Module 4: Data Encoding and Packet Communication
    labs/Lab_1
    labs/Lab_2
    labs/Lab_3
+   labs/Lab_4
 
 

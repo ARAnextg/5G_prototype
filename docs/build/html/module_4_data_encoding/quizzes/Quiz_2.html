@@ -248,14 +248,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_waveform_transmission.html">Lab 1: Waveform Transmission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 3: Visualizing SDR data with GNURadio</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#software-installation">Software Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#environment-configuration">Environment Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#testing-your-setup">Testing Your Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#developing-the-gnuradio-script">Developing the GNURadio Script</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#script-overview">Script Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#step-by-step-script-development">Step-by-Step Script Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#transferring-the-plot-using-sftp">Transferring the Plot Using SFTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html">Lab 3: Visualizing SDR data with GNURadio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#software-installation">Software Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#environment-configuration">Environment Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#testing-your-setup">Testing Your Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#developing-the-gnuradio-script">Developing the GNURadio Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#script-overview">Script Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#step-by-step-script-development">Step-by-Step Script Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/sdr_gnuradio.html#transferring-the-plot-using-sftp">Transferring the Plot Using SFTP</a></li>
 </ul>
 </li>
 </ul>
@@ -438,7 +438,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_1.html#ldpc-decoding">LDPC Decoding</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_2.html">Lab 4: QPSK Communication System with Polar Coding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_2.html">Lab 2: QPSK Communication System with Polar Coding</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#objectives">Objectives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#setup-and-configuration">Setup and Configuration</a></li>
@@ -490,14 +490,48 @@
   <section id="quiz-2-fundamentals-of-packet-communication">
 <h1>Quiz 2: Fundamentals of Packet Communication<a class="headerlink" href="#quiz-2-fundamentals-of-packet-communication" title="Link to this heading"></a></h1>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fundamentals of Packet Communication in 5G</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Data Encoding in 5G</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .question { margin-bottom: 20px; }
-        .feedback { margin-top: 10px; color: green; }
-        .incorrect { color: red; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f8f9fa;
+        }
+        .question { 
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .feedback { 
+            margin-top: 10px; 
+        }
+        .incorrect { 
+            color: #dc3545; /* Bootstrap 'danger' color */
+        }
+        .correct {
+            color: #0eed42; /* Bootstrap 'success' color */
+        }
+        .quiz-title {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .submit-btn {
+            background-color: #007bff; /* Bootstrap primary button color */
+            color: rgb(3, 2, 2);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>

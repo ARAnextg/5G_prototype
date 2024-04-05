@@ -1,4 +1,4 @@
-Lab 4: QPSK Communication System with Polar Coding
+Lab 2: QPSK Communication System with Polar Coding
 ==================================================
 
 Introduction
