@@ -83,3 +83,40 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #ccc;
     padding: 8px;
 }
+
+/* Overrides for the top navigation bar */
+.wy-nav-top {
+    background-color: #000; /* Black */
+}
+
+/* Search box styling */
+.wy-side-nav-search input[type="text"] {
+    background-color: #fff; /* White */
+    color: #000; /* Black */
+    border: 1px solid #d60000; /* Red border */
+}
+
+.wy-side-nav-search input[type="text"]::placeholder {
+    color: #000; /* Black */
+}
+
+.wy-side-nav-search button {
+    background-color: #d60000; /* Red */
+    color: #fff; /* White */
+}
+
+/* Active module in the sidebar */
+.wy-menu-vertical li.current a {
+    background-color: #d60000; /* Red background */
+    color: #fff; /* White text */
+}
+
+/* For the top navigation bar links (if they are not styled yet) */
+.wy-nav-top a {
+    color: #fff; /* White */
+}
+
+[class*='current'] {
+    background-color: #d60000 !important; /* Red background */
+}
+
