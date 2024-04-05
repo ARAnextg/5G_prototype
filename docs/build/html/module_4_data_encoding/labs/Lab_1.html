@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab 1: Data Encoding and Decoding &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -248,7 +248,12 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/quizzes/quiz_fundamentals_1.html">Quiz 1: Fundamentals of SDRs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_waveform_transmission.html">Lab 1: Waveform Transmission</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 2: Signal Reflection and Multipath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html">Lab 2: Visualizing SDR data with GNURadio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#software-installation">Software Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#environment-configuration">Environment Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../module_1_fundamentals/labs/lab_signal_reflection_and_multipath.html#testing-your-setup">Testing Your Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_2_modulation/index.html">Module 2: Modulation and Communication Techniques</a><ul>
@@ -421,7 +426,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1: Data Encoding and Decoding</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction-to-bpsk-modulation">Introduction to BPSK Modulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulating-a-noisy-channel">Simulating a Noisy Channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ldpc-encoding">LDPC Encoding</a></li>
@@ -452,7 +457,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module 4: Data Encoding and Packet Communication</a></li>
-      <li class="breadcrumb-item active">Lab 1: Data Encoding and Decoding</li>
+      <li class="breadcrumb-item active">Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_4_data_encoding/labs/Lab_1.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -462,8 +467,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lab-1-data-encoding-and-decoding">
-<h1>Lab 1: Data Encoding and Decoding<a class="headerlink" href="#lab-1-data-encoding-and-decoding" title="Link to this heading"></a></h1>
+  <section id="lab-1-data-encoding-and-decoding-with-bpsk-signals-and-ldpc-codes">
+<h1>Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes<a class="headerlink" href="#lab-1-data-encoding-and-decoding-with-bpsk-signals-and-ldpc-codes" title="Link to this heading"></a></h1>
 <p>This lab explores the concepts of data encoding and decoding in the context of digital communication systems. We’ll start with BPSK modulation, a fundamental digital modulation technique, and simulate the transmission of a modulated signal through a noisy channel using the Additive White Gaussian Noise (AWGN) model.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -603,11 +608,14 @@
 <span class="c">% Calculate the number of bit errors</span>
 <span class="n">bitErrors</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">decodedMessage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">binaryMessage</span><span class="p">.</span><span class="o">&#39;</span><span class="p">));</span>
 <span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Number of bit errors: %d\\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">bitErrors</span><span class="p">);</span>
+<span class="c">% Calculate the Bit Error Rate (BER)</span>
+<span class="n">BER</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">bitErrors</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">length</span><span class="p">(</span><span class="n">binaryMessage</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Bit Error Rate (BER) after decoding: %f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">BER</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The effectiveness of LDPC codes in correcting errors is evident when comparing the number of bit errors before and after decoding. A significant reduction in errors demonstrates the robustness of LDPC codes against channel noise.</p>
+<p>The effectiveness of LDPC codes in correcting errors is evident when comparing the number of bit errors before and after decoding. A significant reduction in errors demonstrates the robustness of LDPC codes against channel noise. The example LDPC codes that we’ve utilized in this lab is just an example and may result in a much higher BER than what you would typically see with actual hardware.</p>
 </div>
 </section>
 </section>
