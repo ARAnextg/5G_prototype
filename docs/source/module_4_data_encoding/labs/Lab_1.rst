@@ -178,5 +178,5 @@ The final step in the communication process involves decoding the message using 
    BER = bitErrors / length(binaryMessage);
    fprintf('Bit Error Rate (BER) after decoding: %f\n', BER);
 
-.. note:: The effectiveness of LDPC codes in correcting errors is evident when comparing the number of bit errors before and after decoding. A significant reduction in errors demonstrates the robustness of LDPC codes against channel noise.
+.. note:: The effectiveness of LDPC codes in correcting errors is evident when comparing the number of bit errors before and after decoding. A significant reduction in errors demonstrates the robustness of LDPC codes against channel noise. The example LDPC codes that we've utilized in this lab is just an example and may result in a much higher BER than what you would typically see with actual hardware.
 
