@@ -1,5 +1,5 @@
 SDR Signal Processing: A Look Into Signal Analyzation
-==========================================
+=====================================================
 
 .. contents::
    :local:
@@ -32,8 +32,7 @@ There are four filters used with digital signals:
 
 - **High-pass Filters**: 
   
-  - High frequency signals pass through these filters but low frequency signals are stopped. Due to its design, 0 Hz is always in the stopband (the range of frequencies that a filter blocks).  
-                                                                                                                                                                                             .. figure:: /images/highpass.PNG
+  - High frequency signals pass through these filters but low frequency signals are stopped. Due to its design, 0 Hz is always in the stopband (the range of frequencies that a filter blocks).  .. figure:: /images/highpass.PNG
 - **Band-pass Filters**: 
   
   - A frequency range can be specified with the use of a band-pass filter by defining the lower and upper bound frequencies in the passband. For band-pass filters, 0 Hz will also be in the stopband 
