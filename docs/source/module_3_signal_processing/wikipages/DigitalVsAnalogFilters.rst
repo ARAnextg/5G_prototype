@@ -30,7 +30,7 @@ There are four filters used with digital signals:
 - **Low-pass Filters**: 
   
   - This filter passes low frequencies but stops higher frequencies. 0 Hz is always in the passband (the range of frequencies a filter lets through).
-
+.. figure:: /images/lowpass.png
 - **High-pass Filters**: 
   
   - 
