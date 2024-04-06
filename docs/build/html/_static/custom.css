@@ -116,9 +116,50 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff; /* White */
 }
 
-/* For overriding any other elements that might still be blue */
-/*[class*='active'] {
-    background-color: #d60000 !important; /* Red background */
+/* Notes customization */
+.rst-content .note, 
+.rst-content .admonition-note {
+    border-color: #d60000; /* Red border */
+    background-color: #fff; /* White background */
+}
+
+/* Note title customization */
+.rst-content .note .admonition-title, 
+.rst-content .admonition-note .admonition-title {
+    color: #d60000; /* Red title text */
+}
+
+/* Note body text customization */
+.rst-content .note .admonition-title + p, 
+.rst-content .admonition-note .admonition-title + p {
+    color: #000; /* Black body text */
+}
+
+/* Note header background color */
+.rst-content .admonition.note .admonition-title,
+.rst-content div.admonition .admonition-title {
+    background-color: #050505; /* Red background */
+    color: #d60000; /* White text */
+}
+
+/* Note header border color */
+.rst-content .admonition.note,
+.rst-content div.admonition {
+    border-color: #d60000; /* Red border */
+}
+
+/* Targeting the sidebar caption specifically */
+.wy-menu-vertical .caption, .wy-menu-vertical .caption a {
+    color: #ffffff !important; /* White text */
+    background-color: #000000 !important; /* Black background */
+}
+
+/* Ensure the sidebar links are also styled correctly */
+.wy-menu-vertical .caption a:hover {
+    color: #d60000 !important; /* Red text for hover */
+}
+
+
 
 
 [class*='current'] {
