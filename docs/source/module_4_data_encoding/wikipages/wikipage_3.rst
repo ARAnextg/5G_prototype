@@ -35,6 +35,13 @@ In the domain of 5G telecommunications, encoding techniques play a pivotal role 
 Polar Codes: Revolutionizing Control Channel Encoding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: /images/polar_codes_fig.png
+    :align: center
+    :alt: Polar Codes
+    :figclass: align-center
+
+    Complexity Reduction of Polar Codes
+
 Polar codes mark a significant evolution in error-correcting code design, being the first to achieve channel capacity in certain theoretical settings. Introduced by Erdal Arıkan in 2009, they utilize the concept of channel polarization, a method that systematically improves the reliability of individual bit channels.
 
 **Technical Characteristics and Advantages:**
@@ -68,6 +75,13 @@ While Polar codes offer significant advantages, they face challenges, particular
 
 Low-Density Parity-Check (LDPC) Codes: Enhancing Data Channel Reliability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: /images/ldpc_code.jpg
+    :align: center
+    :alt: Polar Codes
+    :figclass: align-center
+
+    Basic components of LDPC Codes
 
 LDPC codes, first introduced by Robert Gallager in 1962, have undergone significant evolution and have been adopted in 5G for their exceptional performance in large block length scenarios. They are characterized by sparse parity-check matrices, which facilitate efficient implementation and superior error-correcting capabilities, particularly in the context of eMBB.
 
@@ -145,6 +159,11 @@ Low-Density Parity-Check (LDPC) codes are integral to 5G's data layer, providing
 Polar Codes and Network Reliability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. figure:: /images/polar_error.png
+    :align: center
+    :alt: Polar Codes
+    :figclass: align-center
+
 Polar codes, tailored for control channel communications in 5G, address the critical need for rapid, reliable transmission of control information.
 
 **Key Contributions of Polar Codes:**
@@ -173,6 +192,13 @@ Polar codes, tailored for control channel communications in 5G, address the crit
 
 Error Detection in 5G
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: /images/crc_waveform.jpg
+    :align: center
+    :alt: CRC
+    :figclass: align-center
+
+    CRC Waveform Example
+
 
 Effective error detection is crucial for maintaining the integrity and reliability of 5G networks. The cyclic redundancy check (CRC) is a widely implemented technique in this domain.
 
@@ -271,6 +297,12 @@ URLLC scenarios demand unparalleled reliability and latency measures. Polar code
 Practical Example: Autonomous Vehicle Communication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In autonomous vehicle ecosystems, URLLC enables vehicles to communicate with each other and infrastructure with minimal delay. Polar codes are employed to ensure that control messages, such as braking signals, are transmitted and received within milliseconds, thereby preventing accidents and enhancing road safety. Field trials have underscored the effectiveness of Polar codes in reducing transmission errors and latency, pivotal for the safety-critical communication required by autonomous vehicles.
+  .. figure:: /images/autonomous_urllc.png
+    :align: center
+    :alt: Autonomous Vehicle URLLC Example
+    :figclass: align-center
+
+    Autonomous Vehicle Netowrk URLLC
 
 Smart Cities and 5G Encoding Techniques
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

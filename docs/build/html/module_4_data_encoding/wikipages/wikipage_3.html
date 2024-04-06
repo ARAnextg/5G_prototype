@@ -431,7 +431,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_1.html">Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_3.html">Lab 1: Understanding Baseband Modulation Techniques in Digital Communications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#setup-instructions">Setup Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#generating-random-binary-data">Generating Random Binary Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#manchester-encoding">Manchester Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#nrzi-encoding">NRZI Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#simulating-encoding-techniques">Simulating Encoding Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#python-script-for-encoding-techniques">Python Script for Encoding Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#copy-and-run-the-script">Copy and Run the Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#understanding-the-outputs">Understanding the Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#review-questions">Review Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_3.html#further-exploration">Further Exploration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_1.html">Lab 2: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_1.html#introduction-to-bpsk-modulation">Introduction to BPSK Modulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_1.html#simulating-a-noisy-channel">Simulating a Noisy Channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_1.html#ldpc-encoding">LDPC Encoding</a></li>
@@ -439,7 +456,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_1.html#ldpc-decoding">LDPC Decoding</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_2.html">Lab 2: QPSK Communication System with Polar Coding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_2.html">Lab 3: QPSK Communication System with Polar Coding</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#objectives">Objectives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#setup-and-configuration">Setup and Configuration</a></li>
@@ -454,6 +471,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#eye-diagram">Eye Diagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#phase-trajectory">Phase Trajectory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../labs/Lab_2.html#constellation-diagram-with-error-vectors">Constellation Diagram with Error Vectors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../labs/Lab_4.html">Lab 4: Advanced Packet Communication Simulation in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#setup-instructions">Setup Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#generating-data-and-creating-packets">Generating Data and Creating Packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#simulating-packet-transmission">Simulating Packet Transmission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#visualization-of-packet-transmission">Visualization of Packet Transmission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#error-detection-and-packet-recovery">Error Detection and Packet Recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../labs/Lab_4.html#running-the-complete-simulation">Running the Complete Simulation</a></li>
 </ul>
 </li>
 </ul>
@@ -514,6 +543,12 @@
 <p>In the domain of 5G telecommunications, encoding techniques play a pivotal role in enhancing network performance, ensuring data integrity, and optimizing transmission efficiency. The transition from 4G to 5G has necessitated the adoption of more sophisticated encoding schemes, specifically Polar codes and Low-Density Parity-Check (LDPC) codes. These techniques are tailored to meet the stringent requirements of 5G’s diverse communication environments, including enhanced mobile broadband (eMBB), ultra-reliable and low-latency communications (URLLC), and massive machine-type communications (mMTC).</p>
 <section id="polar-codes-revolutionizing-control-channel-encoding">
 <h3>Polar Codes: Revolutionizing Control Channel Encoding<a class="headerlink" href="#polar-codes-revolutionizing-control-channel-encoding" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id6">
+<img alt="Polar Codes" src="../../_images/polar_codes_fig.png" />
+<figcaption>
+<p><span class="caption-text">Complexity Reduction of Polar Codes</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Polar codes mark a significant evolution in error-correcting code design, being the first to achieve channel capacity in certain theoretical settings. Introduced by Erdal Arıkan in 2009, they utilize the concept of channel polarization, a method that systematically improves the reliability of individual bit channels.</p>
 <p><strong>Technical Characteristics and Advantages:</strong></p>
 <ul class="simple">
@@ -521,8 +556,8 @@
 <li><p><strong>Decoding Mechanism:</strong> Polar codes employ a unique decoding strategy known as successive cancellation decoding, which iteratively deciphers bits, leveraging previously decoded information to enhance accuracy. While inherently sequential, leading to higher latency, recent advancements have introduced successive cancellation list decoding, offering a trade-off between complexity and performance, making it more suitable for URLLC scenarios.</p></li>
 <li><p><strong>Adaptability to Short Block Lengths:</strong> Unlike traditional codes that excel over long block lengths, Polar codes demonstrate exceptional performance in short block scenarios, aligning well with the requirements for control information in 5G networks. This makes them particularly beneficial for applications demanding quick response times and low latency.</p></li>
 </ul>
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Technical Specifications of Polar Codes</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Technical Specifications of Polar Codes</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -552,6 +587,12 @@ communications.</p></td>
 </section>
 <section id="low-density-parity-check-ldpc-codes-enhancing-data-channel-reliability">
 <h3>Low-Density Parity-Check (LDPC) Codes: Enhancing Data Channel Reliability<a class="headerlink" href="#low-density-parity-check-ldpc-codes-enhancing-data-channel-reliability" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id8">
+<img alt="Polar Codes" src="../../_images/ldpc_code.jpg" />
+<figcaption>
+<p><span class="caption-text">Basic components of LDPC Codes</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>LDPC codes, first introduced by Robert Gallager in 1962, have undergone significant evolution and have been adopted in 5G for their exceptional performance in large block length scenarios. They are characterized by sparse parity-check matrices, which facilitate efficient implementation and superior error-correcting capabilities, particularly in the context of eMBB.</p>
 <p><strong>Technical Characteristics and Advantages:</strong></p>
 <ul class="simple">
@@ -559,8 +600,8 @@ communications.</p></td>
 <li><p><strong>Flexibility and Scalability:</strong> LDPC codes can be designed for a wide range of block lengths and code rates, making them highly adaptable to various 5G scenarios. This flexibility ensures that LDPC codes can be optimized for different quality of service requirements, from high throughput in eMBB to robustness in URLLC.</p></li>
 <li><p><strong>Performance Near Shannon Limit:</strong> LDPC codes are renowned for their ability to perform close to the Shannon limit, the theoretical maximum efficiency of a communication channel. This characteristic makes them ideal for maximizing data throughput in 5G networks, particularly for eMBB applications requiring high data rates.</p></li>
 </ul>
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Technical Specifications of LDPC Codes</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Technical Specifications of LDPC Codes</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -609,8 +650,8 @@ communication channel.</p></td>
 <li><p><strong>Adaptability:</strong> The flexible nature of LDPC codes, with their variable code rates and lengths, allows them to adapt dynamically to varying channel conditions, improving the efficiency of 5G data transmission.</p></li>
 <li><p><strong>HARQ Integration:</strong> The seamless integration with Hybrid Automatic Repeat Request (HARQ) mechanisms further bolsters data reliability, reducing latency and improving the responsiveness of the network.</p></li>
 </ul>
-<table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Impact of LDPC Codes on Network Efficiency</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Impact of LDPC Codes on Network Efficiency</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Aspect</p></th>
 <th class="head"><p>Contribution</p></th>
@@ -636,6 +677,9 @@ enhanced user experiences.</p></td>
 </section>
 <section id="polar-codes-and-network-reliability">
 <h3>Polar Codes and Network Reliability<a class="headerlink" href="#polar-codes-and-network-reliability" title="Link to this heading"></a></h3>
+<figure class="align-center">
+<img alt="Polar Codes" src="../../_images/polar_error.png" />
+</figure>
 <p>Polar codes, tailored for control channel communications in 5G, address the critical need for rapid, reliable transmission of control information.</p>
 <p><strong>Key Contributions of Polar Codes:</strong></p>
 <ul class="simple">
@@ -643,8 +687,8 @@ enhanced user experiences.</p></td>
 <li><p><strong>Channel Polarization:</strong> This unique property ensures that bits are allocated to channels based on their noise levels, enhancing the reliability of transmitted control signals.</p></li>
 <li><p><strong>Enhanced Control Channel Performance:</strong> The adoption of Polar codes in control channels leads to improved network reliability and stability, particularly in URLLC scenarios.</p></li>
 </ul>
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Impact of Polar Codes on Network Reliability</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Impact of Polar Codes on Network Reliability</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Aspect</p></th>
 <th class="head"><p>Contribution</p></th>
@@ -670,6 +714,12 @@ stability and efficiency.</p></td>
 </section>
 <section id="error-detection-in-5g">
 <h3>Error Detection in 5G<a class="headerlink" href="#error-detection-in-5g" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id12">
+<img alt="CRC" src="../../_images/crc_waveform.jpg" />
+<figcaption>
+<p><span class="caption-text">CRC Waveform Example</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>Effective error detection is crucial for maintaining the integrity and reliability of 5G networks. The cyclic redundancy check (CRC) is a widely implemented technique in this domain.</p>
 <p><strong>Functionality and Benefits of CRC in 5G:</strong></p>
 <ul class="simple">
@@ -677,8 +727,8 @@ stability and efficiency.</p></td>
 <li><p><strong>Network Reliability:</strong> By identifying corrupt packets, CRC enables the network to request retransmissions only when necessary, thus avoiding unnecessary bandwidth consumption and reducing latency.</p></li>
 <li><p><strong>Complementary to Error Correction:</strong> While LDPC and Polar codes focus on correcting errors, CRC adds an additional layer of integrity checking, enhancing overall data reliability.</p></li>
 </ul>
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-text">Role of CRC in 5G Networks</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Role of CRC in 5G Networks</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Aspect</p></th>
 <th class="head"><p>Contribution</p></th>
@@ -724,8 +774,8 @@ complete solution for data reliability.</p></td>
 <li><p><strong>Variable Code Rates and Lengths:</strong> This flexibility allows networks to adapt to varying channel conditions and user demands, essential for the diverse applications envisioned for eMBB.</p></li>
 <li><p><strong>Efficient HARQ Processes:</strong> Integration with HARQ ensures timely correction of errors, crucial for maintaining continuous high-speed data transmission.</p></li>
 </ul>
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-text">Encoding Techniques’ Impact on eMBB</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Encoding Techniques’ Impact on eMBB</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
 <th class="head"><p>Benefit</p></th>
@@ -765,8 +815,8 @@ and network capacity.</p></td>
 <li><p><strong>Low Latency:</strong> Polar codes support rapid encoding and decoding processes, essential for latency-sensitive applications.</p></li>
 <li><p><strong>Reliability:</strong> The inherent error correction capabilities of Polar codes ensure data integrity, a non-negotiable requirement for URLLC.</p></li>
 </ul>
-<table class="docutils align-default" id="id12">
-<caption><span class="caption-text">Encoding Techniques’ Impact on URLLC</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Encoding Techniques’ Impact on URLLC</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
 <th class="head"><p>Benefit</p></th>
@@ -787,7 +837,15 @@ retransmissions and further lowering latency.</p></td>
 </section>
 <section id="practical-example-autonomous-vehicle-communication">
 <h3>Practical Example: Autonomous Vehicle Communication<a class="headerlink" href="#practical-example-autonomous-vehicle-communication" title="Link to this heading"></a></h3>
-<p>In autonomous vehicle ecosystems, URLLC enables vehicles to communicate with each other and infrastructure with minimal delay. Polar codes are employed to ensure that control messages, such as braking signals, are transmitted and received within milliseconds, thereby preventing accidents and enhancing road safety. Field trials have underscored the effectiveness of Polar codes in reducing transmission errors and latency, pivotal for the safety-critical communication required by autonomous vehicles.</p>
+<dl>
+<dt>In autonomous vehicle ecosystems, URLLC enables vehicles to communicate with each other and infrastructure with minimal delay. Polar codes are employed to ensure that control messages, such as braking signals, are transmitted and received within milliseconds, thereby preventing accidents and enhancing road safety. Field trials have underscored the effectiveness of Polar codes in reducing transmission errors and latency, pivotal for the safety-critical communication required by autonomous vehicles.</dt><dd><figure class="align-center" id="id16">
+<img alt="Autonomous Vehicle URLLC Example" src="../../_images/autonomous_urllc.png" />
+<figcaption>
+<p><span class="caption-text">Autonomous Vehicle Netowrk URLLC</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</dd>
+</dl>
 </section>
 <section id="smart-cities-and-5g-encoding-techniques">
 <h3>Smart Cities and 5G Encoding Techniques<a class="headerlink" href="#smart-cities-and-5g-encoding-techniques" title="Link to this heading"></a></h3>
@@ -803,8 +861,8 @@ retransmissions and further lowering latency.</p></td>
 <li><p><strong>Scalability and Efficiency:</strong> LDPC codes, with their ability to handle a wide range of code rates and lengths, are ideal for the diverse array of devices and applications within smart cities, from high-speed data transmission to low-rate sensor data.</p></li>
 <li><p><strong>Reliability in Varied Environments:</strong> Smart cities feature a complex mix of urban and sub-urban environments. Polar codes, with their excellent performance in short block lengths, are adept at providing reliable communication in varying signal conditions.</p></li>
 </ul>
-<table class="docutils align-default" id="id13">
-<caption><span class="caption-text">Impact of Encoding Techniques on Smart Cities</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-text">Impact of Encoding Techniques on Smart Cities</span><a class="headerlink" href="#id17" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
 <th class="head"><p>Benefit</p></th>
@@ -849,8 +907,8 @@ responsiveness.</p></td>
 <li><p><strong>High-Speed Data Transmission:</strong> LDPC codes support the high data rates required for transmitting detailed maps, sensor data, and live video feeds, ensuring that autonomous vehicles receive and process necessary information without delay.</p></li>
 <li><p><strong>Real-Time Control Information:</strong> Polar codes, with their low latency and high reliability, are crucial for transmitting real-time control information, such as acceleration, steering, and braking commands.</p></li>
 </ul>
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-text">Impact of Encoding Techniques on Autonomous Vehicles</span><a class="headerlink" href="#id14" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id18">
+<caption><span class="caption-text">Impact of Encoding Techniques on Autonomous Vehicles</span><a class="headerlink" href="#id18" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Feature</p></th>
 <th class="head"><p>Benefit</p></th>

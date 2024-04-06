@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
+  <title>Lab 4: Advanced Packet Communication Simulation in 5G Networks &mdash; Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural Broadband 2023. v1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Module 5: Practical Applications and Systems" href="../../module_5_practical_applications/index.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="Lab_3.html" /> 
+    <link rel="prev" title="Lab 3: QPSK Communication System with Polar Coding" href="Lab_2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,7 +44,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../module_0_fundamentals/index.html">Module 0: Introduction to 5G (© Copyright 2023, Zachary Miller, Adam Kruger, Danny Cao, Ethan Gabriel. Revision 23440036)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../module_0_fundamentals/beforeyoubegin.html">Starting your learning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../module_0_fundamentals/beforeyoubegin.html#learning-modules">Learning Modules</a></li>
@@ -274,7 +274,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module_3_signal_processing/index.html">Module 3: Signal Processing and Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Module 4: Data Encoding and Packet Communication</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Module 4: Data Encoding and Packet Communication</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../wikipages/wikipage_1.html">Introduction to Data Encoding in 5G</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../wikipages/wikipage_1.html#overview-of-data-encoding">Overview of Data Encoding</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../wikipages/wikipage_1.html#why-data-encoding-is-crucial-in-telecommunications">Why Data Encoding is Crucial in Telecommunications</a></li>
@@ -430,7 +430,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_3.html">Quiz 3: Encoding Techniques for 5G</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_4.html">Quiz 4: Packet Communication Protocols and Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../quizzes/Quiz_5.html">Quiz 5: Implementing Packet Communication with USRP SDRs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Lab_1.html">Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Lab_3.html">Lab 1: Understanding Baseband Modulation Techniques in Digital Communications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#setup-instructions">Setup Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#generating-random-binary-data">Generating Random Binary Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#manchester-encoding">Manchester Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#nrzi-encoding">NRZI Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#simulating-encoding-techniques">Simulating Encoding Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#python-script-for-encoding-techniques">Python Script for Encoding Techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#copy-and-run-the-script">Copy and Run the Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#understanding-the-outputs">Understanding the Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#review-questions">Review Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Lab_3.html#further-exploration">Further Exploration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Lab_1.html">Lab 2: Data Encoding and Decoding with BPSK signals and LDPC codes</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#introduction-to-bpsk-modulation">Introduction to BPSK Modulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#simulating-a-noisy-channel">Simulating a Noisy Channel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#ldpc-encoding">LDPC Encoding</a></li>
@@ -438,7 +455,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Lab_1.html#ldpc-decoding">LDPC Decoding</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Lab_2.html">Lab 2: QPSK Communication System with Polar Coding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Lab_2.html">Lab 3: QPSK Communication System with Polar Coding</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Lab_2.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_2.html#objectives">Objectives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_2.html#setup-and-configuration">Setup and Configuration</a></li>
@@ -453,6 +470,18 @@
 <li class="toctree-l3"><a class="reference internal" href="Lab_2.html#eye-diagram">Eye Diagram</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_2.html#phase-trajectory">Phase Trajectory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Lab_2.html#constellation-diagram-with-error-vectors">Constellation Diagram with Error Vectors</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 4: Advanced Packet Communication Simulation in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-tools">Required Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-instructions">Setup Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-data-and-creating-packets">Generating Data and Creating Packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulating-packet-transmission">Simulating Packet Transmission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualization-of-packet-transmission">Visualization of Packet Transmission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#error-detection-and-packet-recovery">Error Detection and Packet Recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-complete-simulation">Running the Complete Simulation</a></li>
 </ul>
 </li>
 </ul>
@@ -477,7 +506,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module 4: Data Encoding and Packet Communication</a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Lab 4: Advanced Packet Communication Simulation in 5G Networks</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/module_4_data_encoding/labs/Lab_4.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -487,12 +516,227 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
+  <section id="lab-4-advanced-packet-communication-simulation-in-5g-networks">
+<h1>Lab 4: Advanced Packet Communication Simulation in 5G Networks<a class="headerlink" href="#lab-4-advanced-packet-communication-simulation-in-5g-networks" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This lab focuses on simulating packet communication in 5G networks, incorporating elements like packet loss, network congestion, and recovery mechanisms. By simulating these processes, you will gain a deeper understanding of the challenges and techniques in managing packet transmissions in modern telecommunications. This lab will guide you through creating and transmitting packets, simulating losses, and attempting recovery, all within a controlled Python simulation environment.</p>
+</section>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Understand the structure of packets and the importance of headers and trailers.</p></li>
+<li><p>Simulate packet loss and visualize its impact on data transmission.</p></li>
+<li><p>Implement and observe the efficacy of packet recovery techniques.</p></li>
+<li><p>Analyze how network conditions affect packet delivery and the role of error correction.</p></li>
+</ul>
+</section>
+<section id="required-tools">
+<h2>Required Tools<a class="headerlink" href="#required-tools" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Python 3.x</p></li>
+<li><p>NumPy library</p></li>
+<li><p>Matplotlib library</p></li>
+</ul>
+<p>Ensure that your Python environment is ready, with the necessary libraries installed. If not already installed, you can add these libraries using pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+</section>
+<section id="setup-instructions">
+<h2>Setup Instructions<a class="headerlink" href="#setup-instructions" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Open your Python IDE or Jupyter notebook</strong>: Prepare your environment where you will execute the Python scripts.</p></li>
+<li><p><strong>Create a new Python script or notebook</strong>: Name it <cite>Packet_Communication_Simulation.py</cite> or create a new notebook named <cite>Packet_Communication_Simulation.ipynb</cite>.</p></li>
+<li><p><strong>Follow along with the below guide to develop the python code for this lab</strong>.</p></li>
+</ol>
+</section>
+<section id="generating-data-and-creating-packets">
+<h2>Generating Data and Creating Packets<a class="headerlink" href="#generating-data-and-creating-packets" title="Link to this heading"></a></h2>
+<p>Let’s begin the experiment by generating random binary data, which will be used as the payload for our packets. We will also define a function to create packets by adding a standard header and a trailer, which includes a simple checksum for error checking.</p>
+<ol class="arabic">
+<li><p><strong>Generate Random Binary Data</strong>:
+The following function generates a sequence of binary digits that will serve as the payload for our packets.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_data</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Generate random binary payload data. &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">length</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create a Packet with Header and Trailer</strong>:
+This function takes the generated data and encapsulates it into a packet with predefined headers and trailers. The trailer includes a checksum for basic error detection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_packet</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Create a packet with a header, payload, and trailer. &quot;&quot;&quot;</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;01101000&#39;</span>  <span class="c1"># Example header (simulating address or control info)</span>
+    <span class="n">trailer</span> <span class="o">=</span> <span class="n">crc_checksum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Calculate a simple checksum</span>
+    <span class="k">return</span> <span class="n">header</span> <span class="o">+</span> <span class="n">data</span> <span class="o">+</span> <span class="n">trailer</span>
+
+<span class="k">def</span> <span class="nf">crc_checksum</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Generate a simple checksum by XORing chunks of data. &quot;&quot;&quot;</span>
+    <span class="n">checksum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">4</span><span class="p">):</span>  <span class="c1"># Checksum chunks of 4 bits</span>
+        <span class="n">checksum</span> <span class="o">^=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">format</span><span class="p">(</span><span class="n">checksum</span><span class="p">,</span> <span class="s1">&#39;04b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>crc_checksum</cite> function is a simplistic approach to illustrate how error checking might be implemented. In real-world applications, more complex algorithms would be used.</p>
+</div>
+</section>
+<section id="simulating-packet-transmission">
+<h2>Simulating Packet Transmission<a class="headerlink" href="#simulating-packet-transmission" title="Link to this heading"></a></h2>
+<p>Transmission of packets over a network can be affected by various factors that may lead to packet loss. In this section, we will simulate this process and introduce randomness to mimic real-world network unreliability.</p>
+<ol class="arabic">
+<li><p><strong>Simulate Packet Transmission</strong>:
+This function simulates the act of sending a packet over a network where there’s a specified chance of packet loss.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transmit_packet</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="n">loss_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Simulate packet transmission with a given loss rate. &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">packet</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">loss_rate</span> <span class="k">else</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Adjust Loss Rate for Simulated Network Congestion</strong>:
+We will dynamically adjust the loss rate based on simulated network congestion to show how increased network traffic can affect packet delivery.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_congestion</span><span class="p">(</span><span class="n">loss_rate</span><span class="p">,</span> <span class="n">num_packets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Simulate varying network conditions affecting the loss rate. &quot;&quot;&quot;</span>
+    <span class="n">congestion_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">num_packets</span><span class="p">)</span>  <span class="c1"># Congestion increases linearly</span>
+    <span class="k">return</span> <span class="n">loss_rate</span> <span class="o">*</span> <span class="n">congestion_factor</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="visualization-of-packet-transmission">
+<h2>Visualization of Packet Transmission<a class="headerlink" href="#visualization-of-packet-transmission" title="Link to this heading"></a></h2>
+<p>Visualizing the packet transmission process is crucial for understanding how often packets are lost and at what stages of the congestion the losses peak.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_transmissions</span><span class="p">(</span><span class="n">transmissions</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Visualize the packet transmission showing successes and losses. &quot;&quot;&quot;</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Success&#39;</span> <span class="k">if</span> <span class="n">pkt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;Lost&#39;</span> <span class="k">for</span> <span class="n">pkt</span> <span class="ow">in</span> <span class="n">transmissions</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">drawstyle</span><span class="o">=</span><span class="s1">&#39;steps-post&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="p">)),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">[</span><span class="n">s</span> <span class="o">==</span> <span class="s1">&#39;Lost&#39;</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">states</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Packet Transmission Simulation&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Transmission Status&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Lost&#39;</span><span class="p">,</span> <span class="s1">&#39;Success&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Packet Number&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/transmission_visualization.png"><img alt="Visual representation of packet transmission showing packet loss and success." src="../../_images/transmission_visualization.png" style="width: 80%;" /></a>
+</figure>
+<p>The plot generated by this script will highlight each packet’s transmission status, with losses clearly indicated. This visualization helps in understanding the impact of network conditions on data transmission.</p>
+</section>
+<section id="error-detection-and-packet-recovery">
+<h2>Error Detection and Packet Recovery<a class="headerlink" href="#error-detection-and-packet-recovery" title="Link to this heading"></a></h2>
+<p>Detecting and recovering from errors are key aspects of maintaining data integrity in network communications. Here, we simulate basic error detection and implement a simple recovery mechanism.</p>
+<ol class="arabic">
+<li><p><strong>Recover Lost Packets</strong>:
+This segment of the code attempts to retransmit packets that were lost during the initial transmission.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recover_lost_packets</span><span class="p">(</span><span class="n">transmissions</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Attempt to recover lost packets using retransmission. &quot;&quot;&quot;</span>
+    <span class="n">recovery_attempts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pkt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">transmissions</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">pkt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># Packet was lost</span>
+            <span class="n">recovery</span> <span class="o">=</span> <span class="n">transmit_packet</span><span class="p">(</span><span class="s2">&quot;RETRANSMITTED_PACKET&quot;</span><span class="p">,</span> <span class="n">loss_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>  <span class="c1"># Lower chance of loss on retransmission</span>
+            <span class="n">recovery_attempts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">recovery</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">recovery_attempts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pkt</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">recovery_attempts</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Visualize Recovery Process</strong>:
+To clearly see the effectiveness of the recovery process, we visualize both the original and recovered transmissions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize_packet_recovery</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">recovered</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Compare original and recovered transmissions to visualize the recovery process. &quot;&quot;&quot;</span>
+    <span class="n">original_states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Success&#39;</span> <span class="k">if</span> <span class="n">pkt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;Lost&#39;</span> <span class="k">for</span> <span class="n">pkt</span> <span class="ow">in</span> <span class="n">original</span><span class="p">]</span>
+    <span class="n">recovered_states</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Recovered&#39;</span> <span class="k">if</span> <span class="n">pkt</span> <span class="o">==</span> <span class="s2">&quot;RETRANSMITTED_PACKET&quot;</span> <span class="k">else</span> <span class="s1">&#39;Success&#39;</span> <span class="k">if</span> <span class="n">pkt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">&#39;Lost&#39;</span> <span class="k">for</span> <span class="n">pkt</span> <span class="ow">in</span> <span class="n">recovered</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">original_states</span><span class="p">,</span> <span class="s1">&#39;ro-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original Transmissions&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Transmission Status&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Lost&#39;</span><span class="p">,</span> <span class="s1">&#39;Success&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Packet Number&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">recovered_states</span><span class="p">,</span> <span class="s1">&#39;go-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Recovered&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Recovered Transmissions&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Transmission Status&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Lost&#39;</span><span class="p">,</span> <span class="s1">&#39;Success&#39;</span><span class="p">,</span> <span class="s1">&#39;Recovered&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Packet Number&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/recovery_visualization.png"><img alt="Visual comparison of original and recovered packet transmissions." src="../../_images/recovery_visualization.png" style="width: 80%;" /></a>
+</figure>
+<p>The visualization of the recovery process provides a clear, visual feedback of how effective the retransmission strategy is in recovering lost packets, highlighting improvements in transmission success.</p>
+</section>
+<section id="running-the-complete-simulation">
+<h2>Running the Complete Simulation<a class="headerlink" href="#running-the-complete-simulation" title="Link to this heading"></a></h2>
+<p>Now that all the functions for generating data, creating packets, transmitting them with variable loss rates, and recovering lost packets are defined, you will combine these elements to simulate the packet communication process in 5G networks.</p>
+<p>The following Python script encapsulates the entire process from data generation to packet recovery. Here’s a breakdown of what each part of the script does:</p>
+<ol class="arabic simple">
+<li><p><strong>Setup Simulation Parameters</strong>:
+- Define the number of packets (<cite>num_packets</cite>) and the length of the data for each packet (<cite>data_length</cite>).
+- Set the base probability of packet loss (<cite>base_loss_rate</cite>).</p></li>
+<li><p><strong>Adjust Loss Rate for Simulated Network Congestion</strong>:
+- The loss rate is adjusted based on simulated congestion to reflect more realistic network conditions.</p></li>
+<li><p><strong>Generate and Transmit Packets</strong>:
+- Packets are generated with variable loss rates and transmitted. The result (success or loss) is stored for each packet.</p></li>
+<li><p><strong>Recover Lost Packets</strong>:
+- Attempts are made to recover packets that were lost during initial transmission.</p></li>
+<li><p><strong>Visualize Results</strong>:
+- Visualize both the initial transmission outcomes and the results of the packet recovery process.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">num_packets</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># Number of packets to simulate</span>
+    <span class="n">data_length</span> <span class="o">=</span> <span class="mi">16</span>  <span class="c1"># Length of the payload in each packet (bits)</span>
+    <span class="n">base_loss_rate</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Base probability of packet loss</span>
+
+    <span class="c1"># Adjust loss rate based on simulated congestion</span>
+    <span class="n">adjusted_loss_rates</span> <span class="o">=</span> <span class="n">simulate_congestion</span><span class="p">(</span><span class="n">base_loss_rate</span><span class="p">,</span> <span class="n">num_packets</span><span class="p">)</span>
+
+    <span class="c1"># Generate and transmit packets with variable loss rates</span>
+    <span class="n">transmissions</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_packets</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">generate_data</span><span class="p">(</span><span class="n">data_length</span><span class="p">)</span>
+        <span class="n">packet</span> <span class="o">=</span> <span class="n">create_packet</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">transmit_packet</span><span class="p">(</span><span class="n">packet</span><span class="p">,</span> <span class="n">loss_rate</span><span class="o">=</span><span class="n">adjusted_loss_rates</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">transmissions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+    <span class="c1"># Attempt to recover lost packets</span>
+    <span class="n">recovered_packets</span> <span class="o">=</span> <span class="n">recover_lost_packets</span><span class="p">(</span><span class="n">transmissions</span><span class="p">)</span>
+
+    <span class="c1"># Visualize the transmission and recovery results</span>
+    <span class="n">visualize_transmissions</span><span class="p">(</span><span class="n">transmissions</span><span class="p">)</span>
+    <span class="n">visualize_packet_recovery</span><span class="p">(</span><span class="n">transmissions</span><span class="p">,</span> <span class="n">recovered_packets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>### Analyzing the Output</p>
+<p>After running the script, observe the plots generated by <cite>visualize_transmissions</cite> and <cite>visualize_packet_recovery</cite> functions:</p>
+<ul class="simple">
+<li><p>The first plot shows the initial transmission results, indicating whether each packet was successfully transmitted or lost.</p></li>
+<li><p>The second plot illustrates the effectiveness of the recovery process, showing which packets were successfully retrieved after being lost initially.</p></li>
+</ul>
+<p>These visualizations will help you understand the dynamics of packet transmission in congested networks and the importance of effective recovery strategies in maintaining data integrity.</p>
+<p>Reflect on how variations in network congestion and the effectiveness of different recovery strategies could impact real-world 5G communications.</p>
+</section>
+</section>
+
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Lab_3.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Lab_2.html" class="btn btn-neutral float-left" title="Lab 3: QPSK Communication System with Polar Coding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../../module_5_practical_applications/index.html" class="btn btn-neutral float-right" title="Module 5: Practical Applications and Systems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -1,4 +1,4 @@
-Lab 1: Data Encoding and Decoding with BPSK signals and LDPC codes
+Lab 2: Data Encoding and Decoding with BPSK signals and LDPC codes
 =================================
 
 This lab explores the concepts of data encoding and decoding in the context of digital communication systems. We'll start with BPSK modulation, a fundamental digital modulation technique, and simulate the transmission of a modulated signal through a noisy channel using the Additive White Gaussian Noise (AWGN) model.
