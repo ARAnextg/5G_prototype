@@ -12,7 +12,7 @@ Module 1: Fundamental Concepts of SDRs
    wikipages/wikipage_6
    quizzes/quiz_fundamentals_1
    labs/lab_waveform_transmission
-   labs/sample_tests_uhd.rst
+   labs/sample_tests_uhd
    labs/sdr_gnuradio
 
 
