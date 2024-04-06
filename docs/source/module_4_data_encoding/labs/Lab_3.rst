@@ -69,7 +69,32 @@ This part of the experiment involves generating a random binary sequence which w
        data_length = 20
        data = generate_random_data(data_length)
 
-3. **Visualize the Original Data**:
+3. **Visualize Encoded Data**:
+   Define a function to visualize the encoded data, that will be called in the main function and referred to in the sections that talk about Manchester and NRZI encoding
+
+   .. code-block:: python
+
+       def plot_encoded_data(time_slots, encoded_data, title, ylabel):
+          """Plot encoded data as a step function with annotations."""
+          plt.figure(figsize=(12, 2))
+          plt.step(time_slots, encoded_data + 0.5, where='post', linewidth=1.5)  # Offset for visibility
+          plt.ylim(0, 2)
+          plt.title(title)
+          plt.xlabel('Time Slots')
+          plt.ylabel(ylabel)
+          plt.grid(True)
+          plt.yticks([0.5, 1.5], ['0', '1'])
+
+          # Annotating transitions
+          for i, value in enumerate(encoded_data[:-1]):
+              if encoded_data[i] != encoded_data[i+1]:
+                  plt.annotate('', xy=(i+1, 1.5 if encoded_data[i+1] > encoded_data[i] else 0.5), xytext=(i+1, 0.5 if encoded_data[i+1] > encoded_data[i] else 1.5),
+                               arrowprops=dict(facecolor='red', shrink=0.05, width=1.5, headwidth=8))
+          
+          plt.show()
+
+
+4. **Visualize the Original Data**:
    To better understand what your raw input data looks like, plot it using Matplotlib.
 
    .. code-block:: python
@@ -91,7 +116,7 @@ This part of the experiment involves generating a random binary sequence which w
 
       The plot of the original binary data.
 
-The plot above shows the original binary data generated for the experiment. Each bit in the sequence is represented as either a '0' or '1'. This binary sequence serves as the input for the subsequent encoding processes. Notice how each bit is distinctly represented, which will contrast with the transformation seen in the encoding techniques.      
+The plot above shows the original binary data generated for the experiment. Each bit in the sequence is represented as either a '0' or '1'. This binary sequence serves as the input for the subsequent encoding processes. Notice how each bit is distinctly represented, which will contrast with the transformation seen in the encoding techniques.   
 
 Manchester Encoding
 -------------------
