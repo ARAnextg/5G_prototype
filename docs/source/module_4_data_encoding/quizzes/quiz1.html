@@ -48,60 +48,51 @@
     <div class="container">
         <h1 class="quiz-title">Data Encoding in 5G</h1>
         <form id="quiz">
-             <!-- Question 1 -->
-        <div class="question">
-            <p>1. What does SDR stand for?</p>
-            <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a. Software Defined Radio</label><br>
-            <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b. Systematic Digital Radio</label><br>
-            <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c. Signal Driven Reception</label>
-            <p class="feedback" id="feedback1"></p>
-        </div>
+       <div class="question">
+                <p>1. What are the three main usage scenarios of 5G that require improved throughput, latency, and reliability compared with a 4G system?</p>
+                <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">A. Enhanced mobile broadband (eMBB), ultra-reliable and low latency communications (URLLC), and massive machine type communications</label><br>
+                <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">B. Enhanced mobile broadband (eMBB), ultra-reliable and high latency communications (URHLC), and minimal machine type communications</label><br>
+                <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">C. Reduced mobile broadband (RMBB), ultra-reliable and low latency communications (URLLC), and massive machine type communications</label><br>
+                <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">D. Enhanced mobile broadband (eMBB), unreliable and low latency communications (ULLC), and massive machine type communications</label>
+                <p class="feedback" id="feedback1"></p>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. Which encoding technique is used for user data in 5G networks and supports high throughput, a variable code rate and length, and hybrid automatic repeat request (HARQ)?</p>
+                <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">A. Polar Codes</label><br>
+                <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">B. High-Density Parity-Check (HDPC) codes</label><br>
+                <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">C. Low-Density Parity-Check (LDPC) codes</label><br>
+                <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">D. Medium-Density Parity-Check (MDPC) codes</label>
+                <p class="feedback" id="feedback2"></p>
+            </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Which encoding technique is used for control information in 5G networks and is designed to perform well with short block length while addressing a latency issue of successive cancellation decoding?</p>
+                <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. Polar Codes</label><br>
+                <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. High-Density Parity-Check (HDPC) codes</label><br>
+                <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. Low-Density Parity-Check (LDPC) codes</label><br>
+                <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. Medium-Density Parity-Check (MDPC) codes</label>
+                <p class="feedback" id="feedback3"></p>
+            </div>
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. What is the target throughput for 5G networks?</p>
+                <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">A. 10 Gbps</label><br>
+                <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">B. 20 Gbps</label><br>
+                <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">C. 30 Gbps</label><br>
+                <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. 40 Gbps</label>
+                <p class="feedback" id="feedback4"></p>
+            </div>
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What is the role of Hybrid Automatic Repeat Request (HARQ) in 5G networks?</p>
+                <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">A. It increases the probability of retransmission, thereby increasing latency.</label><br>
+                <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">B. It reduces the probability of retransmission, thereby increasing latency.</label><br>
+                <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">C. It increases the probability of retransmission, thereby reducing latency.</label><br>
+                <input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">D. It reduces the probability of retransmission, thereby reducing latency.</label>
+                <p class="feedback" id="feedback5"></p>
+            </div>
 
-        <!-- Question 2 -->
-        <div class="question">
-            <p>2. Which component converts analog signals into digital signals in an SDR?</p>
-            <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a. Digital-to-Analog Converter</label><br>
-            <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b. Analog-to-Digital Converter</label><br>
-            <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c. Signal Processor</label>
-            <p class="feedback" id="feedback2"></p>
-        </div>
-
-        <!-- Question 3 -->
-        <div class="question">
-            <p>3. What is the primary purpose of a Digital Signal Processor (DSP) in SDR?</p>
-            <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a. To enhance the signal strength</label><br>
-            <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b. To convert digital signals to RF waves</label><br>
-            <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c. To handle various signal processing tasks</label>
-            <p class="feedback" id="feedback3"></p>
-        </div>
-
-        <!-- Question 4 -->
-        <div class="question">
-            <p>4. In SDR, which method is commonly used for spectrum analysis?</p>
-            <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">a. Time-Domain Reflectometry</label><br>
-            <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">b. Fast Fourier Transform</label><br>
-            <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">c. Pulse Code Modulation</label>
-            <p class="feedback" id="feedback4"></p>
-        </div>
-
-        <!-- Question 5 -->
-        <div class="question">
-            <p>5. What is the primary advantage of SDR over traditional hardware radios?</p>
-            <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">a. Longer range of transmission</label><br>
-            <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">b. Higher power efficiency</label><br>
-            <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">c. Flexibility and adaptability</label>
-            <p class="feedback" id="feedback5"></p>
-        </div>
-
-        <!-- Question 6 -->
-        <div class="question">
-            <p>6. Which frequency range is typically accessible by most commercial SDR receivers?</p>
-            <input type="radio" name="q6" value="a" id="q6a"> <label for="q6a">a. Up to 30 MHz</label><br>
-            <input type="radio" name="q6" value="b" id="q6b"> <label for="q6b">b. 30 MHz to 3 GHz</label><br>
-            <input type="radio" name="q6" value="c" id="q6c"> <label for="q6c">c. Above 5 GHz</label>
-            <p class="feedback" id="feedback6"></p>
-        </div>
-            
             <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
         </form>
         <div id="result"></div>
@@ -110,76 +101,74 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-         function submitQuiz() {
-            var score = 0;
-            var totalQuestions = 6;
+    function submitQuiz() {
+        var score = 0;
+        var totalQuestions = 5; // Total number of questions in the quiz
 
-            // Check Question 1
-            if(document.getElementById('q1a').checked) {
-                score++;
-                document.getElementById('feedback1').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback1').innerHTML = "Incorrect. The correct answer is 'Software Defined Radio'.";
-                document.getElementById('feedback1').classList.add('incorrect');
-            }
-
-            // Check Question 2
-            if(document.getElementById('q2b').checked) {
-                score++;
-                document.getElementById('feedback2').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback2').innerHTML = "Incorrect. The correct component is 'Analog-to-Digital Converter'.";
-                document.getElementById('feedback2').classList.add('incorrect');
-            }
-
-            // Check Question 3
-            if(document.getElementById('q3c').checked) {
-                score++;
-                document.getElementById('feedback3').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback3').innerHTML = "Incorrect. The DSP handles various signal processing tasks.";
-                document.getElementById('feedback3').classList.add('incorrect');
-            }
-
-            // Check Question 4
-            if(document.getElementById('q4b').checked) {
-                score++;
-                document.getElementById('feedback4').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback4').innerHTML = "Incorrect. Fast Fourier Transform is commonly used for spectrum analysis.";
-                document.getElementById('feedback4').classList.add('incorrect');
-            }
-
-            // Check Question 5
-            if(document.getElementById('q5c').checked) {
-                score++;
-                document.getElementById('feedback5').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback5').innerHTML = "Incorrect. The primary advantage of SDR is its flexibility and adaptability.";
-                document.getElementById('feedback5').classList.add('incorrect');
-            }
-
-            // Check Question 6
-            if(document.getElementById('q6b').checked) {
-                score++;
-                document.getElementById('feedback6').innerHTML = "Correct!";
-            } else {
-                document.getElementById('feedback6').innerHTML = "Incorrect. Most commercial SDR receivers access 30 MHz to 3 GHz.";
-                document.getElementById('feedback6').classList.add('incorrect');
-            }
-
-            // Overall Feedback
-            var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
-            if (score === totalQuestions) {
-                overallFeedback += "<p>Great job! You have a strong understanding of SDR fundamentals.</p>";
-            } else if (score > totalQuestions / 2) {
-                overallFeedback += "<p>Good effort, but there are some areas to review.</p>";
-            } else {
-                overallFeedback += "<p>It seems you might need to revisit the fundamentals of SDR.</p>";
-            }
-
-            document.getElementById('result').innerHTML = overallFeedback;
+        // Check Question 1
+        if (document.getElementById('q1a').checked) {
+            score++;
+            document.getElementById('feedback1').innerHTML = "Correct!";
+            document.getElementById('feedback1').classList.add('correct');
+        } else {
+            document.getElementById('feedback1').innerHTML = "Incorrect. The correct answer is 'Enhanced mobile broadband (eMBB), ultra-reliable and low latency communications (URLLC), and massive machine type communications'.";
+            document.getElementById('feedback1').classList.add('incorrect');
         }
+
+        // Check Question 2
+        if (document.getElementById('q2c').checked) {
+            score++;
+            document.getElementById('feedback2').innerHTML = "Correct!";
+            document.getElementById('feedback2').classList.add('correct');
+        } else {
+            document.getElementById('feedback2').innerHTML = "Incorrect. The correct answer is 'Low-Density Parity-Check (LDPC) codes'.";
+            document.getElementById('feedback2').classList.add('incorrect');
+        }
+
+        // Check Question 3
+        if (document.getElementById('q3a').checked) {
+            score++;
+            document.getElementById('feedback3').innerHTML = "Correct!";
+            document.getElementById('feedback3').classList.add('correct');
+        } else {
+            document.getElementById('feedback3').innerHTML = "Incorrect. The correct answer is 'Polar Codes'.";
+            document.getElementById('feedback3').classList.add('incorrect');
+        }
+
+        // Check Question 4
+        if (document.getElementById('q4a').checked) {
+            score++;
+            document.getElementById('feedback4').innerHTML = "Correct!";
+            document.getElementById('feedback4').classList.add('correct');
+        } else {
+            document.getElementById('feedback4').innerHTML = "Incorrect. The correct answer is '10 Gbps'.";
+            document.getElementById('feedback4').classList.add('incorrect');
+        }
+
+        // Check Question 5
+        if (document.getElementById('q5d').checked) {
+            score++;
+            document.getElementById('feedback5').innerHTML = "Correct!";
+            document.getElementById('feedback5').classList.add('correct');
+        } else {
+            document.getElementById('feedback5').innerHTML = "Incorrect. The correct answer is 'It reduces the probability of retransmission, thereby reducing latency.'";
+            document.getElementById('feedback5').classList.add('incorrect');
+        }
+
+        // Overall Feedback
+        var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
+        if (score === totalQuestions) {
+            overallFeedback += "<p>Great job! You have a strong understanding of 5G Data Encoding.</p>";
+        } else if (score > totalQuestions / 2) {
+            overallFeedback += "<p>Good effort, but there are some areas to review.</p>";
+        } else {
+            overallFeedback += "<p>It seems you might need to revisit the fundamentals of 5G Data Encoding.</p>";
+        }
+
+        document.getElementById('result').innerHTML = overallFeedback;
+    }
+</script>
+
     </script>
 </body>
 </html>
