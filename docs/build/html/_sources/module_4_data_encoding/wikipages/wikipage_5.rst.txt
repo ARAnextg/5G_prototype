@@ -1,9 +1,6 @@
 Implementing Packet Communication with USRP SDRs
 ===================================================
 
-Implementing Packet Communication with USRP SDRs
-=================================================
-
 Introduction to Using USRP for Packet Communication
 ----------------------------------------------------
 
