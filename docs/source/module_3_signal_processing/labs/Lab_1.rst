@@ -21,46 +21,34 @@ Follow the steps below to start this experiment:
 #. Login to the portal `ARA Portal <https://portal.arawireless.org>`_
    with your username and password.
 
-#. Create two reservations (as done before in the Wave Transmission lab in Module 1)  
+#. Create one reservation (as done before in the Wave Transmission lab in Module 1)  
    using the *Project -> Reservations ->
    Leases* tab from the dashboard:
 
-      1.  gNB
+      1.  filterExperiment
 	       * *Site*: Sandbox  
 	       * *Resource Type*: AraRAN  
 	       * *Device Type*: Host
-      	 * *Device ID*: 002
-
-      2. UE
-	       * *Site*: Sandbox
-      	 * *Resource Type*: AraRAN
-	       * *Device Type*: Host
-	       * *Device ID*: 001
+      	 * *Device ID*: 001 (If this ID doesn't work, increment by 1: 003, 004, etc.)
 
 
- #. Create two containers on the respective nodes using the
-   corresponding reservation IDs.  For the containers, the Docker
-   images can be used as follows:
+ #. Create a container on the respective node using the
+   corresponding reservation ID.  For the container, the Docker
+   image can be used as follows:
 
-      1. gNB
-	        * *Container Image*: ``arawirelesshub/openairinterface5g:oai_gnb``
+      1. filteringExperiment
+	        * *Container Image*: ``arawirelesshub/openairinterface5g:oai_filteringExperiment``
 	        * *CPU*: 2
 	        * *Memory*: 5120
-
-      2. nrUE
-	        * *Container Image*: ``arawirelesshub/openairinterface5g:oai_nrue``
-	        * *CPU*: 2
-      	  * *Memory*: 5120
       
-   .. note:: Note that the above container images are equipped with
+   .. note:: Note that the above container image is equipped with
       USRP Hardware Driver (UHD).
 
  #. As before, containers can be accessed via the console tab of the
    respective containers in the *Project -> Containers* tab from the
    dashboard or using SSH via the :ref:`jumpbox server <ARA_Jumpbox>`.
 
- #. In the **gNB container**, run the following commands to create an empty waveform
-    to build the filters. ::
+ #. In the **filteringExperiment container**, run the following commands to create an empty waveform to build the filters. ::
 
 
 
