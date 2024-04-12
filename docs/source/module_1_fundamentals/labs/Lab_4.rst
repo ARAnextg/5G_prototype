@@ -1,0 +1,203 @@
+Lab 04: Exploring OFDM with USRP B210
+======================================
+
+**Platform:** Software Defined Radios.
+
+..
+   **Resources needed:** USRP N320, USRP B210, and a general purpose
+   server.
+
+**Resources needed:** 2 x USRP B210s
+
+**Short Description:** Transmit and receive samples to a file using USRP Hardware Driver (UHD) and GNU Radio.
+
+**Detailed Description:** The experiment makes use of UHD and Gnuradio
+to transmit signals from the base station, receive, visualize, and
+save the IQ samples to a file for analysis.
+
+Follow the steps below to create leases and launch containers for this experiment:
+
+#. Login to the portal `ARA Portal <https://portal.arawireless.org>`_
+   with your username and password.
+
+#. Create two reservations using the *Project -> Reservations ->
+   Leases* tab from the dashboard:
+
+      1. gNB
+
+	 * *Site*: Sandbox  
+	 * *Resource Type*: AraRAN  
+	 * *Device Type*: Host
+	 * *Device ID*: 002
+
+      2. UE
+
+	 * *Site*: Sandbox
+	 * *Resource Type*: AraRAN
+	 * *Device Type*: Host
+	 * *Device ID*: 001
+
+
+#. Create two containers on the respective nodes using the
+   corresponding reservation IDs.  For the containers, the Docker
+   images can be used as follows:
+
+       1. gNB
+
+	  * *Container Image*: ``arawirelesshub/openairinterface5g:oai_gnb``
+	  * *CPU*: 2
+	  * *Memory*: 5120
+
+       2. nrUE
+
+	  * *Container Image*: ``arawirelesshub/openairinterface5g:oai_nrue``
+	  * *CPU*: 2
+	  * *Memory*: 5120
+
+   .. note:: Note that the above container images are equipped with
+      USRP Hardware Driver (UHD).
+
+#. Once the container is launched, take a note on the floating IP if
+   you want to access the container from your PC via ARA jumpbox.
+
+#. The containers can be accessed via the console tab of the
+   respective containers in the *Project -> Containers* tab from the
+   dashboard or using SSH via the :ref:`jumpbox server <ARA_Jumpbox>`.
+
+
+Software Installation
+---------------------
+
+1. Install GNURadio and its dependencies by executing the following command:
+
+   .. code-block:: bash
+
+      apt install -y gnuradio git cmake g++ libboost-all-dev libgmp-dev swig python3-numpy python3-mako python3-sphinx python3-lxml doxygen libfftw3-dev libsdl1.2-dev libgsl-dev libqwt-qt5-dev libqt5opengl5-dev python3-pyqt5 liblog4cpp5-dev libzmq3-dev python3-yaml python3-click python3-click-plugins python3-zmq python3-scipy python3-gi python3-gi-cairo gir1.2-gtk-3.0 libcodec2-dev libgsm1-dev libusb-1.0-0 libusb-1.0-0-dev libudev-dev python3-pip
+
+2. Install additional tools for text-based plotting:
+
+   .. code-block:: bash
+
+      pip install plotext
+
+Environment Configuration
+-------------------------
+
+1. Install the Nano text editor (if it's not already installed):
+
+   .. code-block:: bash
+
+      apt install nano
+
+2. Open your bash configuration file:
+
+   .. code-block:: bash
+
+      nano ~/.bashrc
+
+3. Add the following lines to the end of the file to set up environment variables:
+
+   .. code-block:: bash
+
+      export PYTHONPATH="${PYTHONPATH}:/usr/local/lib/python3.10/dist-packages/"
+      export UHD_IMAGES_DIR=/usr/local/share/uhd/images
+
+4. Save and exit the file (Ctrl + O, Enter, Ctrl + X in Nano).
+
+5. Apply the changes:
+
+   .. code-block:: bash
+
+      source ~/.bashrc
+
+6. Download UHD images:
+
+   .. code-block:: bash
+
+      uhd_images_downloader
+
+Testing Your Setup
+------------------
+
+Before proceeding, verify that your installation and environment setup are successful.
+
+1. Test UHD by opening a Python3 terminal and importing the UHD module:
+
+   .. code-block:: python
+
+      python3
+      >>> import uhd
+      >>> quit()
+
+2. Test GNURadio:
+
+   .. code-block:: bash
+
+      gnuradio-config-info --version
+
+The version of GNURadio installed on your system will be displayed, confirming the successful setup.
+
+Introduction
+------------
+
+In this lab, you will gain hands-on experience with Orthogonal Frequency-Division Multiplexing (OFDM), a key modulation technique used in 5G communication systems. You will use the USRP B210 software-defined radio (SDR) to transmit and receive OFDM signals, and through this process, you will learn about the properties and behavior of OFDM signals in both time and frequency domains.
+
+Objective
+---------
+
+By the end of this lab, you will be able to:
+
+- Generate OFDM symbols and understand their time-domain representation.
+- Transmit OFDM symbols using the USRP B210.
+- Receive and visualize OFDM signals.
+- Perform basic signal analysis including SNR calculation and peak detection.
+
+Preparation
+-----------
+
+Before you start with the exercises, make sure you have completed the following setup steps:
+
+- Access the provided container with the necessary software installed.
+- Ensure the USRP B210 is connected and can be accessed from within the container.
+
+Creating the Script
+-------------------
+
+Begin by creating a new Python script to hold the code for the lab exercises. Use the `nano` editor, a simple text editor that runs in a command line interface. 
+
+To create and open a new script called `ofdm_tx_rx.py`, enter the following command:
+
+.. code-block:: bash
+
+    nano ofdm_tx_rx.py
+
+This will open the `nano` editor with a blank file. You can now start entering the Python code for the lab.
+
+In the next section, we will start by defining the necessary functions to generate OFDM symbols and handle the transmission and reception of these symbols using the USRP B210.
+
+Part 1: Generating OFDM Symbols
+-------------------------------
+
+In this part, you'll write a function to generate an OFDM symbol. OFDM utilizes a large number of closely spaced orthogonal sub-carrier signals to carry data on several parallel data streams or channels.
+
+.. code-block:: python
+
+    import numpy as np
+
+    def generate_ofdm_symbol(fft_len, cp_len):
+        """
+        Generate an OFDM symbol.
+
+        :param fft_len: Length of the FFT used in OFDM
+        :param cp_len: Length of the cyclic prefix
+        :return: An OFDM symbol with cyclic prefix
+        """
+        # Generate random BPSK symbols
+        symbols = np.random.choice([-1, 1], size=fft_len)
+        # Perform the IFFT
+        ofdm_time = np.fft.ifft(symbols) * fft_len
+        # Add cyclic prefix
+        ofdm_symbol = np.concatenate([ofdm_time[-cp_len:], ofdm_time])
+        return ofdm_symbol
+
+Type this function into your `ofdm_tx_rx.py` script. This function will be used later to generate the data that we want to transmit.
