@@ -37,6 +37,7 @@ The actual hopping of frequencies is achieved using both a transmitter and recei
 Applications
 ------------
 Frequency hopping is used in a wide variety of applications, such as:
+
     - **Bluetooth** - For improved reliability and security
     - **Satellite Communications** - For enhancing signal reliability and security, especially in scenarios where the satellite is subjected to jamming or interference.
     - **Cellular Networks** - Helps mitigate interference and enhance the overall performance of the network, particularly in densely populated urban areas where multiple base stations operate in close proximity.
