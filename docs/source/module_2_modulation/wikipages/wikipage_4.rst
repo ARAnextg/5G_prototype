@@ -30,3 +30,25 @@ There are two specific types of PAM:
 2. **M-ary Pulse Amplitude Modulation (M-PAM)**: 
 
     M-PAM is more complex than B-PAM.  In M-PAM, binary sequences are mapped to one of M possible unique amplitude levels.  There are not only 2 levels in the waveform, as there are in B-PAM.  Instead, there can be any number m of levels, providing more amplitude levels and thus a more complex waveform shape.
+
+3. **Quadrature Amplitude Modulation (QAM)**:
+
+    QAM is, in a nutshell, PAM that works in two dimensions, or components.  These two dimensions are as follows:
+
+    1. **In-phase component** -- The in-phase component is perpendicular to the quadrature component.
+    2. **Quadrature component** -- The quadrature component is perpendicular to the in-phase component.
+
+    QAM works by combining both components into a single channel, allowing for potentially double the data transmission rate without any extra effort.  Another way to think about this is relating it to road lanaes; when two dimensions are used instead of just one, it is similar to having two lanes on a road instead of just one lane, which obviously encourages traffic efficiency.
+
+    [insert diagram]
+
+
+Phase Shift Keying (PSK)
+--------------------------------
+Phase Shift Keying sends digital data by changing the phase of a signal.  It uses different phases to represent different patterns of binary digits.  Each phase stands for a specific combination of bits, forming what is called a "symbol".
+
+When the signal is received, the receiver compares the phase of the received signal to a reference (carrier) signal to figure out which symbol it represents.  After comparing the received signal to a reference signal, the original data sent can be recovered.
+
+[insert diagram]
+
+[insert quiz questions]
