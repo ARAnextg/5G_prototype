@@ -14,5 +14,6 @@ Module 1: Fundamental Concepts of SDRs
    labs/lab_waveform_transmission
    labs/sample_tests_uhd
    labs/sdr_gnuradio
+   labs/Lab_4.rst
 
 

@@ -70,8 +70,8 @@ This part of the experiment involves generating a random binary sequence which w
        data = generate_random_data(data_length)
 
 3. **Visualize Encoded Data**:
-   Define a function to visualize the encoded data, that will be called in the main function
-   
+   Define a function to visualize the encoded data, that will be called in the main function and referred to in the sections that talk about Manchester and NRZI encoding
+
    .. code-block:: python
 
        def plot_encoded_data(time_slots, encoded_data, title, ylabel):
