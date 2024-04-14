@@ -1,4 +1,4 @@
-Module 2: Modulation and Communication Techniques
+Module 1: Modulation and Communication Techniques
 =================================================
 
 .. toctree::

@@ -1,4 +1,4 @@
-Module 1: Fundamental Concepts of SDRs
+Module 4: Fundamental Concepts of SDRs
 ======================================
 
 .. toctree::

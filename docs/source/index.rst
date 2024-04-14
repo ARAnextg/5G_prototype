@@ -11,12 +11,12 @@ Welcome to Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural 
    :caption: Modules
 
    module_0_fundamentals/index
-   module_1_fundamentals/index
    module_2_modulation/index
    module_3_signal_processing/index
    module_4_data_encoding/index
-   module_5_practical_applications/index
+   module_1_fundamentals/index
    module_6_OAI_5G_technologies/index
+   module_5_practical_applications/index
    module_7_cognitive_radio/index
 
 

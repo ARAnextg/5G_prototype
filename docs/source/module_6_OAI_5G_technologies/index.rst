@@ -1,2 +1,2 @@
-Module 6: OpenAirInterface(OAI) and 5G Technologies
+Module 5: OpenAirInterface(OAI) and 5G Technologies
 ===========================================

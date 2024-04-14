@@ -1,4 +1,4 @@
-Module 4: Data Encoding and Packet Communication
+Module 3: Data Encoding and Packet Communication
 ==================================================
 
 .. toctree::
