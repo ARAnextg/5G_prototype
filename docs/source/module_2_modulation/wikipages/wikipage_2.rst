@@ -1,55 +1,52 @@
 OFDM: Principles and Implementation
 ====================================
 
-OFDM(Orthogonal Frequency Division Multiplexing) is a type of modulation for encoding digital data on multiple carrier frequencies. 
-OFDM has developed into a popular scheme for wideband digital communication, used in applications such as digital television and audio broadcasting, 
-DSL internet access, wireless networks, power line networks, and 4G/5G mobile communications.
--Why use OFDM
-	-Overcoming frequency selective fading and multipath distortions found in wideband channels
+Introduction
+------------
+Orthogonal Frequency Division Multiplexing (OFDM) is a modulation technique used for encoding digital data on multiple carrier frequencies. It has become a popular scheme for wideband digital communication, utilized in various applications such as digital television, audio broadcasting, DSL internet access, wireless networks, power line networks, and 4G/5G mobile communications.
 
-	-Allowing channel estimation and equalization oto occur independently at each subcarrier
+Why Use OFDM?
+-------------
+OFDM offers several advantages which make it suitable for modern communication systems:
 
-	-Ease in sharing resources across multiple data streams
-
-	-Ability to fir well with MIMO and Massive MIMO systems because each subcarrier experiences flat fading, so equalization includes one single tap per subcarrier
-
-	-high overall spectral efficiency
-
+- **Overcoming frequency selective fading and multipath distortions** found in wideband channels.
+- **Simplified channel estimation and equalization**, which can occur independently at each subcarrier.
+- **Efficient resource sharing** across multiple data streams.
+- **Compatibility with MIMO (Multiple Input Multiple Output) and Massive MIMO systems**, where each subcarrier experiences flat fading, simplifying equalization to a single tap per subcarrier.
+- **High spectral efficiency**, maximizing the data rate within a given bandwidth.
 
 .. figure:: /images/OFDM_FDM.png
 
-
-
-    *OFDM and FDM examples*
-
-
--OFDM is adopted from the idea of Frequency Division Multiplexing(FDM). To better understand OFDM it is best to first explain the FDM method. 
-FDM is a simply the idea that multiple communication signals are together on one link to divide available bandwidth into different non-overlapping sub channels. 
-There is a Gaurd Band in between these channels to separate the channels and prevent interference with each other.
-
+	*Comparison of OFDM and FDM examples.*
+   
+From FDM to OFDM
+----------------
+OFDM is derived from Frequency Division Multiplexing (FDM), which involves dividing available bandwidth into non-overlapping subchannels, each carrying a separate signal. FDM uses guard bands between channels to prevent interference.
 
 .. figure:: /images/FDM_Guard.png
 
+	*Example of Frequency Division Multiplexing (FDM) with guard bands.*
+	
 
-    *FDM Example*
-
-
--OFDM is similar to FDM, but in this case all of the signals are all squeezed together and are overlapped which allows more data transmission than FDM, 
-but doesnt this cause interference since the signals are all overlapped with one another? These signals are orthogonal to each other, which means 2 or more multiple objects act independently. 
-In this case they are independent with one another because at the peak of the signal(highest point on their amplitude), all of the other signals are either 0 or null. 
-In another words, OFDM is multiplexed in a way that the peak of one signal occurs at the null of the other neighbor signals. This signal would be demodulated the same way it was multiplexed together to be orthogonal. 
-The signal would demultiplex and the result would be something similar to a FDM signal.
-
+   
+Unlike FDM, OFDM allows the subcarrier signals to overlap, which increases bandwidth efficiency. These signals are orthogonal, meaning they do not interfere with each other. Orthogonality ensures that the peak of one signal coincides with the nulls of other signals, allowing them to be independently demodulated.
 
 .. figure:: /images/OFDM_Example.png
-    
+	
+	*OFDM signal example showing overlapping subcarriers.*
+   
+Advantages and Challenges
+-------------------------
+**Major Pros of OFDM:**
 
-    *OFDM Example*
+- **Better bandwidth utilization** compared to traditional FDM.
+- **Higher data transmission rates** due to the overlapping subcarriers.
+- **Effective integration with MIMO technologies** for improved signal reliability and network capacity.
 
+**Cons:**
 
--Major Pro’s of OFDM
-		-Better utilization of bandwidth
-		-Higher data transmission than FDM
-		-Integration with MIMO
--Con’s
-		-Synchronization is difficult.
+- **Synchronization challenges** among the subcarriers and overall system can complicate the implementation.
+
+Conclusion
+----------
+OFDM is a robust modulation format that addresses several challenges inherent in modern digital communication systems. Its ability to handle high-speed data transmission over complex channels makes it essential for the backbone of current and future wireless technology deployments.
