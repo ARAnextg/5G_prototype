@@ -49,11 +49,8 @@ Frequency hopping is used in a wide variety of applications, such as:
 References
 ----------
 
-1. "Modulation of Laser Light" by Volkmar Brückner.
-2. "What is QAM: Quadrature Amplitude Modulation" by Electronics Notes.
-3. `Binary Phase Shift Keying <https://www.geeksforgeeks.org/bpsk-binary-phase-shift-keying/>`_
-4. `CNN <http://cnn.com>`_
-
-3. [GNU Radio Tutorials](https://wiki.gnuradio.org/index.php/Tutorials)
+1. "`Modulation of Laser Light" <https://www.researchgate.net/publication/325962173_Modulation_of_Laser_Light>`_" by Volkmar Brückner.
+2. "`What is QAM: Quadrature Amplitude Modulation <https://www.electronics-notes.com/articles/radio/modulation/quadrature-amplitude-modulation-what-is-qam-basics.php>`" by Electronics Notes.
+3. "`Binary Phase Shift Keying <https://www.geeksforgeeks.org/bpsk-binary-phase-shift-keying/>`_" by GeeksforGeeks.
 
 [insert quiz questions]
