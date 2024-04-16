@@ -19,7 +19,7 @@ Pulse Amplitude Modulation (PAM)
 --------------------------------
 In Pulse Amplitude Modulation, message information is encoded into the amplitude of a series of signal pulses.  
 
-[insert diagram]
+.. figure:: /images/PAM.png
 
 There are two specific types of PAM:
 
@@ -40,7 +40,7 @@ There are two specific types of PAM:
 
     QAM works by combining both components into a single channel, allowing for potentially double the data transmission rate without any extra effort.  Another way to think about this is relating it to road lanaes; when two dimensions are used instead of just one, it is similar to having two lanes on a road instead of just one lane, which obviously encourages traffic efficiency.
 
-    [insert diagram]
+    .. figure:: /images/QAM.jpg
 
 
 Phase Shift Keying (PSK)
@@ -49,4 +49,4 @@ Phase Shift Keying sends digital data by changing the phase of a signal.  It use
 
 When the signal is received, the receiver compares the phase of the received signal to a reference (carrier) signal to figure out which symbol it represents.  After comparing the received signal to a reference signal, the original data sent can be recovered.
 
-[insert diagram]
+.. figure:: /images/BPSK.png
