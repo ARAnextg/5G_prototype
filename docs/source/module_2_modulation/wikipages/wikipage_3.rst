@@ -52,5 +52,3 @@ References
 1. "`Modulation of Laser Light" <https://www.researchgate.net/publication/325962173_Modulation_of_Laser_Light>`_" by Volkmar Brückner.
 2. "`What is QAM: Quadrature Amplitude Modulation <https://www.electronics-notes.com/articles/radio/modulation/quadrature-amplitude-modulation-what-is-qam-basics.php>`_" by Electronics Notes.
 3. "`Binary Phase Shift Keying <https://www.geeksforgeeks.org/bpsk-binary-phase-shift-keying/>`_" by GeeksforGeeks.
-
-[insert quiz questions]
