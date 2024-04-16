@@ -51,9 +51,8 @@ References
 
 1. "Modulation of Laser Light" by Volkmar Brückner.
 2. "What is QAM: Quadrature Amplitude Modulation" by Electronics Notes.
-3. [Binary Phase Shift Keying](https://www.geeksforgeeks.org/bpsk-binary-phase-shift-keying/)
+3. `Binary Phase Shift Keying <https://www.geeksforgeeks.org/bpsk-binary-phase-shift-keying/>`
 
-1. "Digital Signal Processing: A Practical Guide for Engineers and Scientists" by Steven Smith.
 3. [GNU Radio Tutorials](https://wiki.gnuradio.org/index.php/Tutorials)
 
 [insert quiz questions]
