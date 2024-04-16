@@ -50,5 +50,3 @@ Phase Shift Keying sends digital data by changing the phase of a signal.  It use
 When the signal is received, the receiver compares the phase of the received signal to a reference (carrier) signal to figure out which symbol it represents.  After comparing the received signal to a reference signal, the original data sent can be recovered.
 
 [insert diagram]
-
-[insert quiz questions]
