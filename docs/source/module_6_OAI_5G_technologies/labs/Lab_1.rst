@@ -1,4 +1,3 @@
-.. _AraRAN_Experiments:
 
 Lab1: Indoor/Sanbox OpenAirInterface5g Experiment Using USRPs
 ================================================================================
