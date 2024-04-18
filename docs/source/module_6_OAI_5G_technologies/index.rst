@@ -6,6 +6,7 @@ Module 5: OpenAirInterface(OAI) and 5G Technologies
 
    wikipages/wikipage_1
    wikipages/wikipage_2
+   wikipages/wikipage_3
 
 
    labs/Lab_1
