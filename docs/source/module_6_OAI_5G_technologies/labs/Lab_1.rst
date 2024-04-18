@@ -23,7 +23,7 @@ via a USB 3.0 cable. The gNB is connected to the core network via a
 high-speed Ethernet link. The following figure shows the 5G BS-UE link
 created from the experiment.
 
-.. image:: images/Experiment_5.png
+.. image:: docs/source/images/Experiment_5.png
    :align: center
 | 
 
