@@ -73,7 +73,7 @@ created from the experiment.
 #. The containers can be accessed via the console tab of the
    respective containers in the *Project -> Containers* tab from the
    dashboard or using SSH via the jumpbox server. Visit
-   :ref:`ARA_Jumpbox` for more information on accessing containers via
+   `ARA_Jumpbox <https://arawireless.readthedocs.io/en/latest/getting_started/ara_portal_extras.html#ara-jumpbox>`_ for more information on accessing containers via
    jumpbox.
 
 #. In both containers, run the following command to check the radios
