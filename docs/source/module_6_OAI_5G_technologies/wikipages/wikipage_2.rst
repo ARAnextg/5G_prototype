@@ -10,7 +10,7 @@ Components of OAI
 ~~~~~~~~~~~~~~~~~
 
 Radio Access Network (RAN)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **5G RAN Project**:
   Develops a 5G software stack for both Non-Stand-Alone (NSA) and Stand-Alone (SA) modes, including gNodeB and UE functionalities.
