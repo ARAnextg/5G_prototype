@@ -1,8 +1,6 @@
-OpenAirInterface (OAI) and 5G Technologies
-=============================================
 
 Background and history of OAI and why it was created
------------------------------------------------------
+=========================================================
 OpenAirInterface (OAI) is an open-source project that implements the 3rd Generation Partnership Project (3GPP) technology on general-purpose x86 computing hardware and Off-The-Shelf (COTS) Software Defined Radio (SDR) cards. It was created by the Mobile Communications Department at EURECOM to enable innovation in the area of mobile/wireless. The OAI source code is split into two projects: OAI Radio Access Network (OAI-RAN) and OAI Core Network (OAI-CN), each residing in separate repositories and distributed under separate licenses. OAI distinguishes itself from other similar projects through its unique open-source license, the OAI public license v1.1, which was created by the OAI Software Alliance (OSA) in 2017. This initiative has democratized innovation in the 5G era resulting in it becoming an ideal platform for both industrial and academic research.
 
 OpenAirInterface (OAI)
