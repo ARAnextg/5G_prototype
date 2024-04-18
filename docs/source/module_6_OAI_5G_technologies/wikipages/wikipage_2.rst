@@ -66,39 +66,6 @@ Despite its advantages, OAI faces several challenges:
 #. **Licensing**: Commercial use requires navigating a patent declaration system.
 #. **Integration**: May require significant effort to integrate with existing network infrastructures.
 
-Scalability and Integration
----------------------------
-OpenAirInterface is designed to be highly scalable, supporting small scale laboratory setups to larger field deployments. Its flexible architecture allows for integration with various types of network equipment and software platforms, enhancing its utility across different deployment scenarios.
-
-- **Scalability**: OAI can scale from a single small testbed to a full regional network. This scalability is crucial for testing the network under different loads and conditions, which is essential for both academic research and commercial deployments.
-
-- **Integration with Other Systems**:
-  OAI's compatibility with standard 3GPP network elements allows it to be seamlessly integrated into existing telecom infrastructures, enabling hybrid setups that can be used for transition scenarios from 4G to 5G.
-
-.. list-table:: Examples of OAI Integration
-   :widths: 30 70
-   :header-rows: 1
-
-   * - Type
-     - Description
-   * - **Hybrid Networks**
-     - Integrating OAI with legacy 4G systems to enable smooth transition and dual-connectivity scenarios.
-   * - **Multi-vendor Environments**
-     - OAI's compliance with 3GPP standards allows it to operate in environments with equipment from multiple vendors, promoting diversity and flexibility.
-
-Role in Research and Innovation
--------------------------------
-OpenAirInterface not only facilitates the practical deployment of 5G networks but also serves as a pivotal platform for research and development in the wireless communications space. Its open-source nature invites collaboration and innovation.
-
-- **Academic Research**: Universities and research institutions use OAI to explore new concepts in network architecture, security protocols, and wireless technologies.
-- **Industry Prototyping**: Companies leverage OAI to develop and test new products and services, reducing time to market for new technological advancements.
-
-.. sidebar:: OAI's Impact on 5G Research
-   :title: Case Studies
-
-   - **University of XYZ**: Utilized OAI to simulate advanced network slicing techniques.
-   - **TechCorp Inc.**: Developed a new low-latency communication protocol using OAI, enhancing their IoT solutions.
-
 
 Conclusion
 ----------
