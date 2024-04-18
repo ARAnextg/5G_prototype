@@ -1,6 +1,7 @@
 Background and History of OpenAirInterface (OAI)
 ================================================
-
+.. image:: /images/OAI.png
+   :align: center
 Introduction
 ------------
 OpenAirInterface (OAI) is an open-source project spearheaded by the Mobile Communications Department at EURECOM. It is designed to implement the 3rd Generation Partnership Project (3GPP) standards on general-purpose x86 computing hardware and Commercial Off-The-Shelf (COTS) Software Defined Radio (SDR) cards, promoting innovation in mobile and wireless technology domains.
