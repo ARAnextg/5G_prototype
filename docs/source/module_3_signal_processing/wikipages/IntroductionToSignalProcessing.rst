@@ -3,7 +3,7 @@ Diving Deeper into Signal Processing
 
 Importance of Signals
 ---------------------
-Signals are arguably the most important part of any 5G network foundational component, with the reliable transmission of data happening through radio signal propagation. Signals in their raw form propagate through the air, bouncing off of stationary/moving objects and other signals produced from random sources before arriving at a listening receiver. However, there are many factors like noise, attenuation, distortion, fading, and interference that provide obstacle to the reliable transmission of data. 
+Signals are an important part of 5G network foundational components, with the reliable transmission of data happening through radio signal propagation. Signals in their raw form propagate through the air, bouncing off of stationary/moving objects and other signals produced from random sources before arriving at a listening receiver. However, there are many factors like noise, attenuation, distortion, fading, and interference that provide obstacle to the reliable transmission of data. 
 .. figure:: /images/signalpropagatation.PNG
 
 Why Signal Processing is needed for Data Analyzation
