@@ -3,7 +3,8 @@ Diving Deeper into Signal Processing
 
 Importance of Signals
 ---------------------
-Signals are arguably the most important part of any 5G network foundational component, with the reliable transmission of data happening through radio signal propagation. Signals in their raw form propagate through the air, bouncing off of stationary/moving objects and other signals produced from random sources before arriving at a listening receiver. However, there are many factors like noise, attenuation, distortion, fading, and interference that provide obstacle to the reliable transmission of data.     
+Signals are arguably the most important part of any 5G network foundational component, with the reliable transmission of data happening through radio signal propagation. Signals in their raw form propagate through the air, bouncing off of stationary/moving objects and other signals produced from random sources before arriving at a listening receiver. However, there are many factors like noise, attenuation, distortion, fading, and interference that provide obstacle to the reliable transmission of data. 
+.. figure:: /images/signalpropagatation.PNG
 
 Why Signal Processing is needed for Data Analyzation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -20,6 +21,10 @@ The conversion from time to frequency domain and back is represented mathematica
 - **Discrete Fourier Transform (DFT):** Time domain and frequency domain signals are viewed as periodic, meaning that signals continuously repeat. 
 
 - **Fast Fourier Transform (FFT):** The FFT is a faster implementation of the DFT and produces similar results as the other approaches but with significantly less computation time. An FFT has the same effect as an analog spectrum analyzer by narrowing the bandwidth and measuring amplitude and noise components of any digitized signal. 
+
+.. figure:: /images/timedomain.PNG
+
+The uses of DFT and FFT are most prominent in the capture and output of signal waveforms. The above figure depicts the difference between DFT and other Fourier transform time signal representations. 
 
 .. list-table:: **Fourier Properties**
    :widths: 25 75
@@ -45,5 +50,9 @@ The conversion from time to frequency domain and back is represented mathematica
      - Performing this function on a signal in time will produce a derivative fourier transform signal. 
    * - Integration
      - Similar to derivative, an integral fourier transform signal will result. 
+
+Some of the more essential properties of Fourier transforms like frequency and time Convolution are covered in further detail in the rest of this module.
+
+.. figure:: /images/timescaling.PNG
    
 
