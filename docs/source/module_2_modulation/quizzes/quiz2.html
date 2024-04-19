@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFDM: Principles and Implementation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f8f9fa;
+        }
+        .question { 
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .feedback { 
+            margin-top: 10px; 
+        }
+        .incorrect { 
+            color: #dc3545; /* Bootstrap 'danger' color */
+        }
+        .correct {
+            color: #0eed42; /* Bootstrap 'success' color */
+        }
+        .quiz-title {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .submit-btn {
+            background-color: #007bff; /* Bootstrap primary button color */
+            color: rgb(3, 2, 2);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="quiz-title">OFDM Basics</h1>
+        <form id="quiz">
+           <!-- Question 1 -->
+<div class="question">
+    <p>1. What is the purpose of the Guard Band?</p>
+    <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">A. To increase signal speed.</label><br>
+    <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">B. To prevent interference between channels.</label><br>
+    <input type="radio" name="q1" value="b" id="q1c"> <label for="q1b">C. To decrease signal speed.</label><br>
+    <input type="radio" name="q1" value="b" id="q1d"> <label for="q1b">D. To decrease costs of implementation.</label>
+    <p class="feedback" id="feedback1"></p>
+</div>
+
+<!-- Question 2 -->
+<div class="question">
+    <p>2. Why should we choose OFDM?</p>
+    <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">A. It has a higher data transfer rate.</label><br>
+    <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">B. It is easy to synchronize.</label><br>
+    <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">C. It makes sharing resources difficult.</label><br>
+    <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">D. It has a low overall spectral frequency.</label>
+    <p class="feedback" id="feedback2"></p>
+</div>
+
+<!-- Question 3 -->
+<div class="question">
+    <p>3. What is one major advantage of OFDM over FDM?</p>
+    <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. OFDM allows for better utilization of bandwidth.</label><br>
+    <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. OFDM has lower data transmission rates than FDM.</label><br>
+    <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. OFDM integrates poorly with MIMO systems.</label><br>
+    <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. OFDM requires a guard band between channels.</label>
+    <p class="feedback" id="feedback3"></p>
+</div>
+
+<!-- Question 4 -->
+<div class="question">
+    <p>4. What characteristic makes OFDM signals orthogonal to each other?</p>
+    <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">A. They have the same peak amplitude.</label><br>
+    <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">B. They are all transmitted at the same frequency.</label><br>
+    <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">C. At the peak of one signal, all other signals are either 0 or null.</label><br>
+    <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. They are transmitted using different modulation techniques.</label>
+    <p class="feedback" id="feedback4"></p>
+</div>
+        
+            
+            <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+         function submitQuiz() {
+        var score = 0;
+        var totalQuestions = 4; // Total number of questions in this quiz
+
+        // Check Question 1
+        if (document.getElementById('q1b').checked) {
+            score++;
+            document.getElementById('feedback1').innerHTML = "Correct!";
+            document.getElementById('feedback1').classList.add('correct');
+        } else {
+            document.getElementById('feedback1').innerHTML = "Incorrect. The correct answer is 'Prevent interference between channels.'";
+            document.getElementById('feedback1').classList.add('incorrect');
+        }
+
+        // Check Question 2
+        if (document.getElementById('q2a').checked) {
+            score++;
+            document.getElementById('feedback2').innerHTML = "Correct!";
+            document.getElementById('feedback2').classList.add('correct');
+        } else {
+            document.getElementById('feedback2').innerHTML = "Incorrect. The correct answer is 'Get rid of redundant signals'.";
+            document.getElementById('feedback2').classList.add('incorrect');
+        }
+
+        // Check Question 3
+        if (document.getElementById('q3a').checked) {
+            score++;
+            document.getElementById('feedback3').innerHTML = "Correct!";
+            document.getElementById('feedback3').classList.add('correct');
+        } else {
+            document.getElementById('feedback3').innerHTML = "Incorrect. The correct answer is 'Restore signal from attenuation'.";
+            document.getElementById('feedback3').classList.add('incorrect');
+        }
+
+        // Check Question 4
+        if (document.getElementById('q4c').checked) {
+            score++;
+            document.getElementById('feedback4').innerHTML = "Correct!";
+            document.getElementById('feedback4').classList.add('correct');
+        } else {
+            document.getElementById('feedback4').innerHTML = "Incorrect. The correct answer is 'At the peak of one signal, all other signals are either 0 or null.'";
+            document.getElementById('feedback4').classList.add('incorrect');
+        }
+
+        // Overall Feedback
+        var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
+        if (score === totalQuestions) {
+            overallFeedback += "<p>Excellent! You have a deep understanding of OFDM.</p>";
+        } else if (score > totalQuestions / 2) {
+            overallFeedback += "<p>Good effort! Review some concepts for a better score next time.</p>";
+        } else {
+            overallFeedback += "<p>You might want to revisit the basics of OFDM.</p>";
+        }
+
+        document.getElementById('result').innerHTML = overallFeedback;
+    }
+    </script>
+</body>
+</html>
+
