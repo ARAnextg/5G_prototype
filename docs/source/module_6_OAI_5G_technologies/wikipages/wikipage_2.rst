@@ -21,6 +21,12 @@ Radio Access Network (RAN)
 **CU/DU Split**:
   Supports control plane and user plane traffic management in 5G SA mode using the OAI RFsimulator.
 
+.. image:: /images/RAN.png
+   :align: center
+   :alt: OAI RAN
+   :figclass: align-center
+
+
 Core Network
 ^^^^^^^^^^^^
 
