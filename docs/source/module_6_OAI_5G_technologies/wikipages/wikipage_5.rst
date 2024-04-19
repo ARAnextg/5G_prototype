@@ -30,6 +30,9 @@ After setting up the gNB and NRUE, the next step is to establish an IP route bet
   Where `<network>` is the network of the CN, `<gateway>` is the IP address of the gateway (usually the CN machine), and `<interface>` is the network interface on the gNB machine.
 - **Purpose**: This configuration ensures that the gNB can communicate with the Core Network through the designated network interface.
 
+.. image:: /images/IP.png
+   :align: center
+
 Testing Connectivity
 --------------------
 Once the IP route is established, testing the connectivity verifies the correct setup and communication between the gNB and NRUE.
