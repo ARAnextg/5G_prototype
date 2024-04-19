@@ -26,6 +26,8 @@ Setting up the RAN is crucial and involves configuring the gNodeB and UE. OAI so
 .. image:: /images/l2.png
    :align: center
   *Layer 2 Simulation Framework Diagram*
+
+
 Core Network (CN) Setup
 -----------------------
 The Core Network setup includes configuring several network functions (NFs):
@@ -55,7 +57,7 @@ The Core Network setup includes configuring several network functions (NFs):
 
 .. image:: /images/CN2.png
    :align: center
-
+          *Network Diagram*
 
 Deployment Using Docker-Compose
 -------------------------------
