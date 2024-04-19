@@ -21,7 +21,7 @@ The conversion from time to frequency domain and back is represented mathematica
 
 - **Fast Fourier Transform (FFT):** The FFT is a faster implementation of the DFT and produces similar results as the other approaches but with significantly less computation time. An FFT has the same effect as an analog spectrum analyzer by narrowing the bandwidth and measuring amplitude and noise components of any digitized signal. 
 
-.. list-table:: Fourier Properties
+.. list-table:: **Fourier Properties**
    :widths: 25 75
    :header-rows: 1
 
@@ -37,4 +37,13 @@ The conversion from time to frequency domain and back is represented mathematica
      - Convolving input and impulse response signals in a linear system will produce a third output signal.  
    * - Convolution in Frequency
      - Reverse process as convolution in time. 
+   * - Symmetry
+     - The transform values of positive and negative frequencies for a given signal are complex conjugates of each other. 
+   * - Inversion formula
+     - Sine waves can be reconstructed with frequency and phase information. 
+   * - Derivative
+     - Performing this function on a signal in time will produce a derivative fourier transform signal. 
+   * - Integration
+     - Similar to derivative, an integral fourier transform signal will result. 
+   
 
