@@ -1,2 +1,2 @@
-Module 5: Practical Applications and Systems
+Module 6: Practical Applications and Systems
 =============================================

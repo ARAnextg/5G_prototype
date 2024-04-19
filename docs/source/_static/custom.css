@@ -1,0 +1,168 @@
+/* General body settings for a cleaner look */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+}
+
+.wy-side-nav-search {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border-bottom: 1px solid #222; /* Adds a slight border */
+}
+
+/* Main content background and text color */
+.wy-body-for-nav {
+    background-color: white;
+    color: black;
+}
+
+/* Sidebar styles */
+.wy-nav-side {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.wy-nav-side .wy-menu-vertical header {
+    background-color: #222; /* Darker black for header */
+    color: #fff;
+}
+
+.wy-nav-side .wy-menu-vertical li.toctree-l1.current > a {
+    color: #fff;
+    background-color: #d60000; /* Red highlights */
+}
+
+.wy-nav-side .wy-menu-vertical li.toctree-l1 > a {
+    color: #fff;
+    border: none;
+}
+
+/* Links styling for better visibility */
+a, a:visited {
+    color: #d60000; /* Red color for links */
+}
+
+a:hover {
+    color: #bf0000; /* Darker red on hover */
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+    color: #d60000; /* Red headings */
+}
+
+/* Admonitions styling */
+.admonition {
+    border-left: 10px solid #d60000; /* Red bar for admonitions */
+}
+
+/* Custom footer styling */
+.rst-footer {
+    background-color: #000; /* Black footer background */
+    color: #fff; /* White footer text */
+}
+
+.rst-footer a {
+    color: #d60000; /* Red links in footer */
+}
+
+/* Custom styles for code blocks to fit the theme */
+.highlight {
+    background-color: #f7f7f7; /* Light background for code blocks */
+    border: 1px solid #ccc; /* Grey border */
+}
+
+/* Custom styles for tables */
+.table {
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Overrides for the top navigation bar */
+.wy-nav-top {
+    background-color: #000; /* Black */
+}
+
+/* Search box styling */
+.wy-side-nav-search input[type="text"] {
+    background-color: #fff; /* White */
+    color: #000; /* Black */
+    border: 1px solid #d60000; /* Red border */
+}
+
+.wy-side-nav-search input[type="text"]::placeholder {
+    color: #000; /* Black */
+}
+
+.wy-side-nav-search button {
+    background-color: #d60000; /* Red */
+    color: #fff; /* White */
+}
+
+/* Active module in the sidebar */
+.wy-menu-vertical li.current a {
+    background-color: #d60000; /* Red background */
+    color: #fff; /* White text */
+}
+
+/* For the top navigation bar links (if they are not styled yet) */
+.wy-nav-top a {
+    color: #fff; /* White */
+}
+
+/* Notes customization */
+.rst-content .note, 
+.rst-content .admonition-note {
+    border-color: #d60000; /* Red border */
+    background-color: #fff; /* White background */
+}
+
+/* Note title customization */
+.rst-content .note .admonition-title, 
+.rst-content .admonition-note .admonition-title {
+    color: #d60000; /* Red title text */
+}
+
+/* Note body text customization */
+.rst-content .note .admonition-title + p, 
+.rst-content .admonition-note .admonition-title + p {
+    color: #000; /* Black body text */
+}
+
+/* Note header background color */
+.rst-content .admonition.note .admonition-title,
+.rst-content div.admonition .admonition-title {
+    background-color: #050505; /* Red background */
+    color: #d60000; /* White text */
+}
+
+/* Note header border color */
+.rst-content .admonition.note,
+.rst-content div.admonition {
+    border-color: #d60000; /* Red border */
+}
+
+/* Targeting the sidebar caption specifically */
+.wy-menu-vertical .caption, .wy-menu-vertical .caption a {
+    color: #ffffff !important; /* White text */
+    background-color: #000000 !important; /* Black background */
+}
+
+/* Ensure the sidebar links are also styled correctly */
+.wy-menu-vertical .caption a:hover {
+    color: #d60000 !important; /* Red text for hover */
+}
+
+
+
+
+[class*='current'] {
+    background-color: #d60000 !important; /* Red background */
+}
+

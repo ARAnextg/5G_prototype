@@ -1,4 +1,4 @@
-Module 1: Fundamental Concepts of SDR
+Module 4: Fundamental Concepts of SDRs
 ======================================
 
 .. toctree::
@@ -12,6 +12,8 @@ Module 1: Fundamental Concepts of SDR
    wikipages/wikipage_6
    quizzes/quiz_fundamentals_1
    labs/lab_waveform_transmission
-   labs/lab_signal_reflection_and_multipath
+   labs/sample_tests_uhd
+   labs/sdr_gnuradio
+   labs/Lab_4.rst
 
 
