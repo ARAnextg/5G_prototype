@@ -23,8 +23,7 @@ Radio Access Network (RAN)
 
 .. image:: /images/RAN.png
    :align: center
-   :alt: OAI RAN
-   :figclass: align-center
+ 
 
 
 Core Network
@@ -52,7 +51,9 @@ Docker-Based Deployment Overview
    | Network (BFCN)         | features for extended testing and integration.    |
    +------------------------+---------------------------------------------------+
 
-Advantages of OAI
+.. image:: /images/CN.png
+   :align: center
+
 -----------------
 OpenAirInterface provides several significant benefits:
 
