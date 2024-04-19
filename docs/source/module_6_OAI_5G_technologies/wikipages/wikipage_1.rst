@@ -37,6 +37,10 @@ OAI Community and Future
 - **Community Growth**: OAI has a rapidly growing community that supports massive 5G-enabled government, academic, and research use cases. It fosters a thriving ecosystem for research, prototype system development, and system integration through the OAI Software Alliance, a non-profit consortium.
 - **Future Development**: Continuous development of new features for future 5G networks is planned. The OAI community roadmap provides a sequence and timeline for the availability of different functions of a 3GPP-compliant 5G core.
 
+.. image:: /images/OAI_1.png
+   :align: center
+
+    *OAI most recent project*
 Conclusion
 ----------
 OpenAirInterface continues to be a pivotal platform for the exploration and implementation of 5G technologies. By providing tools and resources that lower the barriers to entry for 5G research and development, OAI facilitates innovative advancements in the telecommunications field, promising to shape the future of mobile and wireless communications.
