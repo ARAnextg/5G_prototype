@@ -51,6 +51,10 @@ The Core Network setup includes configuring several network functions (NFs):
    * - **NSSF (Network Slice Selection Function)**
      - Assists with the selection of Network Slice instances for devices.
 
+.. image:: /images/CN2.png
+   :align: center
+
+
 Deployment Using Docker-Compose
 -------------------------------
 Deployment of the OAI 5G network utilizes Docker-Compose, enabling cloud-native features such as FQDN/service exposure for better network function availability and load balancing.
