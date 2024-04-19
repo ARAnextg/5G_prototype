@@ -22,7 +22,7 @@ Nyquist Sampling
 ^^^^^^^^^^^^^^^^^^
 The theorem proposed by a physicist by name of Harry Nyquist stated that a real signal can be reconstructed with no errors from uniform sampling at a rate of R > 2B samples/second (the signal being bandlimited to B Hz). However, the undersampling of a signal results in a lack of complete information about the spectrum and does not allow the signal to be recovered any longer. 
 
-.. figure:: /images/nyquistsample1.jpg
+.. figure:: /images/nyquistsample1.PNG.jpg
 .. figure:: /images/nyquistsample2.jpg
 
 Here, samples of a signal are taken at a rate of f and 1.5f, showing the ambiguity that develops as a result. 
