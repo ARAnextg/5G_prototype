@@ -25,6 +25,7 @@ Setting up the RAN is crucial and involves configuring the gNodeB and UE. OAI so
 - **Layer 2 Simulation Framework**: Enables testing of large numbers of UEs by connecting OAI UE with OAI xNB via the nFAPI interface.
 .. image:: /images/l2.png
    :align: center
+
   *Layer 2 Simulation Framework Diagram*
 
 
