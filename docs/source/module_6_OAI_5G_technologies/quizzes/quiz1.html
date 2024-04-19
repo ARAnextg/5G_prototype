@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz on OpenAirInterface (OAI)</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f8f9fa;
+        }
+        .question { 
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .feedback { 
+            margin-top: 10px; 
+        }
+        .incorrect { 
+            color: #dc3545; /* Bootstrap 'danger' color */
+        }
+        .correct {
+            color: #28a745; /* Bootstrap 'success' color */
+        }
+        .quiz-title {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .submit-btn {
+            background-color: #007bff; /* Bootstrap primary button color */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="quiz-title">Quiz on OpenAirInterface (OAI)</h1>
+        <form id="quiz">
+            <div class="question">
+                <p>1. What is the main goal of the OpenAirInterface (OAI) project?</p>
+                <input type="radio" name="q1" value="b" id="q1a"> <label for="q1a">A. To develop access solutions for networks, radio, and core networks</label><br>
+                <input type="radio" name="q1" value="a" id="q1b"> <label for="q1b">B. To develop a 3G network</label><br>
+                <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">C. To create a new programming language</label><br>
+                <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">D. To design new hardware for radio networks</label>
+                <p class="feedback" id="feedback1"></p>
+            </div>
+            <div class="question">
+                <p>2. What are the two main projects under the OAI software?</p>
+                <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">A. OAI Data Network and OAI Radio Network</label><br>
+                <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">B. OAI Radio Access Network (OAI-RAN) and OAI Core Network (OAI-CN)</label><br>
+                <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">C. OAI Hardware Access Network and OAI Software Network</label><br>
+                <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">D. OAI Public License and OAI Private License</label>
+                <p class="feedback" id="feedback2"></p>
+            </div>
+            <div class="question">
+                <p>3. What is the purpose of the OAI Public License V1.1?</p>
+                <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. It allows companies/individuals which own significant portfolio of patents to contribute to the OAI source code and still be able to keep their patent rights</label><br>
+                <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. It restricts the use of OAI software to academic research only</label><br>
+                <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. It allows anyone to use OAI software for commercial purposes</label><br>
+                <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. It prohibits the use of OAI software outside of EURECOM</label>
+                <p class="feedback" id="feedback3"></p>
+            </div>
+            <div class="question">
+                <p>4. Which of the following is NOT a component of the OAI software?</p>
+                <input type="radio" name="q4" value="c" id="q4a"> <label for="q4a">A. OAI Data Network (OAI-DN)</label><br>
+                <input type="radio" name="q4" value="a" id="q4b"> <label for="q4b">B. OAI Radio Access Network (OAI-RAN)</label><br>
+                <input type="radio" name="q4" value="b" id="q4c"> <label for="q4c">C. OAI Core Network (OAI-CN)</label><br>
+                <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. Docker-Based Deployment</label>
+                <p class="feedback" id="feedback4"></p>
+            </div>
+            <div class="question">
+                <p>5. What is one of the advantages of OAI?</p>
+                <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">A. It provides a rich development environment with a range of built-in tools for research and development</label><br>
+                <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">B. It restricts the use of OAI software to academic research only</label><br>
+                <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">C. It allows anyone to use OAI software for commercial purposes</label><br>
+                <input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">D. It prohibits the use of OAI software outside of EURECOM</label>
+                <p class="feedback" id="feedback5"></p>
+            </div>
+            <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function submitQuiz() {
+            var score = 0;
+            var totalQuestions = 5; // Total number of questions in the quiz
+        
+            // Check Question 1
+            if (document.getElementById('q1b').checked) {
+                score++;
+                document.getElementById('feedback1').innerHTML = "Correct!";
+                document.getElementById('feedback1').classList.add('correct');
+            } else {
+                document.getElementById('feedback1').innerHTML = "Incorrect. The correct answer is 'To develop access solutions for networks, radio, and core networks'.";
+                document.getElementById('feedback1').classList.add('incorrect');
+            }
+        
+            // Check Question 2
+            if (document.getElementById('q2b').checked) {
+                score++;
+                document.getElementById('feedback2').innerHTML = "Correct!";
+                document.getElementById('feedback2').classList.add('correct');
+            } else {
+                document.getElementById('feedback2').innerHTML = "Incorrect. The correct answer is 'OAI Radio Access Network (OAI-RAN) and OAI Core Network (OAI-CN)'.";
+                document.getElementById('feedback2').classList.add('incorrect');
+            }
+        
+            // Check Question 3
+            if (document.getElementById('q3a').checked) {
+                score++;
+                document.getElementById('feedback3').innerHTML = "Correct!";
+                document.getElementById('feedback3').classList.add('correct');
+            } else {
+                document.getElementById('feedback3').innerHTML = "Incorrect. The correct answer is 'It allows companies/individuals which own significant portfolio of patents to contribute to the OAI source code and still be able to keep their patent rights'.";
+                document.getElementById('feedback3').classList.add('incorrect');
+            }
+        
+            // Check Question 4
+            if (document.getElementById('q4c').checked) {
+                score++;
+                document.getElementById('feedback4').innerHTML = "Correct!";
+                document.getElementById('feedback4').classList.add('correct');
+            } else {
+                document.getElementById('feedback4').innerHTML = "Incorrect. The correct answer is 'OAI Data Network (OAI-DN)'.";
+                document.getElementById('feedback4').classList.add('incorrect');
+            }
+        
+            // Check Question 5
+            if (document.getElementById('q5a').checked) {
+                score++;
+                document.getElementById('feedback5').innerHTML = "Correct!";
+                document.getElementById('feedback5').classList.add('correct');
+            } else {
+                document.getElementById('feedback5').innerHTML = "Incorrect. The correct answer is 'It provides a rich development environment with a range of built-in tools for research and development'.";
+                document.getElementById('feedback5').classList.add('incorrect');
+            }
+        
+            // Display Overall Feedback
+            var result = document.getElementById('result');
+            var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
+            if (score === totalQuestions) {
+                overallFeedback += "<p>Excellent! You have a strong understanding of OpenAirInterface.</p>";
+            } else if (score > totalQuestions / 2) {
+                overallFeedback += "<p>Good effort, but review some areas to improve your understanding.</p>";
+            } else {
+                overallFeedback += "<p>It seems you might need to revisit the materials to better understand OpenAirInterface.</p>";
+            }
+        
+            result.innerHTML = overallFeedback;
+        }
+        </script>
+        
+</body>
+</html>

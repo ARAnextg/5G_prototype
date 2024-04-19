@@ -1,4 +1,4 @@
-Module 1: Fundamental Concepts of SDRs
+Module 4: Fundamental Concepts of SDRs
 ======================================
 
 .. toctree::
@@ -14,5 +14,6 @@ Module 1: Fundamental Concepts of SDRs
    labs/lab_waveform_transmission
    labs/sample_tests_uhd
    labs/sdr_gnuradio
+   labs/Lab_4.rst
 
 

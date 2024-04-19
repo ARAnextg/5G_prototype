@@ -1,90 +1,87 @@
 Understanding Modulation & Demodulation Techniques
-===================================================
--A transmission system makes use of a physical transmission medium or channel that allows the propagation of energy in the form of pulses or variations in voltage, current, or light intensity.
+==================================================
 
+Introduction
+------------
+
+This section explores the fundamental concepts of modulation and demodulation techniques used in communication systems. These techniques are critical for effectively transmitting data over various types of transmission media.
+
+Transmission Media
+------------------
+
+Transmission systems use physical channels that allow the propagation of energy in the form of electrical pulses or variations in voltage, current, or light intensity. Common examples of transmission media include:
+
+- Copper wire pairs
+- Coaxial cables
+- Optical fibers
+- Infrared
+- Radio frequencies
 
 .. figure:: /images/differ_cables.png
-    
-    
-    
-    *examples of some cables widely used*
+    :align: center
+    :alt: Examples of some widely used cables
 
+    *Examples of some cables widely used.*
 
+Signal Transmission and Challenges
+----------------------------------
 
--Copper wire pairs, coaxial cables, optical fiber, infrared, and radio are all examples of transmission media.
-
-
--In analog communications, the objective is to transmit a waveform, which is a function that varies continuously with time.
-The cost advantage of digital transmission over analog transmission become apparent when transmitting over a long distance.
+In analog communications, the primary goal is to transmit a waveform—a function that varies continuously with time. The advantages of digital transmission, especially over long distances, become apparent when considering the cost and efficiency.
 
 .. figure:: /images/repeater.jpg
+    :align: center
+    :alt: Example of a repeater
 
+    *Repeater example.*
 
-    
-    
-    *Repeater Example*
+Long-distance transmission over media such as copper wires involves challenges such as signal attenuation and distortion. Moreover, external interference from various sources adds noise to the transmitted signal.
 
--For examples, a system that involves a transmission over a pair of copper wires. As the length of the pair of wires increases, the signal at the output is attenuated and the original shape of the signal is increasingly distorted.
+To mitigate these issues, repeaters are introduced periodically along the transmission path. They regenerate the signal close to its original form before excessive attenuation or noise interference occurs.
 
+Analog Signal Limitations
+-------------------------
 
--In addition, interference from extraneous sources, such as radiation from radio signals, car ignitions, and powerlines, as well as noise inherent in electronic systems result in the addition of random noise to the transmitted signal. 
-To transmit over a long distances, it is necessary to introduce repeaters periodically to compensate for the attenuation and distortion of the signal.
-
-
--In an analog communication system, the task of the repeater is to regenerate a signal that resembles as closely as possible the signal at the input of the repeater segment.
-
-
--For examples, the input to the repeater is an attenuated and distorted version of the original transmitted signal plus the random noise added in the segment.
-If the signal is attenuated too much then the noise level can become comparable to the desired signal. The function of the repeater is to boost the signal power before this occurs.
-
-
--In the case of analog signals, the repeater is limited in what it can do to deal with noise. If it is known that the original signal does not have components outside a certain frequency band, then the repeater can remove noise components that are outside the signal band. 
-
-
--The effect on signal quality after multiple analog repeaters is similar to that in repeated recordings using analog audiocassette tapes or VCR tapes. 
-The first time a signal is recorded, a certain amount of noise, which is audible as hiss, is introduced. Each additional recording adds more noise. 
-After a large number of recordings, the signal quality degrades considerably. A similar effect occurs in the transmission of analog signals over multiple repeater segments.
-
-
--Signal amplitude can assume any value from an interval that is defined by some maximum and minimum value. This property characterizes analog signals. 
-The exact representation of a value in an interval requires an infinite number of bits. For this reason, analog waveforms cannot be represented exactly in practice. 
-Image information consists of the variation of intensity over a plane. Video and motion pictures involve the variation of intensity over space and time. 
-All of these signals can assume a continuum of values over time and/or space and consequently requires infinite precision in their representation. 
-
+In an analog communication system, repeaters can only amplify the signal and filter out noise components outside the expected frequency band. This process is similar to repeated recordings using analog media, where noise accumulates with each copy, degrading the quality over time.
 
 .. figure:: /images/example_signals.png
+    :align: center
+    :alt: Examples of signals
 
+    *Examples of signals.*
 
+Signal Properties
+-----------------
 
-    *examples of signals*
+A signal has three basic properties: amplitude, phase, and frequency. Understanding these is crucial for modulation, which is the process of encoding information in a carrier waveform. The reasons for using modulation include:
 
+- Reducing antenna sizes
+- Minimizing interference
+- Enabling multiplexing
 
--Overall in signal, we have 3 basic properties: amplitude, phase, and frequency. We also have the message signals which are original signals that are not modulated. For example, regular voice signals: up to 3kHz. Then we have the Carrier Signal, which is a waveform just like the message signal. But this signal has a higher frequency to allow the data transmission to travel farther distances.
+Types of Modulation
+-------------------
 
+Modulation can be divided into:
 
--What is modulation and why? Modulation is simply a process of converting data into radio waves by adding information to an electrical or optical carrier signal. Few reasons on why to use modulation is the following: To reduce antenna sizes, reduce interferences, to allow multiplexing of the signals.
+1. **Analog Modulation**: Involves continuous waveform methods like Amplitude Modulation (AM), Frequency Modulation (FM), and Phase Modulation (PM). The choice of modulation affects how the carrier signal is altered based on the message signal.
 
+2. **Digital Modulation**: Involves discrete signals (1's and 0's). This section will be explored further in upcoming discussions.
 
--2 types of modulation: Analog Modulation - which tends to be a continuous wave modulation such as a sine wave or can be a Digital modulation, 
-Digital Modulation - which contains signals of 1’s and 0’s, which will discussed in a later section. Within the Continuous wave Modulation we have 3 subsets of modulations: 
-Amplitude modulation(am), frequency modulation(fm), and phase modulation(pm). These changes in the Carrier signal depends on the message signal. 
-So, if we are using the Amplitude modulation method, the amplitude of the modulated signal will change over time, which will vary on the message signal that is being sent while the phase and frequency stays constant. 
-In Amplitude Modulation, the information is in the amplitude of the carrier signal. For Frequency Modulation, Frequency will change over time while amplitude, and phase stays constant. As the modulating signal increases or amplitude increases, 
-frequency increases and the time period decreases. While the amplitude decreases the frequency decreases and the time period increases.
+Demodulation Techniques
+-----------------------
 
-
--Once the message signal is modulated using one of these modulation techniques(am,pm,fm), then we will have a modulated carrier signal that is optimized for transmission from point A to point B with the assistance of repeaters to keep the quality of the signals over a certain distance. Once the data reaches the destination, the modulated carrier signal will have to be demodulated or extract the message signal from the carrier signal.
-
+Demodulation is the reverse process of modulation, where the original message signal is extracted from the carrier at the destination. Techniques vary depending on the type of modulation used.
 
 .. figure:: /images/Envelope_Detector.png
+    :align: center
+    :alt: Example of an Envelope Detector
 
+    *Example of an Envelope Detector.*
 
+For AM signals, an envelope detector can be used. It extracts the envelope of the original modulated signal, which carries the amplitude variations encoded with the original information.
 
-    *example of Envelope Detector*
+Conclusion
+----------
 
-
--There are a few demodulation techniques depending on the modulation technique used. 
-For example, Amplitude demodulation could use the Envelope detector method which is an electronic circuit 
-that takes a high-frequency amplitude modulated signal as input and provides an output, 
-which is the demodulated envelope of the original signal.
+Understanding and effectively applying modulation and demodulation techniques are fundamental skills in electrical and communications engineering. They play critical roles in everything from simple radio broadcasts to complex digital communications systems like 5G.
 

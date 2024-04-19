@@ -1,2 +1,2 @@
-Module 3: Signal Processing and Analysis
+Module 2: Signal Processing and Analysis
 =============================

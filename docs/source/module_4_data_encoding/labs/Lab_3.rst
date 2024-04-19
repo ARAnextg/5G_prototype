@@ -1,6 +1,6 @@
 
 Lab 1: Understanding Baseband Modulation Techniques in Digital Communications
-======================================================================
+================================================================================
 
 Introduction
 ------------
