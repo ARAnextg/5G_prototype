@@ -39,8 +39,8 @@ OAI Community and Future
 
 .. image:: /images/OAI_1.png
    :align: center
-
-    *OAI most recent project*
+   :alt: OAI Newest Project
+   :figclass: align-center
 Conclusion
 ----------
 OpenAirInterface continues to be a pivotal platform for the exploration and implementation of 5G technologies. By providing tools and resources that lower the barriers to entry for 5G research and development, OAI facilitates innovative advancements in the telecommunications field, promising to shape the future of mobile and wireless communications.
