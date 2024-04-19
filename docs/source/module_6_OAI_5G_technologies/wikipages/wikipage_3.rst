@@ -56,8 +56,8 @@ The Core Network setup includes configuring several network functions (NFs):
    * - **NSSF (Network Slice Selection Function)**
      - Assists with the selection of Network Slice instances for devices.
 
-.. image:: /images/CN2.png
-   :align: center
+.. figure:: /images/CN2.png
+
           *Network Diagram*
 
 Deployment Using Docker-Compose
