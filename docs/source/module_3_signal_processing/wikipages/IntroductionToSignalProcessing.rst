@@ -11,7 +11,7 @@ Signals, in their essential form, are functions that are represented over time. 
 
 Fourier Transforms
 ^^^^^^^^^^^^^^^^^^
-The conversion from time to frequency domain and back is represented mathematically through the Fourier Transform. In this module, you will learn about four members of the fourier transform family: 
+The conversion from time to frequency domain and back is represented mathematically through the Fourier Transform. In this module, four members of the fourier transform family are defined: 
 
 - **Fourier Transform:** This transform is used to convert time and frequency domains both ways. Properties of this transform include addition, scaling, and frequency shifts. 
 
@@ -19,5 +19,22 @@ The conversion from time to frequency domain and back is represented mathematica
 
 - **Discrete Fourier Transform (DFT):** Time domain and frequency domain signals are viewed as periodic, meaning that signals continuously repeat. 
 
-- **Fast Fourier Transform (FFT):** The FFT is a faster implementation of the DFT and produces similar results as the other approaches but with significantly less computation time. The effect of an FFT has the same effect as an analog spectrum analyzer with narrowing the bandwidth and measuring amplitude and noise components of any digitized signal. 
+- **Fast Fourier Transform (FFT):** The FFT is a faster implementation of the DFT and produces similar results as the other approaches but with significantly less computation time. An FFT has the same effect as an analog spectrum analyzer by narrowing the bandwidth and measuring amplitude and noise components of any digitized signal. 
+
+.. list-table:: Fourier Properties
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Property
+     - Description
+   * - Linearity
+     - Signals added to each other in time will similarly be represented in the frequency domain as domain signals added together. Scaling time domain signals will also scale frequency domain signals by the same amount. 
+   * - Frequency Shift
+     - Multiplying a signal by additional sine waves will shift signals up or down a certain frequency amount. 
+   * - Scaling in Time
+     - Shrinking or expanding the signal on the x-axis (time) causes a directly inverse relationship with frequency domain shows why signals with higher data rates take up more bandwidth. 
+   * - Convolution in Time
+     - Convolving input and impulse response signals in a linear system will produce a third output signal.  
+   * - Convolution in Frequency
+     - Reverse process as convolution in time. 
 
