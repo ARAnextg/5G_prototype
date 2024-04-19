@@ -23,8 +23,8 @@ Setting up the RAN is crucial and involves configuring the gNodeB and UE. OAI so
 
 - **Layer 1 Simulation Framework**: Allows functional tests without an RF board by using software communication.
 - **Layer 2 Simulation Framework**: Enables testing of large numbers of UEs by connecting OAI UE with OAI xNB via the nFAPI interface.
-.. figure:: /images/l2.png
 
+.. figure:: /images/l2.png
 
   *Layer 2 Simulation Framework Diagram*
 
