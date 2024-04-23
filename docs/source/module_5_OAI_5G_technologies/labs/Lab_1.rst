@@ -1,7 +1,8 @@
+Indoor/Sanbox OpenAirInterface5g Experiments Using USRPs
+===========================================================
 
-Lab1: Indoor/Sanbox OpenAirInterface5g Experiment Using USRPs
-================================================================================
-
+Lab1: Setup, Ping, and Throughput measurement with iperf
+----------------------------------------------------------
 
 **Platform:** Universal Software Radio Peripheral (USRP)
 
@@ -304,31 +305,9 @@ Throughput Test
 	  :align: center
 	  :width: 600
 
+Lab 2: TBD
+----------------------------------------------
 
-   #. Execute a **Ping Test**: The core network UPF assigns an IP address
-      on the nrUE container.  On the nrUE container, run the following
-      command to ping the core network to ensure stable connection ::
 
-	   # ping 10.189.16.35 -t -S 
-           
-           
-
-	**Advanced Configurations**
-
-	In order to achieve a stable end-to-end experiment on the experimental
-	USRP platforms, we need to set advanced configuration as follows:
-
-	1. On the gNB, make sure that the MTU of the N320 interface it set to
-	9000 and the respective required ring buffer size.
-
-	2. Run the following commands before you start the gNB ::
-
-	   sudo sysctl -w net.core.wmem_max=62500000
-	   sudo sysctl -w net.core.rmem_max=62500000
-	   sudo sysctl -w net.core.wmem_default=62500000
-	   sudo sysctl -w net.core.rmem_default=62500000
-	   sudo ethtool -G eno12429 tx 4096 rx 4096
-
-.. _AraRAN_Experiment_OAI_Outdoor:
 
 
