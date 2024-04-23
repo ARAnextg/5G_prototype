@@ -5,22 +5,30 @@ Lab1: Indoor/Sanbox OpenAirInterface5g Experiment Using USRPs
 
 **Platform:** Universal Software Radio Peripheral (USRP)
 
-**Resources needed:** Two USRP B210s and associated host
-computers. (Please note that the core network is provided by ARA and
-does not need to be created by the user.)
+**Resources needed:** Two USRP B210s, associated host computers, and
+resources needed for the core network (only if required).
 
-**Short Description:** The experiment demonstrates a establishing a  
-5G BS-UE link using OpenAirInterface5g and USRPs. The setup includes an OpenAirInterface (OAI) gNB and nrUE.
+.. note:: For OAI experiments, you have two options for the core
+	  network:
 
+	  1. **Use the ARA-provided core network:** In this case you
+	     can use the core network provided by ARA.
+	  2. **Deploy your own core network:** Here, you need to
+	     reserve another node specifically for the core network
+	     and deploy the core network using specific container.
+
+**Short Description:** The experiment demonstrates establishing a 5G
+BS-UE link using OpenAirInterface5g and USRPs. The setup includes an
+OpenAirInterface (OAI) gNB, nrUE, and the 5G Core Network.
 
 **Detailed Description:** This experiment features a 5G network
 deployment using containerized 5G software components of
-OpenAirInterface5g, i.e., a containerized gNB and a containerized UE
-deployed on Intel x86 servers. Both gNB and nrUE containers run on
-general purpose Intel x86 servers which are connected to USRP B210 SDR
-via a USB 3.0 cable. The gNB is connected to the core network via a
-high-speed Ethernet link. The following figure shows the 5G BS-UE link
-created from the experiment.
+OpenAirInterface5g, i.e., a containerized gNB, a containerized UE, and
+containerized core network deployed on Intel x86 servers. Both gNB and
+nrUE containers run on general purpose Intel x86 servers which are
+connected to USRP B210 SDRs via a USB 3.0 cable. The gNB is connected
+to a 5G core network via a high-speed backhaul link. The following
+figure shows the 5G BS-UE link created from the experiment.
 
 .. image:: /images/Experiment_5.png
    :align: center
@@ -28,54 +36,71 @@ created from the experiment.
 
 **Detailed Steps for the Experiment**
 
-#. Login to `ARA portal <https://portal.arawireless.org>`_ with your
+#. Login to `ARA portal `_ with your
    credentials.
 
-#. Create two reservations using the *Project -> Reservations ->
+#. Create three reservations using the *Project -> Reservations ->
    Leases* tab from the dashboard.
 
-   1. gNB
+   1. **gNB**
 
       * *Site*: Sandbox  
       * *Resource Type*: AraRAN  
       * *Device Type*: Host
       * *Device ID*: 005
 
-   2. UE
+   2. **nrUE**
 
       * *Site*: Sandbox
       * *Resource Type*: AraRAN
       * *Device Type*: Host
       * *Device ID*: 001
 
+   3. **5G_Core (Only if you are using Option 2 on the core network
+      above, i.e., if you are creating your own core network.)**
 
-#. Create the following two containers on the respective nodes using
-   the corresponding reservation IDs. For the containers, the Docker
-   images can be used as follows:
+      Ideally, the core network can be deployed on any node (such as
+      DataCenter-Compute-000 or DataCenter-Compute-001). For this
+      example, we deploy the core network on the Sandbox-Host-004.
 
+      * *Site*: Sandbox
+      * *Resource Type*: AraRAN
+      * *Device Type*: Host
+      * *Device ID*: 004 (or any available node)
 
-   1. gNB
+#. Create the following two (or three) containers on the respective
+   nodes using the corresponding reservation IDs. For the containers,
+   the Docker images can be used as follows:
+
+   1. **gNB**
 
       * *Container Image*: ``arawirelesshub/openairinterface5g:oai_gnb``
       * *CPU*: 8
       * *Memory*: 8192
+      * *Network*: ARA_Shared_Net
 
-   2. nrUE
+   2. **nrUE**
 
       * *Container Image*: ``arawirelesshub/openairinterface5g:oai_nrue``
       * *CPU*: 8
-      * *Memory*: 8192
+      * *Memory*: 6000
+      * *Network*: ARA_Shared_Net
 
-#. Once the container is launched, take a note on the floating IP if
-   you want to access the container from your PC via ARA jumpbox. 
+   3. **5G_Core**
 
-#. The containers can be accessed via the console tab of the
+      * *Container Image*: ``arawirelesshub/openairinterface5g:cn``
+      * *CPU*: 4
+      * *Memory*: 4096
+      * *Network*: ARA_Shared_Net
+
+#. Once the containers are launched, take a note on their floating
+   IPs. The containers can be accessed via the console tab of the
    respective containers in the *Project -> Containers* tab from the
    dashboard or using SSH via the jumpbox server. Visit
-   `ARA_Jumpbox <https://arawireless.readthedocs.io/en/latest/getting_started/ara_portal_extras.html#ara-jumpbox>`_ for more information on accessing containers via
+   :ref:`ARA_Jumpbox` for more information on accessing containers via
    jumpbox.
 
-#. In both containers, run the following command to check the radios
+#. In both gNB and nrUE containers, run the following command to check the radios
    connected to the host. ::
 
 	# uhd_find_devices
@@ -83,42 +108,79 @@ created from the experiment.
    The output of the above command looks like the following image. You
    may see multiple B210s since each host is connected to two SDRs.
 
-   .. image:: images/UHD_Find_Devices.png
+   .. image:: /images/UHD_Find_Devices.png
       :width: 800
       :align: center
 
-#. In order to open and edit the configuration file for the gNB to
-   suit the specifications of our experiment, do the following ::
+#. **[Optional: Execute this step only if you are running your own 5G
+   core network. If you are using ARA-provided core network, skip this
+   step.]** In the 5G_Core container, run the following commands to
+   start OAI 5G Core. ::
+   
+        # cd oai-cn5g
+        # docker compose up -d
+        # iptables -P FORWARD ACCEPT
+
+   Note the IP address of the interface ``eth0`` in the container by
+   executing the command. ::
+
+        # ifconfig eth0
+
+   For this experiment, we assume that the IP address of the core
+   network container is **10.0.4.100**. 
+
+#. To make the **gNB** connected to your core network, you need to
+   attach the gNB to the **AMF** of the core network. First note down
+   the IP address of the interface ``eth0`` of the **gNB** container
+   by executing the following command in the terminal. ::
+
+        # ifconfig eth0
+
+   For this experiment, we assume that the IP address is
+   **10.0.4.44**.
+
+#. Open the gNB configuration file with the following command. ::
 
         # nano ~/openairinterface5g/targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf
 
-#. To make the gNB connected to our core network, we need to attach
-   the gNB to the **AMF** of the core network. Follow Step 7 to open
-   the gNB configuration file to make the necessary changes as seen in
-   the figure below.  For communicating the IP address, run
-   ``ifconfig`` command and obtain the IP address assigned to ``eth1``
-   interface of the container.  Note that in the following image, we
-   assume the IP address as **192.168.70.65**. Use **/26** subnet mask 
-   while specifying the IP address, i.e., **192.168.70.65/26**
+   Make the necessary changes as shown in the figure below. Note that
+   in the following image, provide the IP address you obtained in
+   **Step 7.** Use **/24** subnet mask while specifying the IP
+   address, i.e., **10.0.4.44/24**
 
-   .. image:: images/Network_Interface.png
+   .. image:: /images/Network_Interface.png
       :align: center
 
    Further, specify the B210 serial number by changing the line starting with
    ``sdr_addrs`` to ``sdr_addrs = "serial=8000167";`` as shown below:
 
-   .. image:: images/SDR_Address.png
+   .. image:: /images/SDR_Address.png
       :align: center
 
-   Once the modification is complete, save and exit the nano editor.
+   Once the modification is complete, save (Press Ctrl+O) and exit
+   (Press Ctrl+X) the nano editor.
 
 #. Add a route to the core network from the gNB container with the
-   following command. Please note that we need to provide the interface
-   we identified from Step 8. ::
-	
-	# ip route add 192.168.70.128/26 via 192.168.70.126 dev eth1   
+   following command at the **gNB** container. 
 
-#. In the gNB container, run the OAI gNB using the following
+   **Case 1: If you are using ARA-provided 5G core network:** Use the
+   following command. ::
+   
+	# ip route add 192.168.70.128/26 via 10.0.4.4 dev eth0
+
+   **Case 2: If you are using your own core network:** Use the IP
+   address obtained from **Step 6** (in this example it is 10.0.4.100)
+   in the command as follows. ::
+
+      	# ip route add 192.168.70.128/26 via 10.0.4.100 dev eth0
+
+#. To test the reachability of the 5G Core from the gNB container, run
+   a ping in the gNB container toward the ``AMF`` of the core
+   network. ::
+
+	# ping 192.168.70.132
+
+#. In the **gNB** container, run the OAI gNB using the following
    commands. ::
 
    	# cd ~/openairinterface5g
@@ -137,15 +199,14 @@ created from the experiment.
 
    The parameters above take NR ARFCN values for the specific center
    frequency. You can use the `online 5G NR ARFCN Calculator
-   <https://5g-tools.com/5g-nr-arfcn-calculator/>`_ to get the
+   `_ to get the
    ``absoluteFrequencySSB`` in case if you are not familiar with the
    low-level calculation. To obtain the corresponding
    ``dl_absoluteFrequencyPointA``, subtract ``1272`` from the
    ``absoluteFrequencySSB`` value.
 
-
-#. In the UE container, run the OAI nrUE using the following commands
-   in the UE container. ::
+#. In the **nrUE** container, run the OAI nrUE using the following
+   commands. ::
 
    	# cd ~/openairinterface5g
    	# source oaienv
@@ -159,33 +220,26 @@ created from the experiment.
 
 	**gNB Console Trace**
 	
-	.. image:: images/gNB_Console.png
+	.. image:: /images/gNB_Console.png
            :align: center
 	| 
 
 	**nrUE Console Trace**
 	
-	.. image:: images/UE_Console.png
+	.. image:: /images/UE_Console.png
            :align: center
 
    .. note:: When the connection is established, we can observe a new
-	     interface ``oaitun_ue1`` with an IP address assigned by
-	     the SMF of the core network. In order to find the IP
-	     address, open (or SSH into) another terminal for **nrUE
-	     container** and run the command ``ifconfig``.
+	     interface ``oaitun_ue1`` in **nrUE** with an IP address
+	     assigned by the SMF of the core network. In order to find
+	     the IP address, open (or SSH into) another terminal for
+	     **nrUE container** and run the command ``ifconfig``. For
+	     this experiment, we assume that the IP obtained is
+	     ``10.0.0.2``.
 
    In this experiment, the interface name assigned to the nrUE by the
    SMF is given as ``oaitun_ue1``, which is used in the commands
    provided in the steps below.
-
-   .. note:: ARA provides a dedicated core network for sandbox
-	     experiments and is reachable with the IP address
-	     192.168.70.135.
-
-	     ..
-		In addition, we run an **iperf**
-		server on the core network for experimenters to test the
-		end-to-end throughput.
 
 #. **Ping test to the Core Network**: On the nrUE container, run the
    following command to ping the core network to ensure stable
@@ -195,27 +249,86 @@ created from the experiment.
 
    An example output of the *ping* command is shown below.
 
-     .. image:: images/sandbox_ping.png
+     .. image:: /images/sandbox_ping.png
 	:align: center
-
 
    For recording the *ping* output to a text file (say
    *ping_output.txt*), we can use the following command. ::
 
      # ping -I oaitun_ue1 192.168.70.135 | tee ping_output.txt
 
+Throughput Test
+^^^^^^^^^^^^^^^^^^^^^
 
-..
+15. **Downlink Throughput:** For measuring the throughput, we use the
+    tool *iperf*. For the downlink throughput, follow the steps below.
+
+    1. Run the *iperf* server in the **nrUE** container using the
+       following command. Remember to use the ip address of the
+       ``oaitun_ue1`` interface. In what follows, we assume the IP to
+       be ``10.0.0.2``. ::
+
+	 # iperf -s -i 1 -u -B 10.0.0.2
+
+    2. Run the *iperf* client in the **5G core** container. Remember
+       to use the IP address of the ``oaitun_ue1`` interface in
+       **nrUE** after the ``-c`` flag. In what follows, we assume the
+       UE IP to be ``10.0.0.2``. ::
+
+	 # docker exec -it oai-ext-dn iperf -c 10.0.0.2 -u -b 10M --bind 192.168.70.135
+
+       An example *iperf* trace at **nrUE**
+
+       .. image:: /images/Downlink_Throughput_at_nrUE.png
+	  :align: center
+	  :width: 600
+
+16. **Uplink Throughput**: For the uplink, we need to run the *iperf*
+    server at the 5G core and *iperf* client at the nrUE.
+
+    1. For the uplink throughput, first, run the *iperf* server at the
+       5G core network.::
+
+	 # docker exec -it oai-ext-dn iperf -s -i 1 -u -B 192.168.70.135
+
+    2. Run *iperf* client in the nrUE container. Remember to use the
+       IP address of the ``oaitun_ue1`` interface at **nrUE** after
+       the ``--bind`` flag. In what follows, we assume the UE IP to be
+       ``10.0.0.2``. ::
+
+	 # iperf -c 192.168.70.135 -u -b 2M --bind 10.0.0.2
+
+       An example *iperf* trace at **5G Core**
+
+       .. image:: /images/Uplink_Throughput_at_Core.png
+	  :align: center
+	  :width: 600
+
+
    #. Execute a **Ping Test**: The core network UPF assigns an IP address
       on the nrUE container.  On the nrUE container, run the following
       command to ping the core network to ensure stable connection ::
 
-	   # ping 10.189.16.35 -t -S <oai_tun_ue IP address>
+	   # ping 10.189.16.35 -t -S 
            
            
-..
 
+	**Advanced Configurations**
 
+	In order to achieve a stable end-to-end experiment on the experimental
+	USRP platforms, we need to set advanced configuration as follows:
 
+	1. On the gNB, make sure that the MTU of the N320 interface it set to
+	9000 and the respective required ring buffer size.
+
+	2. Run the following commands before you start the gNB ::
+
+	   sudo sysctl -w net.core.wmem_max=62500000
+	   sudo sysctl -w net.core.rmem_max=62500000
+	   sudo sysctl -w net.core.wmem_default=62500000
+	   sudo sysctl -w net.core.rmem_default=62500000
+	   sudo ethtool -G eno12429 tx 4096 rx 4096
+
+.. _AraRAN_Experiment_OAI_Outdoor:
 
 
