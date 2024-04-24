@@ -9,6 +9,7 @@ Module 3: Data Encoding and Packet Communication
    wikipages/wikipage_3
    wikipages/wikipage_4
    wikipages/wikipage_5
+   wikipages/wikipage_6
   
    quizzes/Quiz_1
    quizzes/Quiz_2
@@ -20,7 +21,7 @@ Module 3: Data Encoding and Packet Communication
    labs/Lab_1
    labs/Lab_2
    labs/Lab_4
-   labs/Lab_5
+ 
  
 
 
