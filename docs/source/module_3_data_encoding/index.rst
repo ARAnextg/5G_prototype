@@ -20,6 +20,7 @@ Module 3: Data Encoding and Packet Communication
    labs/Lab_1
    labs/Lab_2
    labs/Lab_4
+   labs/Lab_5
  
 
 
