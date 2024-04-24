@@ -17,6 +17,6 @@ Welcome to Experimental Exploration of 5G-and-Beyond Wireless Systems and Rural 
    module_4_fundamentals/index
    module_5_OAI_5G_technologies/index
    module_6_practical_applications/index
-   module_7_cognitive_radio/index
+   .. module_7_cognitive_radio/index
 
 
