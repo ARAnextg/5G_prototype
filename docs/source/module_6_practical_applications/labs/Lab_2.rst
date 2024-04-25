@@ -455,43 +455,6 @@ While the main lobe gets wider as d gets lower, it still has a maximum at 20 deg
 
 Once we get lower than λ/4 there is no distinguishing between the two different paths, and the array performs poorly.  As we will see later in this chapter, there are beamforming techniques that provide more precise beams than conventional beamforming, but keeping d as close to λ/2 as possible will continue to be a theme.
 
-
-*******************
-Number of Elements
-*******************
-
-Coming soon!
-
-
-..
-   COMMENTED OUT BECAUSE IT"S NOT CLEAR WHAT THIS SECTION IS PROVIDING TO THE READER BESIDES AN ALTERNATIVE EQUATION AND TERM WHICH COULD BE PRESENTED A LOT MORE CONCISE
-   **********************
-   Bartlett Beamformer
-   **********************
-
-   Now that we've covered the basics, we will take a quick detour into some notational and algebraic details of what we just did, to gain knowledge on how to mathematically represent sweeping beams across space in a condensed and elegant manner.  The following algebriac notations renders itself well to vectorization, making it suitable for real-time processing.
-
-   The process of sweeping beams across space to get an estimate of DOA actually has a technical name; it goes by "Bartlett Beamforming" (a.k.a. Fourier beamforming to some, but note that Fourier beamforming can also mean a different technique altogether).  Let's do a quick recap of what we did earlier in order to calculate our DOA, using what we now know is called Bartlett beamforming:
-
-   #. We picked a bunch of directions to point at (e.g., -90 to +90 degrees at some interval)
-   #. We calculated the beamforming weights at each direction, to point our beam in that direction
-   #. The outputs of the array elements were multiplied with their corresponding wieght, and all results were summed
-   #. We calculated the signal power at each direction, then plotted the results
-   #. Peaks were found, each one inferring that a signal was likely received from that direction
-
-   We are now going to write the series of steps we just reiterated mathematically.  Let the signal received by the array be represented by the steering vector :math:`\mathbf{s}`. This received signal is a function of the direction of arrival (DOA) of the signal, which we will denote as :math:`\theta`. Let the weight applied to the steering vector be represented by :math:`\mathbf{w}`. The output of the array is the dot product of the steering vector and the weight, which we will denote as :math:`\mathbf{w}^{H} \mathbf{s}`.  Now, the power of the received signal can be obtained by squaring the magnitude of the output of the array. This is represented as :math:`\left| \mathbf{w}^{H} \mathbf{s} \right|^{2} = \mathbf{w}^{H} \mathbf{s} \mathbf{s}^{H} \mathbf{w} = \mathbf{w} \mathbf{R_{ss}} \mathbf{w}`, where :math:`\mathbf{R}` is the spatial covariance matrix estimate. The spatial covariance matrix measures the similarity between the samples received from the different elements of the array. We repeat for each direction we want to scan, but note that the only thing that changes between direction is \mathbf{w}.  We are also free to pick the list of directions, it doesn't have to be a -90 to +90 degree sweep, and we can process them all in parallel if we wish, using the same value of :math:`\mathbf{R}` for all.  This is the essence of Bartlett beamforming, i.e the beam sweep that we described using the earlier generated python code.
-
-   .. math::
-      P = \left\| \mathbf{w} \mathbf{s}\right\|^2 
-      
-      = (\mathbf{w}^H\mathbf{s})(\mathbf{w}^H\mathbf{s})^* 
-      
-      = \mathbf{s}^H\mathbf{w}\mathbf{w}^H\mathbf{s}
-      
-      = \mathbf{s}^H\mathbf{R}\mathbf{s}
-
-   This mathematical representation extends to other DOA techniques as well.
-
 **********************
 Spatial Tapering
 **********************
@@ -904,8 +867,6 @@ Lastly, you will want to scan from 0 to 360 degrees, instead of just -90 to +90 
 *************************
 Conclusion and References
 *************************
-
-All Python code, including code used to generate the figures/animations, can be found `on the textbook's GitHub page <https://github.com/777arc/PySDR/blob/master/figure-generating-scripts/doa.py>`_.
 
 * DOA implementation in GNU Radio - https://github.com/EttusResearch/gr-doa
 * DOA implementation used by KrakenSDR - https://github.com/krakenrf/krakensdr_doa/blob/main/_signal_processing/krakenSDR_signal_processor.py
