@@ -58,7 +58,7 @@ Let's examine Python code for simulating a non-integer delay and a frequency off
 
    </details>
 
-We will leave out the plotting-related code because by now you have probably learned how to plot any signal you want.  Making the plots look pretty, as they often do in this textbook, requires a lot of extra code that is not necessary to understand.
+We will leave out the plotting-related code because by now you have probably learned how to plot any signal you want.
 
 
 Adding a Delay
