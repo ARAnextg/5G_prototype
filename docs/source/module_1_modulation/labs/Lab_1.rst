@@ -10,59 +10,110 @@ To Get Started
 --------------
 
 For this lab we be using:
-	-MATLAB
-	-Simulink
+
+	- MATLAB
+
+	- Simulink
+
 Students should have access to MATLAB, which is under academic use. Simulink will fall under MATLAB, so you need MATLAB to download Simulink. If you need assistance on downloading this program, I would recommend contacting Engineering Technology Support. 
 Note: While installing MATLAB be sure to also download Simulink which is sometimes an optional installation.
 
-Part1: Creating a Message Signal
+Part 1: Creating a Message Signal
 --------------------------------
 
-On the top right have corner, click “Simulations”. Then click “Library” -> “Library Browser.
-In the search bar type “Sine Wave”, then press enter. 
-You should click and drag the icon to the main screen that looks like it has no input but has a single output.(Image below)
-Double-Click the Sine Wave box that you just dragged on the screen. You will see a Block Parameter box for the Message Signal. Set Amplitude: 1, Frequency: 5, Bias: 0, Phase: 0, and Sample time: 0. Click “Apply” and “OK”.
+a) On the top right have corner, click “Simulations”. Then click “Library” -> “Library Browser.
+
+
+b) In the search bar type “Sine Wave”, then press enter. 
+
+
+c) You should click and drag the icon to the main screen that looks like it has no input but has a single output.(Image below)
+
+.. figure:: /images/Sine_Wave.png
+    :figclass: align-center
+
+	*Example of Sine Wave Block needed.*
+
+
+d) Double-Click the Sine Wave box that you just dragged on the screen. You will see a Block Parameter box for the Message Signal. Set Amplitude: 1, Frequency: 5, Bias: 0, Phase: 0, and Sample time: 0. Click “Apply” and “OK”.
 
 Part 2: Creating a Carrier Signal
 ---------------------------------
 
-Make 1 more Sine Wave like part 1 and place it on the main screen in Simulink.
-Double-Click the box and set the Amplitude: 1, Bias: 0, Frequency: 50, Phase: 0, Sample time: 0. Click “Apply” and “OK”.
+a) Make 1 more Sine Wave like part 1 and place it on the main screen in Simulink.
 
--We now have the Carrier Signal and the Message signal! We now need to setup the Amplitude Modulated Signal. We will need to multiply the Carrier Signal and Message signal together to officially get the Amplitude Modulated Signal to be “Sent” to the destination.
+b) Double-Click the box and set the Amplitude: 1, Bias: 0, Frequency: 50, Phase: 0, Sample time: 0. Click “Apply” and “OK”.
+
+.. figure:: /images/Carrier_Parameters.png
+    :figclass: align-center
+
+	*Example of Parameters for Carrier Signal.*
+
+
+- We now have the Carrier Signal and the Message signal! We now need to setup the Amplitude Modulated Signal. We will need to multiply the Carrier Signal and Message signal together to officially get the Amplitude Modulated Signal to be “Sent” to the destination.
 
 Part 3: Creating the Amplitude Modulated Signal
 -----------------------------------------------
 
-Get a Product Block(The same way we got the Sine Wave Block, but search Product)
-The two inputs of the product block will be the Message Signal Block, and the Carrier Signal Block.(ctrl + left-click the line to break off the section of the line).
+a) Get a Product Block(The same way we got the Sine Wave Block, but search Product)
 
--We now have the Message Signal, Carrier Signal, and the Amplitude Modulated Signal. Now lets scope these signals to double-check if the signals are correct.
+b) The two inputs of the product block will be the Message Signal Block, and the Carrier Signal Block.(ctrl + left-click the line to break off the section of the line).
+
+.. figure:: /images/Modulated_Signal.png
+    :figclass: align-center
+
+	*Example of Modulated Signal Creation.*
+
+
+- We now have the Message Signal, Carrier Signal, and the Amplitude Modulated Signal. Now lets scope these signals to double-check if the signals are correct.
 
 Part 4: Verifying Signals with scope
 ------------------------------------
 
-Get a Scope Block
-Connect all 3 signals to the scope block(You should be able to add more than 1 input signal to the scope by simply dragging a line near the input of the scope.)
-Double-Click the scope
-Click the “View” tab and then clock “Layout”
-It will show you a 4x4 matrix. Highlight 4x1 of the matrix.(4 rows and 1 columns)
-Then Click “Simulation” -> “Run”.
+a) Get a Scope Block
 
--We should be 3 signals for sure. The order of the signals will correlate to the input of the scope. In my instance I put the message sign first, Amplitude Modulated Signal second, and third is my Carrier Signal. Since this is an Amplitude Signal, the amplitude will vary depending on the Message Signal. Lets De-Modulate the Modulated Signal now!
+b) Connect all 3 signals to the scope block(You should be able to add more than 1 input signal to the scope by simply dragging a line near the input of the scope.)
+
+c) Double-Click the scope
+
+d) Click the “View” tab and then clock “Layout”
+
+e) It will show you a 4x4 matrix. Highlight 4x1 of the matrix.(4 rows and 1 columns)
+
+f) Then Click “Simulation” -> “Run”.
+
+.. figure:: /images/Scope_First_3_Signals.png
+    :figclass: align-center
+
+	*Example of scope signals.*
+
+
+- We should be 3 signals for sure. The order of the signals will correlate to the input of the scope. In my instance I put the message sign first, Amplitude Modulated Signal second, and third is my Carrier Signal. Since this is an Amplitude Signal, the amplitude will vary depending on the Message Signal. Lets De-Modulate the Modulated Signal now!
 
 Part 5: Demodulation of a Modulated Signal
 ------------------------------------------
 
-In this example we will use products and transfer functions to demodulate the signal. Click and drag over 2 x Product Blocks, 2 x Transfer Function Blocks
-The only parameters we will need to change are both of the Transfer Functions. Double-Click the Transfer Function Blocks and change Numerator Coefficients: 15, Denominator Coefficients: [1 15]. Click “Apply” and “OK”.
-For one of the Product Blocks, Multiply the Modulated signal with the Carrier Signal.
-As the output of that Product Block from c), connect both of the transfer functions in sequence with one another.
-At the output of the last Transfer Function block multiply that output with a Constant Block of Value: 2
-Connect the Product Block of e) to the scope.
-Double-Click the scope and “Run” the scope.
+a) In this example we will use products and transfer functions to demodulate the signal. Click and drag over 2 x Product Blocks, 2 x Transfer Function Blocks
 
--In my case the, the fourth signal at the bottom is the demodulated signal. Which should be the same as the message signal.
+b) The only parameters we will need to change are both of the Transfer Functions. Double-Click the Transfer Function Blocks and change Numerator Coefficients: 15, Denominator Coefficients: [1 15]. Click “Apply” and “OK”.
+
+c) For one of the Product Blocks, Multiply the Modulated signal with the Carrier Signal.
+
+d) As the output of that Product Block from c., connect both of the transfer functions in sequence with one another.
+
+e) At the output of the last Transfer Function block multiply that output with a Constant Block of Value: 2
+
+f) Connect the Product Block of e. to the scope.
+
+g) Double-Click the scope and “Run” the scope.
+
+.. figure:: /images/All_Signals.png
+    :figclass: align-center
+
+	*Example of all of the Signals.*
+
+
+- In my case the, the fourth signal at the bottom is the demodulated signal. Which should be the same as the message signal.
 
 Conclusion:
 -----------
