@@ -67,29 +67,29 @@
             </div>
             <!-- Question 3 -->
             <div class="question">
-                <p>3. Fourier Transforms are represented as mathematical models?</p>
-                <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. Continuous-time series, discrete-time series</label><br>
-                <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. Discrete-time series, discrete-time series</label><br>
-                <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. Continuous-time series, continuous-time series</label><br>
-                <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. Discrete-time series, continuous-time series</label>
+                <p>3. The Fast Fourier Transform is a more efficient implementation of which other transform?</p>
+                <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. Discrete Fourier Transform</label><br>
+                <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. Fourier Series</label><br>
+                <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. Fourier Transform</label><br>
+                <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. None, it is its own implementation</label>
                 <p class="feedback" id="feedback3"></p>
             </div>
             <!-- Question 4 -->
             <div class="question">
-                <p>4. What is the effect of putting a high-pass and low-pass filter in parallel?</p>
-                <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">A. Any signal outside the specified range is allowed through.</label><br>
-                <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">B. One specified frequency is allowed through.</label><br>
-                <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">C. No signals are allowed through at all.</label><br>
-                <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. None of the above.</label>
+                <p>4. Which transform has periodic signals in both frequency and time domains?</p>
+                <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">A. Fast Fourier Transform</label><br>
+                <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">B. Fourier Transform</label><br>
+                <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">C. Fourier Series</label><br>
+                <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. Discrete Fourier Transform</label>
                 <p class="feedback" id="feedback4"></p>
             </div>
             <!-- Question 5 -->
             <div class="question">
-                <p>5. What different properties interfere with the data contained in a signal?</p>
-                <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">A. Noise</label><br>
-                <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">B. Interference</label><br>
-                <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">C. Distortion</label><br>
-                <input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">D. All of the above</label>
+                <p>5. When a signal is shrunk or expanded in the time domain, the property of ______ is observed?</p>
+                <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">A. Convolution in time</label><br>
+                <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">B. Scaling in time</label><br>
+                <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">C. Inversion formula</label><br>
+                <input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">D. Frequency shift</label>
                 <p class="feedback" id="feedback5"></p>
             </div>
 
@@ -126,7 +126,7 @@
         }
 
         // Check Question 3
-        if (document.getElementById('q3b').checked) {
+        if (document.getElementById('q3a').checked) {
             score++;
             document.getElementById('feedback3').innerHTML = "Correct!";
             document.getElementById('feedback3').classList.add('correct');
@@ -136,7 +136,7 @@
         }
 
         // Check Question 4
-        if (document.getElementById('q4a').checked) {
+        if (document.getElementById('q4d').checked) {
             score++;
             document.getElementById('feedback4').innerHTML = "Correct!";
             document.getElementById('feedback4').classList.add('correct');
@@ -146,7 +146,7 @@
         }
 
         // Check Question 5
-        if (document.getElementById('q5d').checked) {
+        if (document.getElementById('q5b').checked) {
             score++;
             document.getElementById('feedback5').innerHTML = "Correct!";
             document.getElementById('feedback5').classList.add('correct');
