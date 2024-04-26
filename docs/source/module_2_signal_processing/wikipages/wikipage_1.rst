@@ -55,5 +55,5 @@ The uses of DFT and FFT are most prominent in the capture and output of signal w
 
 Here is an example of the time scaling property mentioned in the above table. As seen in the image, the signal is scaled in the time domain to produce a higher data rate. This is displayed in the lower response in the image and as the data rate is increased, the conversion to frequency domain shows a response that ultimately requires a higher bandwidth. The diagram emphasizes the frequency's inverse response to time domain and explains why there are tradeoffs to having higher data rates. 
 
-Fourier Transforms are essential to providing a mathematical model for shifts from the time and frequency domains. These models provide the provide the proper structure for signal display and introduce an important component between signal capture and signal filtering, sampling. 
+Fourier Transforms are essential to providing a mathematical model for shifts from the time and frequency domains. These models provide the proper structure for displaying signals and introduce an important component between signal capture and signal filtering, sampling. 
    
