@@ -305,8 +305,6 @@ Throughput Test
 	  :align: center
 	  :width: 600
 
-Lab 2: TBD
-----------------------------------------------
 
 
 
