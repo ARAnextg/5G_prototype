@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital and Analog Filters</title>
+    <title>Sampling Theory</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { 
@@ -45,51 +45,51 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="quiz-title">Signal Processing with Filters</h1>
+        <h1 class="quiz-title">Signal Sampling</h1>
         <form id="quiz">
         <!-- Question 1 -->
        <div class="question">
-                <p>1. Which filter(s) contain 0 Hz in the stopband?</p>
-                <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">A. Low-pass filter</label><br>
-                <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">B. High-pass filter</label><br>
-                <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">C. Band-pass filter</label><br>
-                <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">D. Both (B) and (C)</label>
+                <p>1. The process of converting continuous time analog signals into discrete time digital signals is called what?</p>
+                <input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">A. Nyquist Sampling</label><br>
+                <input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">B. Quantization</label><br>
+                <input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">C. AD Conversion</label><br>
+                <input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">D. Uniform Sampling</label>
                 <p class="feedback" id="feedback1"></p>
             </div>
             <!-- Question 2 -->
             <div class="question">
-                <p>2. What variable differentiates between low-pass, high-pass, band-pass, and band-stop filters when changed?</p>
-                <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">A. Transition width</label><br>
-                <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">B. Real/complex taps</label><br>
-                <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">C. Corner frequency</label><br>
-                <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">D. Sample rate</label>
+                <p>2. What is the Nyquist rate (sample rate)?</p>
+                <input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">A. R = 2B</label><br>
+                <input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">B. R < 2B</label><br>
+                <input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">C. R > 2B</label><br>
+                <input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">D. 0 < R < 2B</label>
                 <p class="feedback" id="feedback2"></p>
             </div>
             <!-- Question 3 -->
             <div class="question">
-                <p>3. The input and output of a digital filtering system is?</p>
-                <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. Continuous-time series, discrete-time series</label><br>
-                <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. Discrete-time series, discrete-time series</label><br>
-                <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. Continuous-time series, continuous-time series</label><br>
-                <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. Discrete-time series, continuous-time series</label>
+                <p>3. Aliasing causes ______ to happen?</p>
+                <input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">A. Oversampling</label><br>
+                <input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">B. Signal amplification</label><br>
+                <input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">C. Lost signal</label><br>
+                <input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">D. Undersampling</label>
                 <p class="feedback" id="feedback3"></p>
             </div>
             <!-- Question 4 -->
             <div class="question">
-                <p>4. What is the effect of putting a high-pass and low-pass filter in parallel?</p>
-                <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">A. Any signal outside the specified range is allowed through.</label><br>
-                <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">B. One specified frequency is allowed through.</label><br>
-                <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">C. No signals are allowed through at all.</label><br>
-                <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. None of the above.</label>
+                <p>4. What is the frequency range for 5G mmWaves?</p>
+                <input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">A. 19-23 GHz</label><br>
+                <input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">B. 24-29 GHz</label><br>
+                <input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">C. 30-34 GHz</label><br>
+                <input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">D. 35-39 GHz</label>
                 <p class="feedback" id="feedback4"></p>
             </div>
             <!-- Question 5 -->
             <div class="question">
-                <p>5. What different properties interfere with the data contained in a signal?</p>
-                <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">A. Noise</label><br>
-                <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">B. Interference</label><br>
-                <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">C. Distortion</label><br>
-                <input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">D. All of the above</label>
+                <p>5. The sampling rate ___ the carrier frequency rate?</p>
+                <input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">A. 2*</label><br>
+                <input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">B. =</label><br>
+                <input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">C. 1/2</label><br>
+                <input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">D. 4*</label>
                 <p class="feedback" id="feedback5"></p>
             </div>
 
@@ -106,7 +106,7 @@
         var totalQuestions = 5; // Total number of questions in the quiz
 
         // Check Question 1
-        if (document.getElementById('q1d').checked) {
+        if (document.getElementById('q1b').checked) {
             score++;
             document.getElementById('feedback1').innerHTML = "Correct!";
             document.getElementById('feedback1').classList.add('correct');
@@ -126,7 +126,7 @@
         }
 
         // Check Question 3
-        if (document.getElementById('q3b').checked) {
+        if (document.getElementById('q3d').checked) {
             score++;
             document.getElementById('feedback3').innerHTML = "Correct!";
             document.getElementById('feedback3').classList.add('correct');
@@ -136,7 +136,7 @@
         }
 
         // Check Question 4
-        if (document.getElementById('q4a').checked) {
+        if (document.getElementById('q4b').checked) {
             score++;
             document.getElementById('feedback4').innerHTML = "Correct!";
             document.getElementById('feedback4').classList.add('correct');
@@ -146,7 +146,7 @@
         }
 
         // Check Question 5
-        if (document.getElementById('q5d').checked) {
+        if (document.getElementById('q5a').checked) {
             score++;
             document.getElementById('feedback5').innerHTML = "Correct!";
             document.getElementById('feedback5').classList.add('correct');
@@ -158,11 +158,11 @@
         // Overall Feedback
         var overallFeedback = "<h2>Your Score: " + score + "/" + totalQuestions + "</h2>";
         if (score === totalQuestions) {
-            overallFeedback += "<p>Great job! You have a strong understanding of 5G Data Encoding.</p>";
+            overallFeedback += "<p>Great job! You have a strong understanding of Sampling Theory.</p>";
         } else if (score > totalQuestions / 2) {
             overallFeedback += "<p>Good effort, but there are some areas to review.</p>";
         } else {
-            overallFeedback += "<p>It seems you might need to revisit the fundamentals of 5G Data Encoding.</p>";
+            overallFeedback += "<p>It seems you might need to revisit the fundamentals of Sampling Theory.</p>";
         }
 
         document.getElementById('result').innerHTML = overallFeedback;

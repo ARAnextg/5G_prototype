@@ -4,7 +4,7 @@ Diving Deeper into Signal Processing
 Importance of Signals
 ---------------------
 Signals are an important part of 5G network foundational components, with the reliable transmission of data happening through radio signal propagation. Signals in their raw form propagate through the air, bouncing off of stationary/moving objects and other signals produced from random sources before arriving at a listening receiver. However, there are many factors like noise, attenuation, distortion, fading, and interference that provide obstacle to the reliable transmission of data. 
-.. figure:: /images/signalpropagatation.PNG
+.. figure:: /images/signalpropagation.PNG
 
 Why Signal Processing is needed for Data Analyzation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,7 +24,7 @@ The conversion from time to frequency domain and back is represented mathematica
 
 .. figure:: /images/timedomain.PNG
 
-The uses of DFT and FFT are most prominent in the capture and output of signal waveforms. The above figure depicts the difference between DFT and other Fourier transform time signal representations. 
+The uses of DFT and FFT are most prominent in the capture and output of signal waveforms. The above figure depicts the difference between DFT and other Fourier transform time signal representations. Samples can be taken with N defined points, typically done in fourier, fast fourier, and series or on a continous interval. Periodic sampling is a result of repeating the interval of N points continuously as shown in the figure. DFTs are the only transforms to display periodic signals in both time and frequency domains. Most signals used in signal processing applications, however, are not periodic. With the above figure showing the difference between DFT and alternative transforms, the table below outlines the common properties across the family of transforms and how they are used in signal processing. 
 
 .. list-table:: **Fourier Properties**
    :widths: 25 75
@@ -51,8 +51,9 @@ The uses of DFT and FFT are most prominent in the capture and output of signal w
    * - Integration
      - Similar to derivative, an integral fourier transform signal will result. 
 
-Some of the more essential properties of Fourier transforms like frequency and time Convolution are covered in further detail in the rest of this module.
-
 .. figure:: /images/timescaling.PNG
-   
 
+Here is an example of the time scaling property mentioned in the above table. As seen in the image, the signal is scaled in the time domain to produce a higher data rate. This is displayed in the lower response in the image and as the data rate is increased, the conversion to frequency domain shows a response that ultimately requires a higher bandwidth. The diagram emphasizes the frequency's inverse response to time domain and explains why there are tradeoffs to having higher data rates. 
+
+Fourier Transforms are essential to providing a mathematical model for shifts from the time and frequency domains. These models provide the proper structure for displaying signals and introduce an important component between signal capture and signal filtering, sampling. 
+   

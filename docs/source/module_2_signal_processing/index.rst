@@ -11,8 +11,8 @@ Module 2: Signal Processing and Analysis
    labs/Lab_2
    quizzes/Quiz_2
    wikipages/wikipage_3
-   wikipages/Convolution-Correlation
-   wikipages/FourierTransformFunctions
+   wikipages/wikipage_4
+   wikipages/wikipage_5
    labs/Labs_3
    
 
