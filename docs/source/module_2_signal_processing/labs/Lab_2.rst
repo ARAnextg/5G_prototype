@@ -231,7 +231,7 @@ Hardware Filter Lab
 | 
 | Add QT GUI Frequency Sink Block, Null Source, and Null Sink Block.  They don't need to be changed and can be connected as follows:
 .. figure:: /images/hw-lab-flowgraph.png
-| 
+|  
 |  
 | **The Experiment**
 | Press the play button at the top.  Examine the frequency graph that is outputted.
