@@ -24,7 +24,7 @@ The conversion from time to frequency domain and back is represented mathematica
 
 .. figure:: /images/timedomain.PNG
 
-The uses of DFT and FFT are most prominent in the capture and output of signal waveforms. The above figure depicts the difference between DFT and other Fourier transform time signal representations. Samples can be taken with N defined points, typically done in fourier, fast fourier, and series or on a continous interval. Periodic sampling is a result of repeating the interval of N points continuously as shown in the figure. DFTs are the only transforms to display periodic signals in both time and frequency domains. 
+The uses of DFT and FFT are most prominent in the capture and output of signal waveforms. The above figure depicts the difference between DFT and other Fourier transform time signal representations. Samples can be taken with N defined points, typically done in fourier, fast fourier, and series or on a continous interval. Periodic sampling is a result of repeating the interval of N points continuously as shown in the figure. DFTs are the only transforms to display periodic signals in both time and frequency domains. Most signals used in signal processing applications, however, are not periodic. With the above figure showing the difference between DFT and alternative transforms, the table below outlines the common properties across the family of transforms and how they are used in signal processing. 
 
 .. list-table:: **Fourier Properties**
    :widths: 25 75
@@ -53,5 +53,7 @@ The uses of DFT and FFT are most prominent in the capture and output of signal w
 
 .. figure:: /images/timescaling.PNG
 
-Here is an example of the time scaling property mentioned in the above table. As seen in the image, the signal is scaled in the time domain to produce a higher data rate. This is displayed in the lower response in the image and as the data rate is increased, the conversion to frequency domain shows a response that ultimately requires a higher bandwidth. The diagram emphasizes the frequency's inverse response to time domain and explains why there are tradeoffs to having higher data rates.
+Here is an example of the time scaling property mentioned in the above table. As seen in the image, the signal is scaled in the time domain to produce a higher data rate. This is displayed in the lower response in the image and as the data rate is increased, the conversion to frequency domain shows a response that ultimately requires a higher bandwidth. The diagram emphasizes the frequency's inverse response to time domain and explains why there are tradeoffs to having higher data rates. 
+
+Fourier Transforms are essential to providing a mathematical model for shifts from the time and frequency domains. These models provide the provide the proper structure for signal display and introduce an important component between signal capture and signal filtering, sampling. 
    
