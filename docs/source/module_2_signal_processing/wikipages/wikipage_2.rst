@@ -31,4 +31,6 @@ Decimation is the process of lowering the sample rate, which is desirable in rea
 
 Since most modern applications like WiFi, Bluetooth, LTE, and others use radio frequency ranges from 100 MHz to 6 Hz, the carrier for these signals will often lie in this range. Frequencies for radar and satellite communications are now also used in **5G mmWave** applications which falls in a range of 24 to 29 GHz. Essentially, when a signal is received, it is stored as complex values and being sampled at a given rate that the SDR is picking up. This frequency rate is different from the carrier rate (which is the frequency on which the signal is transmitted). In short, the carrier frequency defines the signal that is being transmitted while the sampling of this signal is occurring at twice the frequency of the carrier (to avoid resulting ambiguity as mentioned above). 
 
+.. figure:: /images/carrierrange.png
+
 This is a summary of the sampling process and only grazes the many components involved. In the remainder of this module, you will learn how key concepts of Convolution and Correlation round out signal processing and analyzation. 
