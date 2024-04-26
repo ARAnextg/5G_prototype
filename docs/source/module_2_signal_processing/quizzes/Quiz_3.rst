@@ -1,4 +1,4 @@
-Quiz 2: Digital and Analog Filters
+Quiz 3: Digital and Analog Filters
 ============================================
 
 .. raw:: html
