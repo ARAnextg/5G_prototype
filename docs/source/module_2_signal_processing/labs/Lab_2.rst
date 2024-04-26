@@ -9,8 +9,7 @@ Setup
 
 These installation instructions are for people running Windows with OpenSSH preinstalled.
 
-**Install X Display Server On Local Device** - A few examples are below
-
+|**Install X Display Server On Local Device** - A few examples are below
 | vcxsrv - https://sourceforge.net/projects/vcxsrv/ 
 | xming - https://sourceforge.net/projects/xming/
 
