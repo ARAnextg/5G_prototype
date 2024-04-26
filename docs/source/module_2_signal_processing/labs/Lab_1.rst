@@ -73,15 +73,7 @@ Follow the steps below to start this experiment:
 
   passwd
 
-.. code-block:: bash
-
-  mkdir /home/[username]
-
-.. code-block:: bash
-
-  chown [username] /home/[username]
-
-#. Now on your local machine, you will open a terminal and ssh into jumpbox seen below.
+Now on your local machine, you will open a terminal and ssh into jumpbox seen below.
 
 .. code-block:: bash
 
@@ -95,8 +87,7 @@ ssh [username]@[floating_ip_container]
 
 su root
 
-#. You should be in. Now run the remaining commands on your local machine:
-
+You should be in. Now run the remaining commands on your local machine:
 
  .. code-block:: bash
 
@@ -107,10 +98,13 @@ su root
   nano ~/.bashrc
 
 **You're going to add the following to the end of this file:**
+
 export PYTHONPATH="${PYTHONPATH}:/usr/local/local/lib/python3.10/dist-packages/"
 export UHD_IMAGES_DIR=/usr/local/share/uhd/images
 export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms
+
 **save and exit the file**
+
 .. code-block:: bash
  
   source ~/.bashrc
@@ -119,6 +113,7 @@ export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platfor
 
  uhd_images_downloaeder
 
+.. code-block:: bash
 
 apt install -y gnuradio git cmake g++ libboost-all-dev libgmp-dev swig python3-numpy python3-mako python3-sphinx python3-lxml doxygen libfftw3-dev libsdl1.2-dev libgsl-dev libqwt-qt5-dev libqt5opengl5-dev python3-pyqt5 liblog4cpp5-dev libzmq3-dev python3-yaml python3-click python3-click-plugins python3-zmq python3-scipy python3-gi python3-gi-cairo gir1.2-gtk-3.0 libcodec2-dev libgsm1-dev libusb-1.0-0 libusb-1.0-0-dev libudev-dev python3-pip
 
