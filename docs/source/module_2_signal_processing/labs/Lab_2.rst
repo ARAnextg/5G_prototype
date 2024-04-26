@@ -7,15 +7,17 @@ This lab lets people explore high and low filters using GNU Radio's blocks progr
 Setup
 -----
 
-These installation instructions are for people running Windows with OpenSSH preinstalled.
-
+| These installation instructions are for people running Windows with OpenSSH already installed (Most modern installations)
+| Jumpbox Instructions can be found in the Ara User Manual
+|  
+|  
 | **Install X Display Server On Local Device** - A few examples are below
 | vcxsrv - https://sourceforge.net/projects/vcxsrv/ 
 | xming - https://sourceforge.net/projects/xming/
-
-Use default installation settings.
-
-
+|  
+| Use default installation settings.
+|  
+|  
 | **Lease Setup**
 | - Navigate to https://portal.arawireless.org
 | - Reservations > Leases
@@ -206,7 +208,7 @@ Hardware Filter Lab
 
 | **Setup Environment**
 
-| You either follow the instructions below or clone the website's GitHub for /python_lab_scripts/high_low_freq_scan.grc a premade GNU Radio Flow Graph.
+| You either follow the instructions below or clone the website's GitHub for /python_lab_scripts/high_low_freq_scan.grc a premade GNU Radio Flow Graph.  All blocks can be searched for using Ctrl+f
 |  
 | GNU Radio should automatically open a new project.
 |  
@@ -214,10 +216,29 @@ Hardware Filter Lab
 .. figure:: /images/hw-lab-options-config.png
 | Save and close the window
 |  
-| Double click the samp_rate variable block and the options like below:
+| Double click the samp_rate variable block and set the parameters like below:
 .. figure:: /images/hw-lab-samprate-config.png
 | Save and close the window
 |  
-| Add three more variables and set them as follows:
+| Add three more variables for cutoff_freq, tran_width, and gain then set the parameters as follows:
 .. figure:: /images/hw-lab-all-variables.png
+|  
+| Add a USRP Source Block and set the parameters under the RF Options tab as follows:
+.. figure:: /images/hw-lab-usrp-source-config.png
+|  
+| Add a High Pass and a Low Pass Filter Block and set the parameters as follows (Same for both):
+.. figure:: /images/hw-lab-highpass-config.png
+| 
+| Add QT GUI Frequency Sink Block, Null Source, and Null Sink Block.  They don't need to be changed and can be connected as follows:
+.. figure:: /images/hw-lab-flowgraph.png
+| 
+|  
+| **The Experiment**
+| Press the play button at the top.  Examine the frequency graph that is outputted.
+|  
+| Experiment with changing the cutoff frequency and transition width variables and restart the graph.
+| What changes did you notice with each variable changed?
+|  
+| Flip the Low Pass Filter block out for the High Pass Filter Block.
+| What has changed with the stopband and passband on the graph that's outputted?
 
