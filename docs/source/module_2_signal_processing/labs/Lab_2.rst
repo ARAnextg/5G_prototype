@@ -4,6 +4,8 @@ Lab 2: Low and High Pass Filters
 This lab lets people explore high and low filters using GNU Radio's blocks programming interface.
 
 
+.. _x-forwarding:
+
 Setup
 -----
 

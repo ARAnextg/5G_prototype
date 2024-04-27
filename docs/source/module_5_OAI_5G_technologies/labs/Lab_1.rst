@@ -305,9 +305,114 @@ Throughput Test
 	  :align: center
 	  :width: 600
 
-Lab 2: TBD
-----------------------------------------------
+Viewing OAI GUI Scope Using X Forwarding
+---------------------------------------------
+
+To visualize the GUI elements of the OpenAirInterface (OAI) software on headless machines, we use X11 Forwarding. This method allows graphical programs on the server to use the display capabilities of the local machine. Follow these steps to set up and use X11 Forwarding.
+
+Setup X11 Forwarding
+^^^^^^^^^^^^^^^^^^^^
+
+You may refer to :ref:`detailed section <x-forwarding>` for more information.
+
+1. **Enable X11 Forwarding on the Server:**
+   Ensure that the SSH server on your container is configured to allow X11 forwarding. This involves editing the SSH configuration file:
+
+   .. code-block:: bash
+
+       nano /etc/ssh/sshd_config
+
+   Find the ``X11Forwarding`` line and make sure it is set to ``yes``. If it is commented out, uncomment it and change the setting to ``yes``.
+
+   .. code-block:: bash
+
+       X11Forwarding yes
+
+   After making changes, restart the SSH service:
+
+   .. code-block:: bash
+
+       service ssh restart
+
+2. **Prepare the Local Machine:**
+   On your local machine, install an X Server software if it's not already installed. For Windows, you can use Xming or VcXsrv. For macOS, XQuartz is recommended.
+
+   - **Windows Users:** Download and install Xming or VcXsrv from their respective websites.
+   - **macOS Users:** Download and install XQuartz from its official website, then log out and back in to initialize the X Server.
+
+3. **Configure SSH Client for X11 Forwarding:**
+   Configure your SSH client to enable X11 Forwarding. This can typically be done with the ``-X`` or ``-Y`` option (the latter disables some X11 security checks and may be needed for some applications).
+
+   .. code-block:: bash
+
+       ssh -Y -J [jbox-username]@jbox.arawireless.org [container-username]@[floating-ip]
+
+4. **Verify X11 Forwarding:**
+   To verify that X11 Forwarding is working, try running a simple X11 program like ``xeyes`` or ``xclock`` after connecting:
+
+   .. code-block:: bash
+
+       xclock
+
+   If the clock or eyes application appears on your local screen, X11 Forwarding is correctly set up.
+
+XForms and QtScope Setup
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. **Install Dependencies for XForms:**
+   Before building the XForms scope, you need to install the necessary packages:
+   
+   .. code-block:: bash
+
+       sudo apt-get update
+       sudo apt-get install libforms-bin libforms-dev
+
+2. **Build XForms Scope:**
+   Compile the XForms scope by navigating to the build directory and running the build script:
+
+   .. code-block:: bash
+
+       cd ~/openairinterface5g/cmake_targets/
+       ./build_oai --build-lib nrscope --ninja
+       cd ran_build/build/
+       cmake -DENABLE_NRSCOPE=ON ../../../ && ninja nrscope
+
+3. **Install Qt5 for QtScope:**
+   QtScope requires Qt5 libraries. Install them using:
+
+   .. code-block:: bash
+
+       sudo apt-get update
+       sudo apt-get install libqt5charts5-dev
+
+4. **Build QtScope:**
+   Similar to XForms, compile the QtScope:
+
+   .. code-block:: bash
+
+       cd ~/openairinterface5g/cmake_targets/
+       ./build_oai --build-lib nrqtscope --ninja
+       cd ran_build/build/
+       cmake -DENABLE_NRQTSCOPE=ON ../../../ && ninja nrqtscope
+
+Start the OAI gNB with GUI Scope
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    cd ~/openairinterface5g/cmake_targets/ran_build/build/
+    ./nr-softmodem -O ../../../targets/PROJECTS/GENERIC-NR-5GC/CONF/gnb.sa.band78.fr1.106PRB.usrpb210.conf --gNBs.[0].min_rxtxtime 6 --sa -E --continuous-tx -d --XFORMS
+
+The ``-d`` switch enables the GUI. The ``--XFORMS`` option specifies using the XForms graphical interface. Ensure that you adjust these parameters according to which GUI you wish to use, whether XForms or QtScope.
+      .. image:: /images/oai_gui_scope_example.png
+     
+     *Example of OpenAirInterface GUI Scope in action.*
 
 
 
+.. note:: The GUI may require significant bandwidth and local system resources, especially when running complex visualizations or when network conditions are suboptimal.
+
+
+
+.. warning:: Ensure that any firewalls or network policies in place allow X11 traffic, as it can be blocked on some networks due to security policies.
 
