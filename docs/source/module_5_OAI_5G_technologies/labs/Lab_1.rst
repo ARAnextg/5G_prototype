@@ -345,9 +345,20 @@ You may refer to :ref:`detailed section <x-forwarding>` for more information.
 
    .. code-block:: bash
 
-       ssh -Y -J [jbox-username]@jbox.arawireless.org [container-username]@[floating-ip]
+       ssh -v -J [jbox-username]@jbox.arawireless.org [container-username]@[floating-ip]
 
-4. **Verify X11 Forwarding:**
+   .. note::
+      If you are using PowerShell in Windows, ensure that the SSH_AUTH_SOCK environment variable is set correctly after starting the SSH agent. In PowerShell, you can set this variable by running:
+
+      .. code-block:: powershell
+
+          $env:SSH_AUTH_SOCK = "path_to_your_ssh_agent_socket"
+          ssh-add /path-to-key/
+
+      Replace ``path_to_your_ssh_agent_socket`` with the actual path provided when you start the ssh-agent. This ensures that `ssh-add` and other SSH operations can correctly communicate with the ssh-agent. If you have used Git Bash to start the ssh-agent and set the variable there, you may need to set it again in PowerShell if running in a different session or window.
+
+
+3. **Verify X11 Forwarding:**
    To verify that X11 Forwarding is working, try running a simple X11 program like ``xeyes`` or ``xclock`` after connecting:
 
    .. code-block:: bash
