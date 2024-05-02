@@ -1,5 +1,5 @@
 Lab 1 : Signal Filtering 
-==============================
+========================
 
 **Platform:** Software Defined Radios.
 
@@ -15,7 +15,7 @@ high-pass, band-pass, and band-stop filters to clean up a received signal.
 Varying degrees of artificial noise can be added to the signal and the 
 constructed filters will be used to improve the clarity of the signal. 
 
-In this lab, we will be using to Python. Follow the steps below to start this experiment:
+In this lab, we will be using Python. Follow the steps below to start this experiment:
 
 #. Open Visual Studio Code and make sure you have the following extensions installed:
  		* *Python*
@@ -28,7 +28,6 @@ In this lab, we will be using to Python. Follow the steps below to start this ex
 #. Add this block of code to the file you just created:
 
 .. code-block:: bash
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -43,7 +42,6 @@ plt.plot(np.real(h))
 plt.plot(np.imag(h))
 plt.legend(['real','imag'], loc=1)
 plt.show()
-
 .. code-block:: bash
 
 #. Save this file, but before running it, make sure all necessary libraries are downloaded (you will have to install matplotlib or alternative plotting library)
@@ -60,7 +58,6 @@ The first image represents the filter's impulse response in the time domain whil
 #. Add the following code to this file:
 
 .. code-block:: bash
-
 import numpy as np
 from gnuradio import gr
 from gnuradio import uhd
@@ -114,7 +111,6 @@ plt.title('Received Signal')
 plt.xlabel('Real Part')
 plt.ylabel('Imaginary Part')
 plt.savefig("gnuexampleoutput.png", dpi=150)
-
 .. code-block:: bash
 
 #. This file will build a filter using GNURadio, a commonly used SDR platform. Here, several modules are defined and connected together in a flowgraph. Running the flowgraph in GNURadio will simulate real time frequency responses and demonstrate the behavior of a signal as it passes through the filter. 
