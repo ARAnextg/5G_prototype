@@ -18,14 +18,11 @@ constructed filters will be used to improve the clarity of the signal.
 In this lab, we will be using Python. Follow the steps below to start this experiment:
 
 #. Open Visual Studio Code and make sure you have the following extensions installed:
- 		* *Python*
-		* *Pylance*
-
-	        * *Python Environment Manager*
-
-	        * *GNURadio Integration*
-
-  		* *GNURadio Development Pack*
+ 		*Python*
+		*Pylance*
+	        *Python Environment Manager*
+	        *GNURadio Integration*
+  		*GNURadio Development Pack*
 	       
 #. Once you have these extensions added, you will open a new file in VS and title it 'lowpassfilterExperiment.py' 
 #. Add this block of code to the file you just created:
