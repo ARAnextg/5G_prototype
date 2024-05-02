@@ -20,8 +20,11 @@ In this lab, we will be using Python. Follow the steps below to start this exper
 #. Open Visual Studio Code and make sure you have the following extensions installed:
  		* *Python*
 		* *Pylance*
+
 	        * *Python Environment Manager*
+
 	        * *GNURadio Integration*
+
   		* *GNURadio Development Pack*
 	       
 #. Once you have these extensions added, you will open a new file in VS and title it 'lowpassfilterExperiment.py' 
@@ -42,7 +45,6 @@ plt.plot(np.real(h))
 plt.plot(np.imag(h))
 plt.legend(['real','imag'], loc=1)
 plt.show()
-.. code-block:: bash
 
 #. Save this file, but before running it, make sure all necessary libraries are downloaded (you will have to install matplotlib or alternative plotting library)
 
@@ -111,7 +113,6 @@ plt.title('Received Signal')
 plt.xlabel('Real Part')
 plt.ylabel('Imaginary Part')
 plt.savefig("gnuexampleoutput.png", dpi=150)
-.. code-block:: bash
 
 #. This file will build a filter using GNURadio, a commonly used SDR platform. Here, several modules are defined and connected together in a flowgraph. Running the flowgraph in GNURadio will simulate real time frequency responses and demonstrate the behavior of a signal as it passes through the filter. 
 
