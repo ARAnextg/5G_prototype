@@ -18,32 +18,28 @@ constructed filters will be used to improve the clarity of the signal.
 In this lab, we will be using Python. Follow the steps below to start this experiment:
 
 #. Open Visual Studio Code and make sure you have the following extensions installed:
- 		*Python*
-		*Pylance*
-	        *Python Environment Manager*
-	        *GNURadio Integration*
-  		*GNURadio Development Pack*
+ 		*Python*, *Pylance*, *Python Environment Manager*, *GNURadio Integration*, *GNURadio Development Pack*
 	       
 #. Once you have these extensions added, you will open a new file in VS and title it 'lowpassfilterExperiment.py' 
 #. Add this block of code to the file you just created:
 
-.. code-block:: bash
-import numpy as np
-import matplotlib.pyplot as plt
+.. code-block::
 
+	import numpy as np
+	import matplotlib.pyplot as plt
+	
+	H = np.hstack((np.zeros(20), np.arange(10)/10, np.zeros(20)))
+	w = np.linspace(-0.5, 0.5, 50)
+	plt.plot(w, H, '.-')
+	plt.show()
 
-H = np.hstack((np.zeros(20), np.arange(10)/10, np.zeros(20)))
-w = np.linspace(-0.5, 0.5, 50)
-plt.plot(w, H, '.-')
-plt.show()
+	h = np.fft.ifftshift(np.fft.ifft(np.fft.ifftshift(H)))
+	plt.plot(np.real(h))
+	plt.plot(np.imag(h))
+	plt.legend(['real','imag'], loc=1)
+	plt.show()
 
-h = np.fft.ifftshift(np.fft.ifft(np.fft.ifftshift(H)))
-plt.plot(np.real(h))
-plt.plot(np.imag(h))
-plt.legend(['real','imag'], loc=1)
-plt.show()
-
-#. Save this file, but before running it, make sure all necessary libraries are downloaded (you will have to install matplotlib or alternative plotting library)
+Save this file, but before running it, make sure all necessary libraries are downloaded (you will have to install matplotlib or alternative plotting library)
 
 You should see the following output after running this file:
 
@@ -57,16 +53,16 @@ The first image represents the filter's impulse response in the time domain whil
 #. Add the following code to this file:
 
 .. code-block:: bash
-import numpy as np
-from gnuradio import gr
-from gnuradio import uhd
-from gnuradio import blocks
-import time 
-import matplotlib.pyplot as plt
+	import numpy as np
+	from gnuradio import gr
+	from gnuradio import uhd
+	from gnuradio import blocks
+	import time 
+	import matplotlib.pyplot as plt
 
 
-class top_block(gr.top_block):
-    def __init__(self):
+	class top_block(gr.top_block):
+    	def __init__(self):
         gr.top_block.__init__(self, "Top Block")
 
         # Parameters
@@ -94,22 +90,22 @@ class top_block(gr.top_block):
     	def get_data(self):
         return self.vector_sink.data()
 
-# Create and run the flowgraph
-tb = top_block()
-tb.start()
-print("Collecting samples...")
-time.sleep(1) 
-tb.stop()
-tb.wait()
-print("Sample collection complete.")
+	# Create and run the flowgraph
+	tb = top_block()
+	tb.start()
+	print("Collecting samples...")
+	time.sleep(1) 
+	tb.stop()
+	tb.wait()
+	print("Sample collection complete.")
 
 
-data = tb.get_data()
-plt.scatter(np.real(data), np.imag(data))  
-plt.title('Received Signal')
-plt.xlabel('Real Part')
-plt.ylabel('Imaginary Part')
-plt.savefig("gnuexampleoutput.png", dpi=150)
+	data = tb.get_data()
+	plt.scatter(np.real(data), np.imag(data))  
+	plt.title('Received Signal')
+	plt.xlabel('Real Part')
+	plt.ylabel('Imaginary Part')
+	plt.savefig("gnuexampleoutput.png", dpi=150)
 
 #. This file will build a filter using GNURadio, a commonly used SDR platform. Here, several modules are defined and connected together in a flowgraph. Running the flowgraph in GNURadio will simulate real time frequency responses and demonstrate the behavior of a signal as it passes through the filter. 
 
