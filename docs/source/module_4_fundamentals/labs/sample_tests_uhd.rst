@@ -89,7 +89,16 @@ Open a new terminal and type the following commands:
  samples = usrp.recv_num_samps(10000, 100e6, 1e6, [0], 50)
  print(samples[0:10])
 
-If no errors occur, you are good to go!
+If no errors occur, you are good to go! 
+
+If errors persist specifically *usrp not found* then download the uhd driver directly using:
+
+.. code-block:: bash
+
+   apt install python3-uhd
+
+This should fix the underlying errors.
+
 
 
 Benchmarking USRP Speed in Python
