@@ -44,11 +44,11 @@ Save this file, but before running it, make sure all necessary libraries are dow
 
 You should see the following output after running this file:
 
-.. image:: images/lowpassresponse1.png
+.. image:: images\lowpassresponse1.png
    :align: center
    :alt: Low-pass time response
 
-.. image:: images/lowpassfreqimpulse.png
+.. image:: images\lowpassfreqimpulse.png
    :align: center
    :alt: Low-pass frequency / impulse
 
