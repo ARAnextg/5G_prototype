@@ -223,7 +223,7 @@ Step-by-Step Script Development
       tb.wait()
       print("Sample collection complete.")
 
-      data = tb.sink_data()
+      data = tb.vector_sink.data()
       data = np.asarray(data)
       plt.scatter(np.real(data), np.imag(data))  
       plt.title('Received Signal')
