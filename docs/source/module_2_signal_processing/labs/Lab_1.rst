@@ -1,11 +1,10 @@
 Lab 1 : Signal Filtering 
-==============================
+========================
 
 **Platform:** Software Defined Radios.
 
 ..
-   **Resources needed:** USRP N320, USRP B210, and a general purpose
-   server.
+   **Resources needed:** USRP N320, USRP B210, and coding platform (Visual Studio recommended).
 
 **Resources needed:** 2 x USRP B210s
 
@@ -16,109 +15,98 @@ high-pass, band-pass, and band-stop filters to clean up a received signal.
 Varying degrees of artificial noise can be added to the signal and the 
 constructed filters will be used to improve the clarity of the signal. 
 
-Follow the steps below to start this experiment:
+In this lab, we will be using Python. Follow the steps below to start this experiment:
 
-#. Login to the portal `ARA Portal <https://portal.arawireless.org>`_
-   with your username and password.
+#. Open Visual Studio Code and make sure you have the following extensions installed:
+   *Python*, *Pylance*, *Python Environment Manager*, *GNURadio Integration*, *GNURadio Development Pack*
+	       
+#. Once you have these extensions added, you will open a new file in VS and title it 'lowpassfilterExperiment.py' 
 
-#. Create one reservation (as done before in the Wave Transmission lab in Module 1)  
-   using the *Project -> Reservations ->
-   Leases* tab from the dashboard:
+#. Add this block of code to the file you just created:
 
-      1.  filterExperiment
-	       * *Site*: Sandbox  
-	       * *Resource Type*: AraRAN  
-	       * *Device Type*: Host
-      	 * *Device ID*: 001 (If this ID doesn't work, increment by 1: 003, 004, etc.)
+   .. code-block:: python
 
+      import numpy as np
+      import matplotlib.pyplot as plt
+	
+      H = np.hstack((np.zeros(20), np.arange(10)/10, np.zeros(20)))
+      w = np.linspace(-0.5, 0.5, 50)
+      plt.plot(w, H, '.-')
+      plt.show()
 
- #. Create a container on the respective node using the
-   corresponding reservation ID.  For the container, the Docker
-   image can be used as follows:
+      h = np.fft.ifftshift(np.fft.ifft(np.fft.ifftshift(H)))
+      plt.plot(np.real(h))
+      plt.plot(np.imag(h))
+      plt.legend(['real','imag'], loc=1)
+      plt.show()
 
-      1. filteringExperiment
-	        * *Container Image*: ``arawirelesshub/uhd:4.4.0.0``
-	        * *CPU*: 2
-	        * *Memory*: 5120
-      
-   .. note:: Note that the above container image is equipped with
-      USRP Hardware Driver (UHD).
+Save this file, but before running it, make sure all necessary libraries are downloaded (you will have to install matplotlib or alternative plotting library)
 
- #. As before, containers can be accessed via the console tab of the
-   respective containers in the *Project -> Containers* tab from the
-   dashboard or using SSH via the :ref:`jumpbox server <ARA_Jumpbox>`.
+You should see the following output after running this file:
 
- #. In the **filteringExperiment container**, run the following commands in the console terminal to start building and testing the filters. 
+.. figure:: /images/lowpassresponse1.png
 
- .. code-block:: bash
+.. figure:: /images/lowpassfreqimpulse.png
 
-  apt update
+The first image represents the filter's impulse response in the time domain while the second image shows the reponses with real taps and complex taps. 
 
-.. code-block:: bash
+#. Now create a new file and title it 'lowpasstohighpass'
 
-  apt install openssh-server
-.. code-block:: bash
- 
-  service ssh start
+#. Add the following code to this file:
 
-.. code-block:: bash
+   .. code-block:: python
 
-  useradd -s /usr/bin/bash [username]
+      import numpy as np
+      from gnuradio import gr
+      from gnuradio import uhd
+      from gnuradio import blocks
+      import time 
+      import matplotlib.pyplot as plt
 
-.. code-block:: bash
+      class top_block(gr.top_block):
+          def __init__(self):
+              gr.top_block.__init__(self, "Top Block")
 
-  passwd [username]
+              # Parameters
+              samp_rate = 1e6
+              center_freq = 3586.98e6
+              gain = 50
 
-.. code-block:: bash
+              # USRP Source
+              self.usrp_source = uhd.usrp_source(
+                  ",".join(("", "")),
+                  uhd.stream_args(
+                      cpu_format="fc32",
+                      channels=[0],
+                  ),
+              )
+              self.usrp_source.set_samp_rate(samp_rate)
+              self.usrp_source.set_center_freq(center_freq, 0)
+              self.usrp_source.set_gain(gain, 0)
 
-  passwd
+              self.vector_sink = blocks.vector_sink_c()
 
-Now on your local machine, you will open a terminal and ssh into jumpbox seen below.
+              self.connect((self.usrp_source, 0), (self.vector_sink, 0))
 
-.. code-block:: bash
+          def get_data(self):
+              return self.vector_sink.data()
 
-ssh -i [private_key_filename] [ara-id]@jbox.arawireless.org
+      # Create and run the flowgraph
+      tb = top_block()
+      tb.start()
+      print("Collecting samples...")
+      time.sleep(1) 
+      tb.stop()
+      tb.wait()
+      print("Sample collection complete.")
 
-.. code-block:: bash
+      data = tb.get_data()
+      plt.scatter(np.real(data), np.imag(data))  
+      plt.title('Received Signal')
+      plt.xlabel('Real Part')
+      plt.ylabel('Imaginary Part')
+      plt.savefig("gnuexampleoutput.png", dpi=150)
 
-ssh [username]@[floating_ip_container]
+#. This file will build a filter using GNURadio, a commonly used SDR platform. Here, several modules are defined and connected together in a flowgraph. Running the flowgraph in GNURadio will simulate real time frequency responses and demonstrate the behavior of a signal as it passes through the filter. 
 
-.. code-block:: bash
-
-su root
-
-You should be in. Now run the remaining commands on your local machine:
-
- .. code-block:: bash
-
-  apt install nano
-
-.. code-block:: bash
-
-  nano ~/.bashrc
-
-**You're going to add the following to the end of this file:**
-
-export PYTHONPATH="${PYTHONPATH}:/usr/local/local/lib/python3.10/dist-packages/"
-export UHD_IMAGES_DIR=/usr/local/share/uhd/images
-export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms
-
-**save and exit the file**
-
-.. code-block:: bash
- 
-  source ~/.bashrc
-
-.. code-block:: bash
-
- uhd_images_downloaeder
-
-.. code-block:: bash
-
-apt install -y gnuradio git cmake g++ libboost-all-dev libgmp-dev swig python3-numpy python3-mako python3-sphinx python3-lxml doxygen libfftw3-dev libsdl1.2-dev libgsl-dev libqwt-qt5-dev libqt5opengl5-dev python3-pyqt5 liblog4cpp5-dev libzmq3-dev python3-yaml python3-click python3-click-plugins python3-zmq python3-scipy python3-gi python3-gi-cairo gir1.2-gtk-3.0 libcodec2-dev libgsm1-dev libusb-1.0-0 libusb-1.0-0-dev libudev-dev python3-pip
-
-.. code-block:: bash
-
-  pip install matplotlib
-
-#. At this point, you should be ready to make your filter and run it. 
+#. Run this file a couple times while changing the 'samp_rate' and 'center_freq' values in the file. See if you can develop high-pass, band-pass, and band-stop responses as well as low-pass. 

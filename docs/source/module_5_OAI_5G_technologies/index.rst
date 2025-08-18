@@ -15,5 +15,6 @@ Module 5: OpenAirInterface(OAI) and 5G Technologies
   
   
    labs/Lab_1
+   labs/lab2
  
  
