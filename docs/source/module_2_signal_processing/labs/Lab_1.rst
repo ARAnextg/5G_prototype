@@ -44,11 +44,15 @@ Save this file, but before running it, make sure all necessary libraries are dow
 
 You should see the following output after running this file:
 
-.. figure:: /images/lowpassresponse1.png
-   :align: center
+#. You should see the following output after running this file:
 
-.. figure:: /images/lowpassfreqimpulse.png
-   :align: center
+   .. image:: /images/lowpassresponse1.png
+      :align: center
+      :alt: Low-pass time response
+
+   .. image:: /images/lowpassfreqimpulse.png
+      :align: center
+      :alt: Low-pass frequency / impulse
 
 The first image represents the filter's impulse response in the time domain while the second image shows the reponses with real taps and complex taps. 
 
