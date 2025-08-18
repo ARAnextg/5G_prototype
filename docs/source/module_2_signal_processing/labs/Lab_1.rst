@@ -49,14 +49,15 @@ You should see the following output after running this file:
     :alt: Low-pass time response
     :name: img-lowpass-time
 
+
+The first image represents the filter's impulse response in the time domain while the second image shows the responses with real taps and complex taps.
+
+You should see the following output after running this file:
+
     .. image:: /_static/lowpass_freq_impulse.png
     :align: center
     :alt: Low-pass frequency / impulse
     :name: img-lowpass-freq
-
-
-The first image represents the filter's impulse response in the time domain while the second image shows the responses with real taps and complex taps.
-
 
 #. Now create a new file and title it 'lowpasstohighpass'
 
