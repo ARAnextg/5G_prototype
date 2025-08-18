@@ -42,15 +42,17 @@ In this lab, we will be using Python. Follow the steps below to start this exper
 
 Save this file, but before running it, make sure all necessary libraries are downloaded (you will have to install matplotlib or alternative plotting library)
 
-#. You should see the following output after running this file:
+You should see the following output after running this file:
 
-   .. image:: ../../images/lowpassresponse1.png
-      :align: center
-      :alt: Low-pass time response
+.. image:: images/lowpassresponse1.png
+   :align: center
+   :alt: Low-pass time response
 
-   .. image:: ../../images/lowpassfreqimpulse.png
-      :align: center
-      :alt: Low-pass frequency / impulse
+.. image:: images/lowpassfreqimpulse.png
+   :align: center
+   :alt: Low-pass frequency / impulse
+
+
 
    The first image represents the filter's impulse response in the time domain while the second image shows the responses with real taps and complex taps.
 
